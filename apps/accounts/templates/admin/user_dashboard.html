@@ -1,0 +1,357 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block title %}{{ title }} - {{ block.super }}{% endblock %}
+
+{% block extrastyle %}
+{{ block.super }}
+<style>
+    .dashboard-container {
+        padding: 30px;
+        background: #f5f7fa;
+        min-height: 100vh;
+    }
+    
+    .dashboard-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 30px;
+        border-radius: 15px;
+        color: white;
+        margin-bottom: 30px;
+        box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+    }
+    
+    .dashboard-header h1 {
+        margin: 0 0 10px 0;
+        font-size: 32px;
+    }
+    
+    .dashboard-header .subtitle {
+        opacity: 0.9;
+        font-size: 14px;
+    }
+    
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .stat-card {
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+        transition: all 0.3s ease;
+    }
+    
+    .stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    }
+    
+    .stat-card .icon {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+    
+    .stat-card .label {
+        font-size: 13px;
+        color: #868e96;
+        margin-bottom: 8px;
+    }
+    
+    .stat-card .value {
+        font-size: 28px;
+        font-weight: bold;
+        color: #495057;
+    }
+    
+    .stat-card.green .value { color: #4CAF50; }
+    .stat-card.blue .value { color: #2196F3; }
+    .stat-card.orange .value { color: #FF9800; }
+    .stat-card.purple .value { color: #9C27B0; }
+    
+    .section {
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        margin-bottom: 20px;
+        box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+    }
+    
+    .section-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #f1f3f5;
+    }
+    
+    .section-header h2 {
+        margin: 0;
+        font-size: 20px;
+        color: #495057;
+    }
+    
+    .section-header .icon {
+        font-size: 24px;
+        margin-left: 10px;
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    table th {
+        text-align: right;
+        padding: 12px;
+        background: #f8f9fa;
+        font-size: 13px;
+        color: #495057;
+        font-weight: 600;
+    }
+    
+    table td {
+        padding: 12px;
+        border-bottom: 1px solid #f1f3f5;
+        font-size: 14px;
+    }
+    
+    table tr:hover {
+        background: #f8f9fa;
+    }
+    
+    .badge {
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 11px;
+        font-weight: bold;
+    }
+    
+    .badge.success {
+        background: #4CAF50;
+        color: white;
+    }
+    
+    .badge.info {
+        background: #2196F3;
+        color: white;
+    }
+    
+    .badge.warning {
+        background: #FF9800;
+        color: white;
+    }
+    
+    .progress-bar {
+        height: 8px;
+        background: #f1f3f5;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-top: 10px;
+    }
+    
+    .progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #4CAF50, #66BB6A);
+        transition: width 0.5s ease;
+    }
+    
+    .empty-state {
+        text-align: center;
+        padding: 40px;
+        color: #adb5bd;
+    }
+    
+    .empty-state .icon {
+        font-size: 48px;
+        margin-bottom: 15px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="dashboard-container">
+    <!-- هدر -->
+    <div class="dashboard-header">
+        <h1>📊 داشبورد: {{ user.username }}</h1>
+        <div class="subtitle">
+            تاریخ عضویت: {{ user.date_joined|date:"Y/m/d" }} | 
+            کد رفرال: {{ user.referral_code|default:"-" }}
+        </div>
+    </div>
+    
+    <!-- آمار کلی -->
+    <div class="stats-grid">
+        <div class="stat-card green">
+            <div class="icon">💰</div>
+            <div class="label">موجودی نقد</div>
+            <div class="value">${{ user.cash_balance|floatformat:2 }}</div>
+        </div>
+        
+        <div class="stat-card blue">
+            <div class="icon">🔄</div>
+            <div class="label">موجودی ری‌اینوست</div>
+            <div class="value">${{ user.reinvest_balance|floatformat:2 }}</div>
+        </div>
+        
+        <div class="stat-card orange">
+            <div class="icon">📈</div>
+            <div class="label">کل سرمایه‌گذاری</div>
+            <div class="value">${{ inv_stats.total_invested|floatformat:0 }}</div>
+        </div>
+        
+        <div class="stat-card purple">
+            <div class="icon">🎯</div>
+            <div class="label">کل سود</div>
+            <div class="value">${{ inv_stats.total_profit|floatformat:2 }}</div>
+        </div>
+    </div>
+    
+    <!-- آمار سرمایه‌گذاری -->
+    <div class="section">
+        <div class="section-header">
+            <span class="icon">💼</span>
+            <h2>آمار سرمایه‌گذاری</h2>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="label">تعداد کل</div>
+                <div class="value">{{ inv_stats.total }}</div>
+            </div>
+            <div class="stat-card green">
+                <div class="label">فعال</div>
+                <div class="value">{{ inv_stats.active }}</div>
+            </div>
+            <div class="stat-card blue">
+                <div class="label">تکمیل شده</div>
+                <div class="value">{{ inv_stats.completed }}</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- آمار کمیسیون -->
+    <div class="section">
+        <div class="section-header">
+            <span class="icon">💸</span>
+            <h2>آمار کمیسیون</h2>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-card green">
+                <div class="label">باینری پرداخت شده</div>
+                <div class="value">${{ commission_stats.binary_paid|floatformat:2 }}</div>
+            </div>
+            <div class="stat-card orange">
+                <div class="label">باینری فلاش شده</div>
+                <div class="value">${{ commission_stats.binary_flushed|floatformat:2 }}</div>
+            </div>
+            <div class="stat-card blue">
+                <div class="label">رفرال (سطوح)</div>
+                <div class="value">${{ commission_stats.referral_total|floatformat:2 }}</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- آمار شبکه -->
+    <div class="section">
+        <div class="section-header">
+            <span class="icon">🌐</span>
+            <h2>آمار شبکه</h2>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="label">زیرمجموعه مستقیم</div>
+                <div class="value">{{ network_stats.direct_referrals }}</div>
+            </div>
+            <div class="stat-card green">
+                <div class="label">تیم چپ</div>
+                <div class="value">{{ network_stats.binary_left }}</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width:{% widthratio network_stats.left_volume network_stats.left_volume|add:network_stats.right_volume 100 %}%"></div>
+                </div>
+            </div>
+            <div class="stat-card blue">
+                <div class="label">تیم راست</div>
+                <div class="value">{{ network_stats.binary_right }}</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width:{% widthratio network_stats.right_volume network_stats.left_volume|add:network_stats.right_volume 100 %}%; background:linear-gradient(90deg, #2196F3, #42A5F5);"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- آخرین ROI -->
+    <div class="section">
+        <div class="section-header">
+            <span class="icon">📊</span>
+            <h2>آخرین ROI ها</h2>
+        </div>
+        {% if recent_roi %}
+        <table>
+            <thead>
+                <tr>
+                    <th>تاریخ</th>
+                    <th>پلن</th>
+                    <th>درصد</th>
+                    <th>مبلغ</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for roi in recent_roi %}
+                <tr>
+                    <td>{{ roi.created_at|date:"Y/m/d H:i" }}</td>
+                    <td><span class="badge info">{{ roi.plan }}</span></td>
+                    <td>{{ roi.percent }}%</td>
+                    <td style="color:#4CAF50; font-weight:bold;">${{ roi.amount|floatformat:2 }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <div class="empty-state">
+            <div class="icon">📭</div>
+            <p>هیچ ROI ثبت نشده</p>
+        </div>
+        {% endif %}
+    </div>
+    
+    <!-- آخرین کمیسیون‌ها -->
+    <div class="section">
+        <div class="section-header">
+            <span class="icon">💰</span>
+            <h2>آخرین کمیسیون‌های رفرال</h2>
+        </div>
+        {% if recent_commissions %}
+        <table>
+            <thead>
+                <tr>
+                    <th>تاریخ</th>
+                    <th>از طرف</th>
+                    <th>سطح</th>
+                    <th>مبلغ</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for comm in recent_commissions %}
+                <tr>
+                    <td>{{ comm.created_at|date:"Y/m/d H:i" }}</td>
+                    <td>{{ comm.from_user.username }}</td>
+                    <td><span class="badge success">Level {{ comm.level }}</span></td>
+                    <td style="color:#4CAF50; font-weight:bold;">${{ comm.amount|floatformat:2 }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <div class="empty-state">
+            <div class="icon">📭</div>
+            <p>هیچ کمیسیونی ثبت نشده</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

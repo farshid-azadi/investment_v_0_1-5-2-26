@@ -1,0 +1,49 @@
+<!-- templates/dashboard/includes/user_node.html -->
+
+{% if node %}
+    <!-- Active Node (کاربر وجود دارد) -->
+    <a href="?user_id={{ node.id }}" class="user-card-wrapper block relative bg-slate-800 border-2 border-slate-700 rounded-xl p-4 w-40 mx-auto transition-all duration-300 z-10 group cursor-pointer">
+        <!-- Avatar Circle -->
+        <div class="w-12 h-12 rounded-full border-2 border-indigo-500 bg-slate-900 mx-auto mb-3 flex items-center justify-center text-indigo-400 font-bold text-lg shadow-lg shadow-indigo-500/20 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+            {{ node.username|slice:":1"|upper }}
+        </div>
+        
+        <!-- Username -->
+        <div class="text-white font-bold text-sm truncate mb-1">{{ node.username }}</div>
+        
+        <!-- Stats (Volumes) -->
+        <div class="flex justify-between text-[10px] text-slate-400 bg-slate-900/50 rounded px-2 py-1 mt-2">
+            <div class="flex flex-col">
+                <span>L</span>
+                <span class="font-bold text-emerald-400">{{ node.left_volume|default:"0" }}</span>
+            </div>
+            <div class="border-l border-slate-700 mx-1"></div>
+            <div class="flex flex-col">
+                <span>R</span>
+                <span class="font-bold text-emerald-400">{{ node.right_volume|default:"0" }}</span>
+            </div>
+        </div>
+        
+        <!-- Tooltip on Hover -->
+        <div class="absolute invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-opacity bg-black text-white text-xs rounded py-1 px-2 -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap z-50">
+            کلیک برای مشاهده زیرمجموعه
+        </div>
+    </a>
+
+{% else %}
+    <!-- Empty Node (جایگاه خالی) -->
+    <div class="block relative bg-slate-800/30 border-2 border-dashed border-slate-700 rounded-xl p-4 w-40 mx-auto group">
+        <div class="w-12 h-12 rounded-full border-2 border-dashed border-slate-600 bg-slate-800/50 mx-auto mb-3 flex items-center justify-center text-slate-500">
+            <i class="fas fa-plus"></i>
+        </div>
+        
+        <div class="text-slate-500 font-medium text-xs mb-1">جایگاه خالی</div>
+        <div class="text-[10px] text-slate-600">{{ position }}</div>
+        
+        <!-- اگر پرنت وجود دارد اما این نود خالی است، می‌توانیم لینک ثبت نام بدهیم -->
+        {% if parent %}
+            <!-- اینجا می‌توانید لینک رفرال برای سمت چپ یا راست بگذارید -->
+             <!-- <a href="..." class="text-[10px] text-indigo-400 hover:text-indigo-300 mt-1 block">افزودن کاربر</a> -->
+        {% endif %}
+    </div>
+{% endif %}

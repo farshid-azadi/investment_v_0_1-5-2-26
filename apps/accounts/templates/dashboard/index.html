@@ -1,0 +1,305 @@
+{% extends 'base_dashboard.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block title %}داشبورد{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <!-- هدر صفحه -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">داشبورد</h1>
+        <a href="{% url 'dashboard:plans' %}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+            <i class="fas fa-rocket fa-sm text-white-50"></i> سرمایه‌گذاری جدید
+        </a>
+    </div>
+
+    <!-- کارت‌های آماری -->
+    <div class="row">
+        <!-- موجودی نقدی -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                موجودی نقدی
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                ${{ user.cash_balance|floatformat:2|intcomma }}
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- سرمایه فعال -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                سرمایه فعال
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                ${{ user.investment_balance|floatformat:2|intcomma }}
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-briefcase fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- تعداد تیم -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                تعداد تیم
+                            </div>
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-auto">
+                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
+                                        {{ team_count|default:0 }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-users fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- سود امروز -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                سود امروز
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                ${{ today_earnings|floatformat:2|intcomma|default:"0.00" }}
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-chart-line fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- بخش سرمایه‌گذاری - دکمه INVEST NOW -->
+    <div class="row">
+        <div class="col-lg-12 mb-4">
+            <div class="card shadow">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">
+                        <i class="fas fa-rocket"></i> سرمایه‌گذاری
+                    </h6>
+                </div>
+                <div class="card-body text-center py-5">
+                    <i class="fas fa-chart-line fa-3x text-primary mb-3"></i>
+                    <h4 class="mb-3">آماده برای کسب درآمد هستید؟</h4>
+                    <p class="text-muted mb-4">
+                        با انتخاب یکی از پلن‌های سرمایه‌گذاری، سفر خود را به سوی موفقیت شروع کنید
+                    </p>
+                    
+                    <!-- دکمه INVEST NOW با استایل کامل -->
+                    <a href="{% url 'dashboard:plans' %}" 
+                       class="btn btn-success btn-lg px-5 py-3 shadow-lg"
+                       style="font-size: 1.3rem; 
+                              font-weight: bold; 
+                              border-radius: 50px;
+                              background: linear-gradient(135deg, #1cc88a 0%, #13855c 100%);
+                              border: none;
+                              transition: all 0.3s ease;
+                              text-transform: uppercase;
+                              letter-spacing: 1px;">
+                        <i class="fas fa-rocket mr-2"></i>
+                        🚀 INVEST NOW
+                    </a>
+                    
+                    <div class="mt-4">
+                        <small class="text-muted">
+                            <i class="fas fa-shield-alt text-success"></i>
+                            سرمایه‌گذاری امن و مطمئن
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- دو ستون: نمودار و تراکنش‌های اخیر -->
+    <div class="row">
+        <!-- پلن فعال -->
+        <div class="col-lg-6 mb-4">
+            <div class="card shadow h-100">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">
+                        <i class="fas fa-briefcase"></i> پلن فعال
+                    </h6>
+                </div>
+                <div class="card-body">
+                    {% if active_plan %}
+                        <div class="text-center">
+                            <h4 class="text-primary">{{ active_plan.plan.name }}</h4>
+                            <hr>
+                            <div class="row">
+                                <div class="col-6 border-right">
+                                    <h6 class="text-muted">مبلغ سرمایه</h6>
+                                    <h5>${{ active_plan.investment_amount|floatformat:2|intcomma }}</h5>
+                                </div>
+                                <div class="col-6">
+                                    <h6 class="text-muted">ROI ماهیانه</h6>
+                                    <h5 class="text-success">{{ active_plan.plan.roi_percent }}%</h5>
+                                </div>
+                            </div>
+                            <hr>
+                            <small class="text-muted">
+                                شروع: {{ active_plan.created_at|date:"Y-m-d" }}
+                            </small>
+                        </div>
+                    {% else %}
+                        <div class="text-center py-4">
+                            <i class="fas fa-exclamation-circle fa-3x text-warning mb-3"></i>
+                            <p class="text-muted">هنوز پلنی فعال نکرده‌اید</p>
+                            <a href="{% url 'dashboard:plans' %}" class="btn btn-primary btn-sm">
+                                مشاهده پلن‌ها
+                            </a>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <!-- تراکنش‌های اخیر -->
+        <div class="col-lg-6 mb-4">
+            <div class="card shadow h-100">
+                <div class="card-header py-3 d-flex justify-content-between align-items-center">
+                    <h6 class="m-0 font-weight-bold text-primary">
+                        <i class="fas fa-history"></i> تراکنش‌های اخیر
+                    </h6>
+                    <a href="{% url 'dashboard:transactions' %}" class="btn btn-sm btn-primary">
+                        مشاهده همه
+                    </a>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th>نوع</th>
+                                    <th>مبلغ</th>
+                                    <th>تاریخ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for transaction in recent_transactions %}
+                                <tr>
+                                    <td>
+                                        <span class="badge badge-{% if transaction.transaction_type == 'deposit' %}success{% elif transaction.transaction_type == 'withdraw' %}danger{% else %}info{% endif %}">
+                                            {{ transaction.get_transaction_type_display }}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="{% if transaction.amount > 0 %}text-success{% else %}text-danger{% endif %}">
+                                            ${{ transaction.amount|floatformat:2|intcomma }}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <small class="text-muted">
+                                            {{ transaction.created_at|date:"m/d H:i" }}
+                                        </small>
+                                    </td>
+                                </tr>
+                                {% empty %}
+                                <tr>
+                                    <td colspan="3" class="text-center text-muted">
+                                        هنوز تراکنشی ثبت نشده
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- لینک ارجاع -->
+    <div class="row">
+        <div class="col-12 mb-4">
+            <div class="card shadow">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">
+                        <i class="fas fa-link"></i> لینک دعوت
+                    </h6>
+                </div>
+                <div class="card-body">
+                    <div class="input-group">
+                        <input type="text" 
+                               class="form-control" 
+                               id="referralLink" 
+                               value="{{ request.scheme }}://{{ request.get_host }}{% url 'accounts:register' %}?ref={{ user.username }}" 
+                               readonly>
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="button" onclick="copyReferralLink()">
+                                <i class="fas fa-copy"></i> کپی
+                            </button>
+                        </div>
+                    </div>
+                    <small class="text-muted mt-2 d-block">
+                        با اشتراک این لینک، دوستان خود را دعوت کنید و کمیسیون دریافت کنید
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .btn-success:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(28, 200, 138, 0.4) !important;
+    }
+    
+    .card {
+        transition: all 0.3s ease;
+    }
+    
+    .card:hover {
+        transform: translateY(-5px);
+    }
+</style>
+
+<script>
+function copyReferralLink() {
+    var copyText = document.getElementById("referralLink");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+    
+    // نمایش پیام موفقیت
+    alert("لینک کپی شد!");
+}
+</script>
+{% endblock %}

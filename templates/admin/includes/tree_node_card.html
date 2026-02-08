@@ -1,0 +1,27 @@
+{% load humanize %}
+<a href="{% url 'admin:binary_tree_view_user' node.username %}" class="node-card {{ role }}-node">
+    <div class="avatar">
+        {% if role == 'root' %}👤{% elif role == 'left' %}L{% else %}R{% endif %}
+    </div>
+    <span class="user-name">{{ node.username }}</span>
+    
+    <!-- Volumes -->
+    <div class="vol-row" title="حجم چپ | حجم راست">
+        <span>L:{{ node.left_volume|floatformat:0|intcomma }}</span>
+        <span>R:{{ node.right_volume|floatformat:0|intcomma }}</span>
+    </div>
+
+    <!-- Income Breakdown -->
+    <div class="income-row">
+        <div class="income-badge income-bin" title="پورسانت باینری">
+            <span>Bin:</span><span>${{ node.stat_binary_income|floatformat:0 }}</span>
+        </div>
+        <div class="income-badge income-ref" title="پاداش معرف">
+            <span>Ref:</span><span>${{ node.stat_referral_income|floatformat:0 }}</span>
+        </div>
+        <!-- Total (Optional check) -->
+        <div class="income-badge income-tot" title="مجموع کل (از مدل کاربر)">
+            <span>Tot:</span><span>${{ node.stat_user_model_total|floatformat:0|intcomma }}</span>
+        </div>
+    </div>
+</a>

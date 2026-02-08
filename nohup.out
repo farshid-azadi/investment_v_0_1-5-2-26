@@ -1,0 +1,1675 @@
+Watching for file changes with StatReloader
+[20/Dec/2025 02:02:05] code 400, message Bad request version ('\xc0\\x14\xc0')
+[20/Dec/2025 02:02:05] You're accessing the development server over HTTPS, but it only supports HTTP.
+[20/Dec/2025 02:02:06] code 400, message Bad request syntax ('MGLNDD_5.202.85.78_8000')
+[20/Dec/2025 02:02:06] "MGLNDD_5.202.85.78_8000" 400 -
+[20/Dec/2025 02:54:36] code 400, message Bad request version ('\xfe1y\xf3\xf4\\x81\xcf\xcb')
+[20/Dec/2025 02:54:36] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /
+[20/Dec/2025 02:54:41] "GET / HTTP/1.1" 404 2783
+Not Found: /favicon.ico
+[20/Dec/2025 02:57:10] "GET /favicon.ico HTTP/1.1" 404 2834
+[20/Dec/2025 03:14:38] code 400, message Bad request version ('\xc0#\xc0\xac\xc0\xae\xc0+\xc0')
+[20/Dec/2025 03:14:38] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /
+[20/Dec/2025 03:14:42] "GET / HTTP/1.1" 404 2783
+Not Found: /favicon.ico
+[20/Dec/2025 03:17:13] "GET /favicon.ico HTTP/1.1" 404 2834
+Not Found: /
+[20/Dec/2025 04:01:03] "GET / HTTP/1.1" 404 2783
+Not Found: /favicon.ico
+[20/Dec/2025 04:01:26] "GET /favicon.ico HTTP/1.1" 404 2834
+Not Found: /http:/api.ipify.org/
+[20/Dec/2025 04:01:31] "GET http://api.ipify.org/?format=json HTTP/1.1" 404 1873
+Not Found: /www.shadowserver.org:443
+[20/Dec/2025 04:01:35] "CONNECT www.shadowserver.org:443 HTTP/1.1" 404 1882
+Not Found: /http:/httpbin.org/ip
+[20/Dec/2025 04:13:14] "GET http://httpbin.org/ip HTTP/1.1" 404 1859
+Not Found: /
+[20/Dec/2025 04:37:12] "GET / HTTP/1.0" 404 2778
+Not Found: /
+[20/Dec/2025 06:35:43] "GET / HTTP/1.1" 404 2783
+Not Found: /
+[20/Dec/2025 06:36:37] "GET / HTTP/1.1" 404 2783
+[20/Dec/2025 06:38:12] code 400, message Bad request version ('\xc0\\x14\xc0')
+[20/Dec/2025 06:38:12] You're accessing the development server over HTTPS, but it only supports HTTP.
+[20/Dec/2025 06:40:01] code 400, message Bad request syntax ('SSH-2.0-Go')
+[20/Dec/2025 06:40:01] "SSH-2.0-Go" 400 -
+[20/Dec/2025 06:41:52] code 400, message Bad request version ('\xc0\\x14\xc0')
+[20/Dec/2025 06:41:52] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /
+[20/Dec/2025 07:34:31] "GET / HTTP/1.1" 404 2783
+Not Found: /api/v2/heartbeat
+[20/Dec/2025 12:50:51] "GET /api/v2/heartbeat HTTP/1.1" 404 2849
+Not Found: /
+[20/Dec/2025 12:50:52] "GET / HTTP/1.1" 404 2783
+Not Found: /
+[20/Dec/2025 12:50:55] "GET / HTTP/1.1" 404 2783
+Not Found: /favicon.ico
+[20/Dec/2025 12:50:56] "GET /favicon.ico HTTP/1.1" 404 2834
+Not Found: /
+[20/Dec/2025 13:12:56] "GET / HTTP/1.1" 404 2783
+Not Found: /
+[20/Dec/2025 13:42:04] "GET / HTTP/1.1" 404 2783
+Not Found: /.env
+[20/Dec/2025 14:23:12] "GET /.env HTTP/1.1" 404 2813
+Not Found: /.git/config
+[20/Dec/2025 14:23:13] "GET /.git/config HTTP/1.1" 404 2834
+Not Found: /
+[20/Dec/2025 14:34:23] "POST / HTTP/1.1" 404 2784
+[20/Dec/2025 15:22:05] code 400, message Bad request version ('encoding="UTF-8"?>')
+[20/Dec/2025 15:22:05] "1111\x0c\x01\x00\x00\x04\x00\x00\x01\x1b\t\x00\x00\x02\x01\x00\x00\xfc\x00\x00\x00admin\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00queryBasicCfg\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00<?xml version="1.0" encoding="UTF-8"?>" 400 -
+[20/Dec/2025 15:22:05] code 400, message Bad request syntax ('1111\\x88\\x00\\x00\\x00\\x01\\x01\\x00\\x00\\x00%\\xad\\x11>')
+[20/Dec/2025 15:22:05] "1111\x88\x00\x00\x00\x01\x01\x00\x00\x00%\xad\x11>" 400 -
+[20/Dec/2025 15:22:06] code 400, message Bad request syntax ('1111\\x88\\x00\\x00\\x00\\x01\\x01\\x00\\x00\\x00%\\xad\\x11>')
+[20/Dec/2025 15:22:06] "1111\x88\x00\x00\x00\x01\x01\x00\x00\x00%\xad\x11>" 400 -
+[20/Dec/2025 15:22:07] code 400, message Bad request syntax ('1111\\x88\\x00\\x00\\x00\\x01\\x01\\x00\\x00\\x00%\\xad\\x11>')
+[20/Dec/2025 15:22:07] "1111\x88\x00\x00\x00\x01\x01\x00\x00\x00%\xad\x11>" 400 -
+[20/Dec/2025 15:25:11] code 400, message Bad request syntax ('JDWP-Handshake')
+[20/Dec/2025 15:25:11] "JDWP-Handshake" 400 -
+Not Found: /
+[20/Dec/2025 16:23:10] "GET / HTTP/1.1" 404 2783
+Not Found: /
+[20/Dec/2025 16:23:11] "POST / HTTP/1.1" 404 2784
+Not Found: /
+[20/Dec/2025 16:32:04] "GET / HTTP/1.1" 404 2783
+Not Found: /
+[20/Dec/2025 16:53:47] "GET / HTTP/1.1" 404 2783
+[20/Dec/2025 16:53:48] code 400, message Bad request syntax ('MGLNDD_5.202.85.78_8000')
+[20/Dec/2025 16:53:48] "MGLNDD_5.202.85.78_8000" 400 -
+[20/Dec/2025 18:41:46] code 400, message Bad request syntax ('\\x04\\x01\\x00P\\x01\\x01\\x01\\x01\\x00')
+[20/Dec/2025 18:41:46] "\x04\x01\x00P\x01\x01\x01\x01\x00" 400 -
+Not Found: /1.1.1.1:443
+[20/Dec/2025 18:41:46] "CONNECT 1.1.1.1:443 HTTP/1.0" 404 1830
+Not Found: /213.209.143.73:80
+[20/Dec/2025 18:41:46] "CONNECT 213.209.143.73:80 HTTP/1.0" 404 1858
+Not Found: /213.209.143.73:80
+[20/Dec/2025 18:41:47] "CONNECT 213.209.143.73:80 HTTP/1.0" 404 1858
+Not Found: /213.209.143.73:80
+[20/Dec/2025 18:41:48] "CONNECT 213.209.143.73:80 HTTP/1.0" 404 1858
+Not Found: /213.209.143.73:80
+[20/Dec/2025 18:41:49] "CONNECT 213.209.143.73:80 HTTP/1.0" 404 1858
+Not Found: /213.209.143.73:80
+[20/Dec/2025 18:41:49] "CONNECT 213.209.143.73:80 HTTP/1.0" 404 1858
+Not Found: /213.209.143.73:80
+[20/Dec/2025 18:41:50] "CONNECT 213.209.143.73:80 HTTP/1.0" 404 1858
+Not Found: /213.209.143.73:80
+[20/Dec/2025 18:41:51] "CONNECT 213.209.143.73:80 HTTP/1.0" 404 1858
+Not Found: /213.209.143.73:80
+[20/Dec/2025 18:41:51] "CONNECT 213.209.143.73:80 HTTP/1.0" 404 1858
+Not Found: /213.209.143.73:80
+[20/Dec/2025 18:41:52] "CONNECT 213.209.143.73:80 HTTP/1.0" 404 1858
+Not Found: /213.209.143.73:80
+[20/Dec/2025 18:41:53] "CONNECT 213.209.143.73:80 HTTP/1.0" 404 1858
+Not Found: /213.209.143.73:80
+[20/Dec/2025 18:41:54] "CONNECT 213.209.143.73:80 HTTP/1.0" 404 1858
+Not Found: /213.209.143.73:80
+[20/Dec/2025 18:41:55] "CONNECT 213.209.143.73:80 HTTP/1.0" 404 1858
+Not Found: /213.209.143.73:80
+[20/Dec/2025 18:41:55] "CONNECT 213.209.143.73:80 HTTP/1.0" 404 1858
+Not Found: /213.209.143.73:80
+[20/Dec/2025 18:41:56] "CONNECT 213.209.143.73:80 HTTP/1.0" 404 1858
+Not Found: /213.209.143.73:80
+[20/Dec/2025 18:41:57] "CONNECT 213.209.143.73:80 HTTP/1.0" 404 1858
+Not Found: /213.209.143.73:80
+[20/Dec/2025 18:41:58] "CONNECT 213.209.143.73:80 HTTP/1.0" 404 1858
+Not Found: /213.209.143.73:80
+[20/Dec/2025 18:41:59] "CONNECT 213.209.143.73:80 HTTP/1.0" 404 1858
+Not Found: /213.209.143.73:80
+[20/Dec/2025 18:41:59] "CONNECT 213.209.143.73:80 HTTP/1.0" 404 1858
+Not Found: /213.209.143.73:80
+[20/Dec/2025 18:42:00] "CONNECT 213.209.143.73:80 HTTP/1.0" 404 1858
+Not Found: /213.209.143.73:80
+[20/Dec/2025 18:42:00] "CONNECT 213.209.143.73:80 HTTP/1.0" 404 1858
+[20/Dec/2025 21:33:19] code 400, message Bad HTTP/0.9 request type ('\\x16\\x03\\x01\\x00\xee\\x01\\x00\\x00\xea\\x03\\x03C\xb7\xc2\xd2\xe9o\xd5o\\x98')
+[20/Dec/2025 21:33:19] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /
+[20/Dec/2025 21:33:22] "GET / HTTP/1.1" 404 2783
+[20/Dec/2025 21:33:24] code 505, message Invalid HTTP version (2.0)
+[20/Dec/2025 21:33:24] "PRI * HTTP/2.0" 505 -
+[20/Dec/2025 21:33:31] code 400, message Bad request version ('\xc4\xcf\xab')
+[20/Dec/2025 21:33:31] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /login
+[20/Dec/2025 21:33:33] "GET /login HTTP/1.1" 404 2816
+[20/Dec/2025 21:47:49] code 400, message Bad request version ('\xc0\\x13\xc0')
+[20/Dec/2025 21:47:49] You're accessing the development server over HTTPS, but it only supports HTTP.
+[20/Dec/2025 21:47:50] code 400, message Bad request version ('\xc0\\x13\xc0')
+[20/Dec/2025 21:47:50] You're accessing the development server over HTTPS, but it only supports HTTP.
+[20/Dec/2025 21:47:51] code 400, message Bad request syntax ('\\x16\\x03\\x01\\x00\xf2\\x01\\x00\\x00\xee\\x03\\x03\xcb\\x1d')
+[20/Dec/2025 21:47:51] You're accessing the development server over HTTPS, but it only supports HTTP.
+[20/Dec/2025 23:25:49,277] - Broken pipe from ('192.168.5.1', 51290)
+Not Found: /
+[21/Dec/2025 00:16:29] "GET / HTTP/1.1" 404 2783
+Not Found: /bins/
+[21/Dec/2025 00:27:36] "GET /bins/ HTTP/1.1" 404 2816
+Not Found: /bin/
+[21/Dec/2025 00:44:10] "GET /bin/ HTTP/1.1" 404 2813
+Not Found: /backup/
+[21/Dec/2025 00:49:24] "GET /backup/ HTTP/1.1" 404 2822
+[21/Dec/2025 01:09:03] code 400, message Bad request version ('\xc0\\x14\xc0')
+[21/Dec/2025 01:09:03] You're accessing the development server over HTTPS, but it only supports HTTP.
+[21/Dec/2025 01:09:04] code 400, message Bad request version ('\xc0\\x14\xc0')
+[21/Dec/2025 01:09:04] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /
+[21/Dec/2025 01:09:04] "GET / HTTP/1.1" 404 2783
+Not Found: /login
+[21/Dec/2025 01:09:05] "GET /login HTTP/1.1" 404 2816
+Not Found: /
+[21/Dec/2025 03:38:02] "GET / HTTP/1.0" 404 2778
+[21/Dec/2025 04:17:55] "GET /admin/ HTTP/1.1" 302 0
+[21/Dec/2025 04:17:56] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 11720
+[21/Dec/2025 04:17:56] "GET /static/unfold/css/simplebar/simplebar.css HTTP/1.1" 304 0
+[21/Dec/2025 04:17:56] "GET /static/unfold/fonts/inter/styles.css HTTP/1.1" 304 0
+[21/Dec/2025 04:17:56] "GET /static/unfold/css/styles.css HTTP/1.1" 304 0
+[21/Dec/2025 04:17:56] "GET /static/unfold/fonts/material-symbols/styles.css HTTP/1.1" 304 0
+[21/Dec/2025 04:17:56] "GET /static/unfold/js/htmx/htmx.js HTTP/1.1" 304 0
+[21/Dec/2025 04:17:56] "GET /static/unfold/js/chart/chart.js HTTP/1.1" 304 0
+[21/Dec/2025 04:17:56] "GET /static/unfold/js/app.js HTTP/1.1" 304 0
+[21/Dec/2025 04:17:56] "GET /static/unfold/js/simplebar/simplebar.js HTTP/1.1" 304 0
+[21/Dec/2025 04:17:56] "GET /static/unfold/js/alpine/alpine.sort.js HTTP/1.1" 304 0
+[21/Dec/2025 04:17:56] "GET /static/unfold/js/alpine/alpine.resize.js HTTP/1.1" 304 0
+[21/Dec/2025 04:17:56] "GET /static/unfold/js/alpine/alpine.persist.js HTTP/1.1" 304 0
+[21/Dec/2025 04:17:56] "GET /static/unfold/js/alpine/alpine.anchor.js HTTP/1.1" 304 0
+[21/Dec/2025 04:17:56] "GET /static/unfold/js/alpine/alpine.js HTTP/1.1" 304 0
+[21/Dec/2025 04:17:56] "GET /static/unfold/fonts/material-symbols/Material-Symbols-Outlined.woff2 HTTP/1.1" 304 0
+[21/Dec/2025 04:17:56] "GET /static/unfold/fonts/inter/Inter-SemiBold.woff2 HTTP/1.1" 304 0
+[21/Dec/2025 04:17:56] "GET /static/unfold/fonts/inter/Inter-Medium.woff2 HTTP/1.1" 304 0
+[21/Dec/2025 04:17:56] "GET /static/unfold/fonts/inter/Inter-Regular.woff2 HTTP/1.1" 304 0
+Not Found: /favicon.ico
+[21/Dec/2025 04:17:57] "GET /favicon.ico HTTP/1.1" 404 2834
+[21/Dec/2025 04:19:58] "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[21/Dec/2025 04:19:59] "GET /admin/ HTTP/1.1" 200 72834
+[21/Dec/2025 04:20:05] "GET /admin/jsi18n/ HTTP/1.1" 200 12738
+[21/Dec/2025 04:20:05] "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+[21/Dec/2025 04:20:05] "GET /static/admin/js/core.js HTTP/1.1" 304 0
+[21/Dec/2025 04:20:05] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+[21/Dec/2025 04:20:05] "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+[21/Dec/2025 04:20:05] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+[21/Dec/2025 04:20:05] "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+[21/Dec/2025 04:20:05] "GET /admin/accounts/binarycommission/ HTTP/1.1" 200 436248
+[21/Dec/2025 04:20:05] "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+[21/Dec/2025 04:20:05] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+[21/Dec/2025 04:20:45] "GET /admin/ HTTP/1.1" 200 72834
+[21/Dec/2025 04:21:00] "GET /admin/accounts/roihistory/ HTTP/1.1" 200 44124
+[21/Dec/2025 04:21:00] "GET /admin/jsi18n/ HTTP/1.1" 200 12738
+[21/Dec/2025 04:21:02] "GET /admin/ HTTP/1.1" 200 72834
+[21/Dec/2025 04:22:11] "GET /admin/core/withdrawalrequest/ HTTP/1.1" 200 42121
+[21/Dec/2025 04:22:11] "GET /admin/jsi18n/ HTTP/1.1" 200 12738
+[21/Dec/2025 04:22:16] "GET /admin/ HTTP/1.1" 200 72834
+[21/Dec/2025 05:31:02] code 400, message Bad request version ('\xc0\\x14\xc0')
+[21/Dec/2025 05:31:02] You're accessing the development server over HTTPS, but it only supports HTTP.
+[21/Dec/2025 05:31:02] code 400, message Bad request syntax ('MGLNDD_5.202.85.78_8000')
+[21/Dec/2025 05:31:02] "MGLNDD_5.202.85.78_8000" 400 -
+Not Found: /
+[21/Dec/2025 07:18:03] "GET / HTTP/1.1" 404 2783
+Not Found: /favicon.ico
+[21/Dec/2025 07:18:26] "GET /favicon.ico HTTP/1.1" 404 2834
+Not Found: /http:/api.ipify.org/
+[21/Dec/2025 07:18:31] "GET http://api.ipify.org/?format=json HTTP/1.1" 404 1873
+Not Found: /www.shadowserver.org:443
+[21/Dec/2025 07:18:34] "CONNECT www.shadowserver.org:443 HTTP/1.1" 404 1882
+Not Found: /
+[21/Dec/2025 07:25:34] "GET / HTTP/1.1" 404 2783
+[21/Dec/2025 07:48:47] code 400, message Bad request version ('\xc0\\x13\xc0')
+[21/Dec/2025 07:48:47] You're accessing the development server over HTTPS, but it only supports HTTP.
+Invalid HTTP_HOST header: ''. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 308, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/http/request.py", line 205, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: ''. The domain name provided is not valid according to RFC 1034/1035.
+[21/Dec/2025 07:48:47] "GET / HTTP/1.1" 400 67887
+Not Found: /.env
+[21/Dec/2025 07:48:47] "GET /.env HTTP/1.1" 404 2813
+Not Found: /
+[21/Dec/2025 08:12:45] "GET / HTTP/1.1" 404 2783
+Not Found: /
+[21/Dec/2025 08:14:15] "GET / HTTP/1.1" 404 2783
+[21/Dec/2025 08:15:38] code 400, message Bad HTTP/0.9 request type ('\\x16\\x03\\x01\\x00{\\x01\\x00\\x00w\\x03\\x03\\x82\xd7\\x87\xfc\xd4\xcf(\xcc\xcb\\x15\\x02L4a\xf2\\x17Eg{.5\xf1\\x9d\xf5{\\x08|\xa5\\x94\xd9\xc2\xa7\\x00\\x00\\x1a\xc0/\xc0+\xc0\\x11\xc0\\x07\xc0\\x13\xc0')
+[21/Dec/2025 08:15:38] You're accessing the development server over HTTPS, but it only supports HTTP.
+[21/Dec/2025 08:16:53] code 400, message Bad request syntax ('SSH-2.0-Go')
+[21/Dec/2025 08:16:53] "SSH-2.0-Go" 400 -
+[21/Dec/2025 08:18:11] code 400, message Bad request version ('\xc0\\x14\xc0')
+[21/Dec/2025 08:18:11] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /cfdump.packetsdatabase.com:443
+[21/Dec/2025 09:33:31] "CONNECT cfdump.packetsdatabase.com:443 HTTP/1.1" 404 1910
+[21/Dec/2025 10:02:21] "GET /admin/ HTTP/1.1" 200 72834
+[21/Dec/2025 10:02:21] "GET /static/unfold/js/chart/chart.js HTTP/1.1" 304 0
+[21/Dec/2025 10:02:21] "GET /static/unfold/css/styles.css HTTP/1.1" 304 0
+[21/Dec/2025 10:02:22] "GET /static/unfold/css/simplebar/simplebar.css HTTP/1.1" 304 0
+[21/Dec/2025 10:02:22] "GET /static/unfold/fonts/inter/styles.css HTTP/1.1" 304 0
+[21/Dec/2025 10:02:22] "GET /static/unfold/js/simplebar/simplebar.js HTTP/1.1" 304 0
+[21/Dec/2025 10:02:22] "GET /static/unfold/js/htmx/htmx.js HTTP/1.1" 304 0
+[21/Dec/2025 10:02:22] "GET /static/unfold/js/app.js HTTP/1.1" 304 0
+[21/Dec/2025 10:02:22] "GET /static/unfold/fonts/material-symbols/styles.css HTTP/1.1" 304 0
+[21/Dec/2025 10:02:23] "GET /static/unfold/js/alpine/alpine.anchor.js HTTP/1.1" 304 0
+[21/Dec/2025 10:02:24] "GET /static/unfold/js/alpine/alpine.js HTTP/1.1" 304 0
+[21/Dec/2025 10:02:24] "GET /static/unfold/js/alpine/alpine.sort.js HTTP/1.1" 304 0
+[21/Dec/2025 10:02:24] "GET /static/unfold/js/alpine/alpine.resize.js HTTP/1.1" 304 0
+[21/Dec/2025 10:02:24] "GET /static/unfold/js/alpine/alpine.persist.js HTTP/1.1" 304 0
+[21/Dec/2025 10:02:25] "GET /static/unfold/fonts/material-symbols/Material-Symbols-Outlined.woff2 HTTP/1.1" 304 0
+[21/Dec/2025 10:02:25] "GET /static/unfold/fonts/inter/Inter-SemiBold.woff2 HTTP/1.1" 304 0
+Not Found: /favicon.ico
+[21/Dec/2025 10:02:27] "GET /favicon.ico HTTP/1.1" 404 2834
+[21/Dec/2025 11:17:02] code 400, message Bad HTTP/0.9 request type ('JDWP-Handshake\\x00\\x00\\x00')
+[21/Dec/2025 11:17:02] "JDWP-Handshake\x00\x00\x00\t\x00\x00\x00\x01\x00\x01\x01" 400 -
+Not Found: /./doc/page/login.asp
+[21/Dec/2025 11:50:46] "GET /./doc/page/login.asp HTTP/1.1" 404 2859
+Not Found: /
+[21/Dec/2025 12:54:26] "GET / HTTP/1.1" 404 2778
+Not Found: /favicon.ico
+[21/Dec/2025 12:54:26] "GET /favicon.ico HTTP/1.1" 404 2829
+Not Found: /
+[21/Dec/2025 16:23:21] "GET / HTTP/1.1" 404 2783
+[21/Dec/2025 17:09:44] code 400, message Bad HTTP/0.9 request type ('\\x00\\x00\\x00')
+[21/Dec/2025 17:09:44] "\x00\x00\x00 c\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00" 400 -
+Not Found: /
+[21/Dec/2025 18:35:49] "GET / HTTP/1.1" 404 2783
+[21/Dec/2025 18:35:49] code 400, message Bad request version ('\xc0\\x14\xc0')
+[21/Dec/2025 18:35:49] You're accessing the development server over HTTPS, but it only supports HTTP.
+[21/Dec/2025 20:31:26] code 400, message Bad request version ('\xc0\\x14\xc0')
+[21/Dec/2025 20:31:26] You're accessing the development server over HTTPS, but it only supports HTTP.
+[21/Dec/2025 20:31:27] code 400, message Bad HTTP/0.9 request type ('\\x16\\x03\\x01\\x00{\\x01\\x00\\x00w\\x03\\x03jo\xefW\xac`')
+[21/Dec/2025 20:31:27] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /
+[21/Dec/2025 20:31:28] "GET / HTTP/1.1" 404 2783
+Not Found: /login
+[21/Dec/2025 20:31:29] "GET /login HTTP/1.1" 404 2816
+[21/Dec/2025 22:31:32] code 400, message Bad request version ('\xc0\\x14\xc0')
+[21/Dec/2025 22:31:32] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /
+[21/Dec/2025 22:31:41] "GET / HTTP/1.1" 404 2783
+[21/Dec/2025 22:31:44] code 505, message Invalid HTTP version (2.0)
+[21/Dec/2025 22:31:44] "PRI * HTTP/2.0" 505 -
+[21/Dec/2025 22:32:47] code 400, message Bad request version ('\xd6v\xa8u\xb8\xe5yWIM+\xc3+j(')
+[21/Dec/2025 22:32:47] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /security.txt
+[21/Dec/2025 22:32:54] "GET /security.txt HTTP/1.1" 404 2837
+Not Found: /cgi-bin/webproc
+[22/Dec/2025 01:03:48] "GET /cgi-bin/webproc HTTP/1.0" 404 2841
+[22/Dec/2025 01:36:31] code 400, message Bad request version ('s\xc7\\x8aGEh\\x87\xe7\xa5:\xea')
+[22/Dec/2025 01:36:31] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /
+[22/Dec/2025 01:36:31] "GET / HTTP/1.1" 404 2778
+Not Found: /favicon.ico
+[22/Dec/2025 01:36:31] "GET /favicon.ico HTTP/1.1" 404 2829
+[22/Dec/2025 01:42:32] code 400, message Bad HTTP/0.9 request type ('\\x00\\x00\\x00')
+[22/Dec/2025 01:42:32] "\x00\x00\x00 c\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00" 400 -
+[22/Dec/2025 01:42:45] code 400, message Bad HTTP/0.9 request type ('\\x00\\x00\\x00')
+[22/Dec/2025 01:42:45] "\x00\x00\x00 c\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00" 400 -
+[22/Dec/2025 01:42:57] code 400, message Bad HTTP/0.9 request type ('\\x00\\x00\\x00')
+[22/Dec/2025 01:42:57] "\x00\x00\x00 c\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00" 400 -
+[22/Dec/2025 01:43:05] code 400, message Bad HTTP/0.9 request type ('\\x00\\x00\\x00')
+[22/Dec/2025 01:43:05] "\x00\x00\x00 c\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00" 400 -
+Not Found: /
+[22/Dec/2025 03:45:33] "GET / HTTP/1.0" 404 2778
+Not Found: /
+[22/Dec/2025 07:17:42] "GET / HTTP/1.1" 404 2783
+Not Found: /favicon.ico
+[22/Dec/2025 07:18:01] "GET /favicon.ico HTTP/1.1" 404 2834
+Not Found: /http:/api.ipify.org/
+[22/Dec/2025 07:18:06] "GET http://api.ipify.org/?format=json HTTP/1.1" 404 1873
+Not Found: /www.shadowserver.org:443
+[22/Dec/2025 07:18:09] "CONNECT www.shadowserver.org:443 HTTP/1.1" 404 1882
+Not Found: /
+[22/Dec/2025 07:57:01] "GET / HTTP/1.1" 404 2783
+[22/Dec/2025 08:18:30] code 400, message Bad request version ('\xc0\\x14\xc0')
+[22/Dec/2025 08:18:30] You're accessing the development server over HTTPS, but it only supports HTTP.
+[22/Dec/2025 08:46:50] code 400, message Bad request version ('\xc0\\x14\xc0')
+[22/Dec/2025 08:46:50] You're accessing the development server over HTTPS, but it only supports HTTP.
+[22/Dec/2025 08:46:50] code 400, message Bad request syntax ('MGLNDD_5.202.85.78_8000')
+[22/Dec/2025 08:46:50] "MGLNDD_5.202.85.78_8000" 400 -
+Not Found: /
+[22/Dec/2025 09:37:59] "GET / HTTP/1.1" 404 2783
+Not Found: /
+[22/Dec/2025 09:38:51] "GET / HTTP/1.1" 404 2783
+[22/Dec/2025 09:40:38] code 400, message Bad HTTP/0.9 request type ('\\x16\\x03\\x01\\x00{\\x01\\x00\\x00w\\x03\\x03\xc2\\x97e/m{G\xfdd\\x9a\xddt<\\x8a\\x0eQ\xde+\xb4Lu\xc0\xbf\xdfau\\x07\xd4~A\\x83\xe7\\x00\\x00\\x1a\xc0/\xc0+\xc0\\x11\xc0\\x07\xc0\\x13\xc0')
+[22/Dec/2025 09:40:38] You're accessing the development server over HTTPS, but it only supports HTTP.
+[22/Dec/2025 09:44:03] code 400, message Bad request version ('\xc0\\x14\xc0')
+[22/Dec/2025 09:44:03] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /.env
+[22/Dec/2025 12:11:09] "GET /.env HTTP/1.1" 404 2813
+Not Found: /.git/config
+[22/Dec/2025 12:11:10] "GET /.git/config HTTP/1.1" 404 2834
+Not Found: /
+[22/Dec/2025 13:46:26] "GET / HTTP/1.1" 404 2783
+Not Found: /
+[22/Dec/2025 14:13:26] "GET / HTTP/1.1" 404 2783
+Not Found: /
+[22/Dec/2025 16:54:55] "GET / HTTP/1.1" 404 2783
+[22/Dec/2025 19:41:38] code 400, message Bad request version ('\xc0\\x14\xc0')
+[22/Dec/2025 19:41:38] You're accessing the development server over HTTPS, but it only supports HTTP.
+[22/Dec/2025 19:41:38] code 400, message Bad request version ('\xc0\\x14\xc0')
+[22/Dec/2025 19:41:38] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /
+[22/Dec/2025 19:41:38] "GET / HTTP/1.1" 404 2783
+Not Found: /login
+[22/Dec/2025 19:41:38] "GET /login HTTP/1.1" 404 2816
+[22/Dec/2025 23:32:15] code 400, message Bad request version ('\xab\xbaZ\xd5a\xfa\xd7(\xe3V4\\x95c\xc1\xcf\xb5')
+[22/Dec/2025 23:32:15] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /
+[22/Dec/2025 23:32:15] "GET / HTTP/1.1" 404 2783
+[22/Dec/2025 23:32:18] code 505, message Invalid HTTP version (2.0)
+[22/Dec/2025 23:32:18] "PRI * HTTP/2.0" 505 -
+[22/Dec/2025 23:32:24] code 400, message Bad request version ('\xc0\\x14\xc0')
+[22/Dec/2025 23:32:24] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /robots.txt
+[22/Dec/2025 23:32:25] "GET /robots.txt HTTP/1.1" 404 2831
+Not Found: /
+[22/Dec/2025 23:59:59] "GET / HTTP/1.1" 404 2783
+[23/Dec/2025 01:22:37] "GET /admin/ HTTP/1.1" 200 72834
+[23/Dec/2025 01:22:38] "GET /static/unfold/fonts/material-symbols/styles.css HTTP/1.1" 200 164
+[23/Dec/2025 01:22:38] "GET /static/unfold/js/htmx/htmx.js HTTP/1.1" 200 50918
+[23/Dec/2025 01:22:38] "GET /static/unfold/fonts/inter/styles.css HTTP/1.1" 200 608
+[23/Dec/2025 01:22:38] "GET /static/unfold/css/simplebar/simplebar.css HTTP/1.1" 200 4647
+[23/Dec/2025 01:22:38] "GET /static/unfold/js/chart/chart.js HTTP/1.1" 200 200633
+[23/Dec/2025 01:22:39] "GET /static/unfold/css/styles.css HTTP/1.1" 200 218995
+[23/Dec/2025 01:22:39] "GET /static/unfold/js/app.js HTTP/1.1" 200 19203
+[23/Dec/2025 01:22:39] "GET /static/unfold/js/simplebar/simplebar.js HTTP/1.1" 200 27176
+[23/Dec/2025 01:22:39] "GET /static/unfold/js/alpine/alpine.anchor.js HTTP/1.1" 200 15524
+[23/Dec/2025 01:22:39] "GET /static/unfold/js/alpine/alpine.persist.js HTTP/1.1" 200 837
+[23/Dec/2025 01:22:39] "GET /static/unfold/js/alpine/alpine.sort.js HTTP/1.1" 200 37891
+[23/Dec/2025 01:22:39] "GET /static/unfold/js/alpine/alpine.js HTTP/1.1" 200 44758
+[23/Dec/2025 01:22:39] "GET /static/unfold/js/alpine/alpine.resize.js HTTP/1.1" 200 703
+[23/Dec/2025 01:22:40] "GET /static/unfold/fonts/inter/Inter-SemiBold.woff2 HTTP/1.1" 200 114812
+[23/Dec/2025 01:22:40] "GET /static/unfold/fonts/inter/Inter-Regular.woff2 HTTP/1.1" 200 111268
+[23/Dec/2025 01:22:40] "GET /static/unfold/fonts/material-symbols/Material-Symbols-Outlined.woff2 HTTP/1.1" 200 291696
+Not Found: /favicon.ico
+[23/Dec/2025 01:22:41] "GET /favicon.ico HTTP/1.1" 404 2834
+Not Found: /favicon.ico
+[23/Dec/2025 01:22:41] "GET /favicon.ico HTTP/1.1" 404 2834
+[23/Dec/2025 01:24:19] "GET /admin/accounts/binarycommission/ HTTP/1.1" 200 436248
+[23/Dec/2025 01:24:20] "GET /static/admin/js/actions.js HTTP/1.1" 200 7977
+[23/Dec/2025 01:24:20] "GET /admin/jsi18n/ HTTP/1.1" 200 12738
+[23/Dec/2025 01:24:20] "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+[23/Dec/2025 01:24:20] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9222
+[23/Dec/2025 01:24:20] "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+[23/Dec/2025 01:24:20] "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+[23/Dec/2025 01:24:20] "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+[23/Dec/2025 01:24:20] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+[23/Dec/2025 01:24:20] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+[23/Dec/2025 01:24:21] "GET /static/unfold/fonts/inter/Inter-Medium.woff2 HTTP/1.1" 200 114348
+[23/Dec/2025 01:25:21] "GET /admin/ HTTP/1.1" 200 72834
+[23/Dec/2025 01:25:27] "GET /admin/accounts/levelcommissionhistory/ HTTP/1.1" 200 43176
+[23/Dec/2025 01:25:27] "GET /admin/jsi18n/ HTTP/1.1" 200 12738
+[23/Dec/2025 01:25:31] "GET /admin/ HTTP/1.1" 200 72834
+[23/Dec/2025 01:25:33] "GET /admin/accounts/levelcommissionhistory/add/ HTTP/1.1" 200 292831
+[23/Dec/2025 01:25:33] "GET /admin/jsi18n/ HTTP/1.1" 200 12738
+[23/Dec/2025 01:25:33] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 978
+[23/Dec/2025 01:25:34] "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+[23/Dec/2025 01:25:34] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 593
+[23/Dec/2025 01:25:34] "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 928
+[23/Dec/2025 01:25:34] "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+[23/Dec/2025 01:25:40] "GET /admin/ HTTP/1.1" 200 72834
+[23/Dec/2025 01:25:42] "GET /admin/accounts/levelcommissionhistory/ HTTP/1.1" 200 43176
+[23/Dec/2025 01:25:42] "GET /admin/jsi18n/ HTTP/1.1" 200 12738
+[23/Dec/2025 01:25:44] "GET /admin/ HTTP/1.1" 200 72834
+[23/Dec/2025 01:25:46] "GET /admin/accounts/roihistory/ HTTP/1.1" 200 44124
+[23/Dec/2025 01:25:46] "GET /admin/jsi18n/ HTTP/1.1" 200 12738
+[23/Dec/2025 01:25:48] "GET /admin/ HTTP/1.1" 200 72834
+[23/Dec/2025 01:25:50] "GET /admin/accounts/roihistory/add/ HTTP/1.1" 200 165848
+[23/Dec/2025 01:25:50] "GET /admin/jsi18n/ HTTP/1.1" 200 12738
+[23/Dec/2025 01:25:50] "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 689
+[23/Dec/2025 01:25:54] "GET /admin/ HTTP/1.1" 200 72834
+[23/Dec/2025 01:25:59] "GET /admin/core/mlmsettings/add/ HTTP/1.1" 200 34578
+[23/Dec/2025 01:26:00] "GET /admin/jsi18n/ HTTP/1.1" 200 12738
+[23/Dec/2025 01:26:04] "GET /admin/ HTTP/1.1" 200 72834
+Not Found: /
+[23/Dec/2025 02:15:41] "GET / HTTP/1.0" 404 2778
+Not Found: /
+[23/Dec/2025 03:19:11] "GET / HTTP/1.1" 404 2783
+Not Found: /
+[23/Dec/2025 03:52:17] "GET / HTTP/1.1" 404 2783
+Not Found: /
+[23/Dec/2025 03:53:21] "GET / HTTP/1.1" 404 2783
+[23/Dec/2025 03:54:32] code 400, message Bad HTTP/0.9 request type ('\\x16\\x03\\x01\\x00{\\x01\\x00\\x00w\\x03\\x03\xfeaq\\x15\xc1\\x1ax\xcc\\x9b\\x03?J\\x9e\xe3\xd8J\\x185B|k\xfd\\xad\xb4\\x80\xbcP\xbe\xe4R\xb4\xe8\\x00\\x00\\x1a\xc0/\xc0+\xc0\\x11\xc0\\x07\xc0\\x13\xc0')
+[23/Dec/2025 03:54:32] You're accessing the development server over HTTPS, but it only supports HTTP.
+[23/Dec/2025 03:56:12] code 400, message Bad request syntax ('SSH-2.0-Go')
+[23/Dec/2025 03:56:12] "SSH-2.0-Go" 400 -
+[23/Dec/2025 03:57:17] code 400, message Bad request version ('\xc0\\x14\xc0')
+[23/Dec/2025 03:57:17] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /
+[23/Dec/2025 05:07:14] "GET / HTTP/1.1" 404 2778
+Not Found: /favicon.ico
+[23/Dec/2025 05:07:15] "GET /favicon.ico HTTP/1.1" 404 2829
+Not Found: /
+[23/Dec/2025 06:55:22] "GET / HTTP/1.1" 404 2783
+[23/Dec/2025 07:22:52] code 400, message Bad HTTP/0.9 request type ('\\x00\\x00\\x00')
+[23/Dec/2025 07:22:52] "\x00\x00\x00 c\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00" 400 -
+Not Found: /
+[23/Dec/2025 08:53:51] "GET / HTTP/1.1" 404 2783
+Not Found: /
+[23/Dec/2025 11:23:43] "GET / HTTP/1.1" 404 2783
+[23/Dec/2025 11:23:43] code 400, message Bad HTTP/0.9 request type ('\\x16\\x03\\x01\\x00u\\x01\\x00\\x00q\\x03\\x03\xc3\xf1/P(B\xd5\\x87\\x82n-\\x13\xee\xbe\xeet\xe4\\x86\\x9a\xe4\xb5\\x92\\x81')
+[23/Dec/2025 11:23:43] You're accessing the development server over HTTPS, but it only supports HTTP.
+/home/invest/my_lottery_project/config/settings.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+December 20, 2025 - 01:34:25
+Django version 6.0, using settings 'config.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/core/management/commands/runserver.py", line 134, in inner_run
+    self.check(**check_kwargs)
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/core/management/base.py", line 492, in check
+    all_issues = checks.run_checks(
+                 ^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/core/checks/registry.py", line 89, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/core/checks/urls.py", line 44, in check_url_namespaces_unique
+    all_namespaces = _load_all_namespaces(resolver)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/core/checks/urls.py", line 63, in _load_all_namespaces
+    url_patterns = getattr(resolver, "url_patterns", [])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 729, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 722, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/invest/my_lottery_project/config/urls.py", line 7, in <module>
+    path('api/accounts/', include('apps.accounts.urls')),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/invest/my_lottery_project/apps/accounts/urls.py", line 4, in <module>
+    from . import views
+  File "/home/invest/my_lottery_project/apps/accounts/views.py", line 18, in <module>
+    from apps.accounts.services.plan_service import purchase_plan
+  File "/home/invest/my_lottery_project/apps/accounts/services/plan_service.py", line 7, in <module>
+    from apps.accounts.utils import propagate_volume, distribute_level_commission
+  File "/home/invest/my_lottery_project/apps/accounts/utils.py", line 9, in <module>
+    from apps.wallet.models import Transaction
+  File "/home/invest/my_lottery_project/apps/wallet/models.py", line 8, in <module>
+    class Wallet(models.Model):
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/db/models/base.py", line 136, in __new__
+    raise RuntimeError(
+RuntimeError: Model class apps.wallet.models.Wallet doesn't declare an explicit app_label and isn't in an application in INSTALLED_APPS.
+/home/invest/my_lottery_project/apps/accounts/apps.py changed, reloading.
+Performing system checks...
+
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/core/management/commands/runserver.py", line 134, in inner_run
+    self.check(**check_kwargs)
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/core/management/base.py", line 492, in check
+    all_issues = checks.run_checks(
+                 ^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/core/checks/registry.py", line 89, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/core/checks/urls.py", line 44, in check_url_namespaces_unique
+    all_namespaces = _load_all_namespaces(resolver)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/core/checks/urls.py", line 63, in _load_all_namespaces
+    url_patterns = getattr(resolver, "url_patterns", [])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 729, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 722, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/invest/my_lottery_project/config/urls.py", line 7, in <module>
+    path('api/accounts/', include('apps.accounts.urls')),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/invest/my_lottery_project/apps/accounts/urls.py", line 4, in <module>
+    from . import views
+  File "/home/invest/my_lottery_project/apps/accounts/views.py", line 18, in <module>
+    from apps.accounts.services.plan_service import purchase_plan
+  File "/home/invest/my_lottery_project/apps/accounts/services/plan_service.py", line 7, in <module>
+    from apps.accounts.utils import propagate_volume, distribute_level_commission
+  File "/home/invest/my_lottery_project/apps/accounts/utils.py", line 9, in <module>
+    from apps.wallet.models import Transaction
+  File "/home/invest/my_lottery_project/apps/wallet/models.py", line 8, in <module>
+    class Wallet(models.Model):
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/db/models/base.py", line 136, in __new__
+    raise RuntimeError(
+RuntimeError: Model class apps.wallet.models.Wallet doesn't declare an explicit app_label and isn't in an application in INSTALLED_APPS.
+/home/invest/my_lottery_project/apps/accounts/models.py changed, reloading.
+Performing system checks...
+
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/core/management/commands/runserver.py", line 134, in inner_run
+    self.check(**check_kwargs)
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/core/management/base.py", line 492, in check
+    all_issues = checks.run_checks(
+                 ^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/core/checks/registry.py", line 89, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/core/checks/urls.py", line 44, in check_url_namespaces_unique
+    all_namespaces = _load_all_namespaces(resolver)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/core/checks/urls.py", line 63, in _load_all_namespaces
+    url_patterns = getattr(resolver, "url_patterns", [])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 729, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 722, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/invest/my_lottery_project/config/urls.py", line 7, in <module>
+    path('api/accounts/', include('apps.accounts.urls')),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/invest/my_lottery_project/apps/accounts/urls.py", line 4, in <module>
+    from . import views
+  File "/home/invest/my_lottery_project/apps/accounts/views.py", line 18, in <module>
+    from apps.accounts.services.plan_service import purchase_plan
+  File "/home/invest/my_lottery_project/apps/accounts/services/plan_service.py", line 7, in <module>
+    from apps.accounts.utils import propagate_volume, distribute_level_commission
+  File "/home/invest/my_lottery_project/apps/accounts/utils.py", line 9, in <module>
+    from apps.wallet.models import Transaction
+  File "/home/invest/my_lottery_project/apps/wallet/models.py", line 8, in <module>
+    class Wallet(models.Model):
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/db/models/base.py", line 136, in __new__
+    raise RuntimeError(
+RuntimeError: Model class apps.wallet.models.Wallet doesn't declare an explicit app_label and isn't in an application in INSTALLED_APPS.
+/home/invest/my_lottery_project/apps/accounts/admin.py changed, reloading.
+Performing system checks...
+
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/core/management/commands/runserver.py", line 134, in inner_run
+    self.check(**check_kwargs)
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/core/management/base.py", line 492, in check
+    all_issues = checks.run_checks(
+                 ^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/core/checks/registry.py", line 89, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/core/checks/urls.py", line 44, in check_url_namespaces_unique
+    all_namespaces = _load_all_namespaces(resolver)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/core/checks/urls.py", line 63, in _load_all_namespaces
+    url_patterns = getattr(resolver, "url_patterns", [])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 729, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 722, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/invest/my_lottery_project/config/urls.py", line 7, in <module>
+    path('api/accounts/', include('apps.accounts.urls')),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/invest/my_lottery_project/apps/accounts/urls.py", line 4, in <module>
+    from . import views
+  File "/home/invest/my_lottery_project/apps/accounts/views.py", line 18, in <module>
+    from apps.accounts.services.plan_service import purchase_plan
+  File "/home/invest/my_lottery_project/apps/accounts/services/plan_service.py", line 7, in <module>
+    from apps.accounts.utils import propagate_volume, distribute_level_commission
+  File "/home/invest/my_lottery_project/apps/accounts/utils.py", line 9, in <module>
+    from apps.wallet.models import Transaction
+  File "/home/invest/my_lottery_project/apps/wallet/models.py", line 8, in <module>
+    class Wallet(models.Model):
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/db/models/base.py", line 136, in __new__
+    raise RuntimeError(
+RuntimeError: Model class apps.wallet.models.Wallet doesn't declare an explicit app_label and isn't in an application in INSTALLED_APPS.
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/core/management/commands/runserver.py", line 134, in inner_run
+    self.check(**check_kwargs)
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/core/management/base.py", line 492, in check
+    all_issues = checks.run_checks(
+                 ^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/core/checks/registry.py", line 89, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/core/checks/urls.py", line 44, in check_url_namespaces_unique
+    all_namespaces = _load_all_namespaces(resolver)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/core/checks/urls.py", line 63, in _load_all_namespaces
+    url_patterns = getattr(resolver, "url_patterns", [])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 729, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 722, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/invest/my_lottery_project/config/urls.py", line 7, in <module>
+    path('api/accounts/', include('apps.accounts.urls')),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/invest/my_lottery_project/apps/accounts/urls.py", line 4, in <module>
+    from . import views
+  File "/home/invest/my_lottery_project/apps/accounts/views.py", line 18, in <module>
+    from apps.accounts.services.plan_service import purchase_plan
+  File "/home/invest/my_lottery_project/apps/accounts/services/plan_service.py", line 7, in <module>
+    from apps.accounts.utils import propagate_volume, distribute_level_commission
+  File "/home/invest/my_lottery_project/apps/accounts/utils.py", line 9, in <module>
+    from apps.wallet.models import Transaction
+  File "/home/invest/my_lottery_project/apps/wallet/models.py", line 8, in <module>
+    class Wallet(models.Model):
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/db/models/base.py", line 136, in __new__
+    raise RuntimeError(
+RuntimeError: Model class apps.wallet.models.Wallet doesn't declare an explicit app_label and isn't in an application in INSTALLED_APPS.
+Performing system checks...
+
+Watching for file changes with StatReloader
+[24/Dec/2025 02:13:57] code 400, message Bad HTTP/0.9 request type ('JDWP-Handshake\\x00\\x00\\x00')
+[24/Dec/2025 02:13:57] "JDWP-Handshake\x00\x00\x00\t\x00\x00\x00\x01\x00\x01\x01" 400 -
+[24/Dec/2025 02:59:15] code 400, message Bad HTTP/0.9 request type ('\\x00\\x00\\x00\xe0Z\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x01\\x00\\x00\\x05\\x01=K\\x00\\x00\\x01\\x01\xef\\x01\xa8\xc0\\x00\xc0\xca\xa4w:o\\x00admin\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x000\\x81\\x89\\x02\\x81\\x81\\x00\xc0+L)\xb3\xfa~\xc2\xd5\xc9zoA\xeb')
+[24/Dec/2025 02:59:15] "\x00\x00\x00\xe0Z\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x05\x01=K\x00\x00\x01\x01\xef\x01\xa8\xc0\x00\xc0\xca\xa4w:o\x00admin\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x000\x81\x89\x02\x81\x81\x00\xc0+L)\xb3\xfa~\xc2\xd5\xc9zoA\xeb\x1c!\x9d\xb3\xb3=\x19\xa1\xc3P\xc4Uo\xcb&#\xa7\x90" 400 -
+[24/Dec/2025 02:59:16] code 400, message Bad HTTP/0.9 request type ('\\x00\\x00\\x00\xe0Z\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x01\\x00\\x00\\x05\\x01=K\\x00\\x00\\x01\\x01\xef\\x01\xa8\xc0\\x00\xc0\xca\xa4w:o\\x00admin\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x000\\x81\\x89\\x02\\x81\\x81\\x00\xc0+L)\xb3\xfa~\xc2\xd5\xc9zoA\xeb')
+[24/Dec/2025 02:59:16] "\x00\x00\x00\xe0Z\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x05\x01=K\x00\x00\x01\x01\xef\x01\xa8\xc0\x00\xc0\xca\xa4w:o\x00admin\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x000\x81\x89\x02\x81\x81\x00\xc0+L)\xb3\xfa~\xc2\xd5\xc9zoA\xeb\x1c!\x9d\xb3\xb3=\x19\xa1\xc3P\xc4Uo\xcb&#\xa7\x90" 400 -
+[24/Dec/2025 02:59:16] code 400, message Bad HTTP/0.9 request type ('\\x00\\x00\\x00\xe0Z\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x01\\x00\\x00\\x05\\x01=K\\x00\\x00\\x01\\x01\xef\\x01\xa8\xc0\\x00\xc0\xca\xa4w:o\\x00admin\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x000\\x81\\x89\\x02\\x81\\x81\\x00\xc0+L)\xb3\xfa~\xc2\xd5\xc9zoA\xeb')
+[24/Dec/2025 02:59:16] "\x00\x00\x00\xe0Z\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x05\x01=K\x00\x00\x01\x01\xef\x01\xa8\xc0\x00\xc0\xca\xa4w:o\x00admin\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x000\x81\x89\x02\x81\x81\x00\xc0+L)\xb3\xfa~\xc2\xd5\xc9zoA\xeb\x1c!\x9d\xb3\xb3=\x19\xa1\xc3P\xc4Uo\xcb&#\xa7\x90" 400 -
+Not Found: /
+[24/Dec/2025 03:34:45] "GET / HTTP/1.0" 404 2930
+Not Found: /
+[24/Dec/2025 04:45:10] "GET / HTTP/1.1" 404 2935
+Not Found: /
+[24/Dec/2025 04:45:11] "POST / HTTP/1.1" 404 2936
+[24/Dec/2025 06:11:29] "GET /admin/ HTTP/1.1" 200 88961
+[24/Dec/2025 06:11:29] "GET /static/unfold/css/styles.css HTTP/1.1" 304 0
+[24/Dec/2025 06:11:30] "GET /static/unfold/fonts/material-symbols/styles.css HTTP/1.1" 304 0
+[24/Dec/2025 06:11:30] "GET /static/unfold/css/simplebar/simplebar.css HTTP/1.1" 304 0
+[24/Dec/2025 06:11:30] "GET /static/unfold/js/htmx/htmx.js HTTP/1.1" 304 0
+[24/Dec/2025 06:11:30] "GET /static/unfold/fonts/inter/styles.css HTTP/1.1" 304 0
+[24/Dec/2025 06:11:30] "GET /static/unfold/js/chart/chart.js HTTP/1.1" 304 0
+[24/Dec/2025 06:11:30] "GET /static/unfold/js/simplebar/simplebar.js HTTP/1.1" 304 0
+[24/Dec/2025 06:11:30] "GET /static/unfold/js/app.js HTTP/1.1" 304 0
+[24/Dec/2025 06:11:30] "GET /static/unfold/js/alpine/alpine.anchor.js HTTP/1.1" 304 0
+[24/Dec/2025 06:11:30] "GET /static/unfold/js/alpine/alpine.sort.js HTTP/1.1" 304 0
+[24/Dec/2025 06:11:30] "GET /static/unfold/js/alpine/alpine.persist.js HTTP/1.1" 304 0
+[24/Dec/2025 06:11:30] "GET /static/unfold/js/alpine/alpine.js HTTP/1.1" 304 0
+[24/Dec/2025 06:11:30] "GET /static/unfold/js/alpine/alpine.resize.js HTTP/1.1" 304 0
+[24/Dec/2025 06:11:30] "GET /static/unfold/fonts/inter/Inter-Regular.woff2 HTTP/1.1" 304 0
+[24/Dec/2025 06:11:30] "GET /static/unfold/fonts/inter/Inter-Medium.woff2 HTTP/1.1" 304 0
+[24/Dec/2025 06:11:30] "GET /static/unfold/fonts/inter/Inter-SemiBold.woff2 HTTP/1.1" 304 0
+[24/Dec/2025 06:11:30] "GET /static/unfold/fonts/material-symbols/Material-Symbols-Outlined.woff2 HTTP/1.1" 304 0
+Not Found: /favicon.ico
+[24/Dec/2025 06:11:31] "GET /favicon.ico HTTP/1.1" 404 2986
+Not Found: /favicon.ico
+[24/Dec/2025 06:11:31] "GET /favicon.ico HTTP/1.1" 404 2986
+Not Found: /
+[24/Dec/2025 07:38:49] "GET / HTTP/1.1" 404 2935
+[24/Dec/2025 09:52:15] code 400, message Bad request version ('\xa9')
+[24/Dec/2025 09:52:15] "\x00\x00\x00\xe0Z\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x05\x01=K\x00\x00\x01\x01\xef\x01\xa8\xc0\x00\xc0\xca\xa4w:o\x00admin\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x000\x81\x89\x02\x81\x81\x00\xab\x1cS\xfc\xde/\xf3\xc4\x93;\xbc\xc3\x14\x0cq\r\xb067S=\x80\xb0M{\x97\x87#\xfaa\xcf\x1d\xa2\xe4\xda\xc6\x8d\x9e\xd1D\x01B1\x80\xf8\x01[\x92\x07\xdd\xc0\x08G-\xab\xf1\xc8\xb7\x04\x89\xf0k\x84\xea\x9c\xd3\x05\x109m|\xe7\xcd$\x8f\xbev,la\xff\x8dd P\x0b\xef\x10\xcd\x005\xf3\xb8\x82Z.\x94\\\x1f\xa9" 400 -
+[24/Dec/2025 09:52:16] code 400, message Bad request version ('\xa9')
+[24/Dec/2025 09:52:16] "\x00\x00\x00\xe0Z\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x05\x01=K\x00\x00\x01\x01\xef\x01\xa8\xc0\x00\xc0\xca\xa4w:o\x00admin\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x000\x81\x89\x02\x81\x81\x00\xab\x1cS\xfc\xde/\xf3\xc4\x93;\xbc\xc3\x14\x0cq\r\xb067S=\x80\xb0M{\x97\x87#\xfaa\xcf\x1d\xa2\xe4\xda\xc6\x8d\x9e\xd1D\x01B1\x80\xf8\x01[\x92\x07\xdd\xc0\x08G-\xab\xf1\xc8\xb7\x04\x89\xf0k\x84\xea\x9c\xd3\x05\x109m|\xe7\xcd$\x8f\xbev,la\xff\x8dd P\x0b\xef\x10\xcd\x005\xf3\xb8\x82Z.\x94\\\x1f\xa9" 400 -
+[24/Dec/2025 09:52:16] code 400, message Bad request version ('\xa9')
+[24/Dec/2025 09:52:16] "\x00\x00\x00\xe0Z\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x05\x01=K\x00\x00\x01\x01\xef\x01\xa8\xc0\x00\xc0\xca\xa4w:o\x00admin\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x000\x81\x89\x02\x81\x81\x00\xab\x1cS\xfc\xde/\xf3\xc4\x93;\xbc\xc3\x14\x0cq\r\xb067S=\x80\xb0M{\x97\x87#\xfaa\xcf\x1d\xa2\xe4\xda\xc6\x8d\x9e\xd1D\x01B1\x80\xf8\x01[\x92\x07\xdd\xc0\x08G-\xab\xf1\xc8\xb7\x04\x89\xf0k\x84\xea\x9c\xd3\x05\x109m|\xe7\xcd$\x8f\xbev,la\xff\x8dd P\x0b\xef\x10\xcd\x005\xf3\xb8\x82Z.\x94\\\x1f\xa9" 400 -
+[24/Dec/2025 09:52:45,327] - Broken pipe from ('192.168.5.1', 14606)
+Not Found: /
+[24/Dec/2025 09:52:48] "GET / HTTP/1.1" 404 2935
+[24/Dec/2025 09:52:49,143] - Broken pipe from ('192.168.5.1', 14640)
+[24/Dec/2025 09:52:54] code 400, message Bad request version ('\xc0\\x14\xc0')
+[24/Dec/2025 09:52:54] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /
+[24/Dec/2025 09:52:54] "GET / HTTP/1.1" 404 2935
+[24/Dec/2025 09:52:55] code 505, message Invalid HTTP version (2.0)
+[24/Dec/2025 09:52:55] "PRI * HTTP/2.0" 505 -
+[24/Dec/2025 09:53:00] code 400, message Bad HTTP/0.9 request type ('\\x16\\x03\\x01\\x00\xee\\x01\\x00\\x00\xea\\x03\\x03%')
+[24/Dec/2025 09:53:00] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /wiki
+[24/Dec/2025 09:53:00] "GET /wiki HTTP/1.1" 404 2965
+Not Found: /sub/b5249973-7660-4f0f-bc9e-5f5181cd6fa4
+[24/Dec/2025 09:54:18] "GET /sub/b5249973-7660-4f0f-bc9e-5f5181cd6fa4 HTTP/1.1" 404 3073
+Not Found: /
+[24/Dec/2025 10:12:45] "GET / HTTP/1.1" 404 2935
+Not Found: /favicon.ico
+[24/Dec/2025 10:13:11] "GET /favicon.ico HTTP/1.1" 404 2986
+Not Found: /http:/api.ipify.org/
+[24/Dec/2025 10:13:14] "GET http://api.ipify.org/?format=json HTTP/1.1" 404 1873
+Not Found: /www.shadowserver.org:443
+[24/Dec/2025 10:13:17] "CONNECT www.shadowserver.org:443 HTTP/1.1" 404 1882
+[24/Dec/2025 14:44:51] "GET /accounts/login HTTP/1.1" 301 0
+[24/Dec/2025 14:44:51] "GET /accounts/login/ HTTP/1.1" 302 0
+[24/Dec/2025 14:44:51] "GET /accounts/dashboard/ HTTP/1.1" 200 20782
+Not Found: /favicon.ico
+[24/Dec/2025 14:44:53] "GET /favicon.ico HTTP/1.1" 404 2986
+[24/Dec/2025 14:45:41] "GET /accounts/transactions/ HTTP/1.1" 200 8254
+[24/Dec/2025 14:45:47] "GET /accounts/my-team/ HTTP/1.1" 200 11811
+[24/Dec/2025 14:45:50] "GET /accounts/my-team/ HTTP/1.1" 200 11811
+[24/Dec/2025 14:46:09] "GET /accounts/login HTTP/1.1" 301 0
+[24/Dec/2025 14:46:10] "GET /accounts/login/ HTTP/1.1" 302 0
+[24/Dec/2025 14:46:10] "GET /accounts/dashboard/ HTTP/1.1" 200 20782
+Not Found: /favicon.ico
+[24/Dec/2025 14:46:14] "GET /favicon.ico HTTP/1.1" 404 2986
+[24/Dec/2025 14:46:52] "GET /accounts/dashboard/ HTTP/1.1" 200 20782
+[24/Dec/2025 14:46:57] "POST /accounts/logout/ HTTP/1.1" 302 0
+[24/Dec/2025 14:46:58] "GET /accounts/login/ HTTP/1.1" 200 11011
+[24/Dec/2025 14:47:03,330] - Broken pipe from ('192.168.5.1', 62247)
+[24/Dec/2025 14:47:03,332] - Broken pipe from ('192.168.5.1', 62246)
+[24/Dec/2025 14:47:54] "POST /accounts/login/ HTTP/1.1" 200 12203
+[24/Dec/2025 14:48:21] "POST /accounts/login/ HTTP/1.1" 200 12203
+[24/Dec/2025 14:49:21] "POST /accounts/login/ HTTP/1.1" 200 12203
+[24/Dec/2025 14:56:01] "GET /accounts/dashboard/ HTTP/1.1" 302 0
+[24/Dec/2025 14:56:01] "GET /accounts/login/?next=/accounts/dashboard/ HTTP/1.1" 200 11011
+[24/Dec/2025 14:56:45] "POST /accounts/login/?next=/accounts/dashboard/ HTTP/1.1" 302 0
+[24/Dec/2025 14:56:45] "GET /accounts/dashboard/ HTTP/1.1" 200 21148
+[24/Dec/2025 14:57:20] "GET /accounts/transactions/ HTTP/1.1" 200 10231
+[24/Dec/2025 14:57:29] "GET /accounts/my-team/ HTTP/1.1" 200 23121
+[24/Dec/2025 14:57:46] "GET /accounts/transactions/ HTTP/1.1" 200 10231
+[24/Dec/2025 14:59:22] "GET /accounts/dashboard/ HTTP/1.1" 200 20780
+[24/Dec/2025 15:01:37,195] - Broken pipe from ('192.168.5.1', 37691)
+[24/Dec/2025 15:48:29] "GET /accounts/login/ HTTP/1.1" 302 0
+[24/Dec/2025 15:48:29] "GET /accounts/dashboard/ HTTP/1.1" 200 20782
+Not Found: /favicon.ico
+[24/Dec/2025 15:48:29] "GET /favicon.ico HTTP/1.1" 404 2986
+[24/Dec/2025 15:48:45] "GET /accounts/login HTTP/1.1" 301 0
+[24/Dec/2025 15:48:45] "GET /accounts/login/ HTTP/1.1" 302 0
+[24/Dec/2025 15:48:45] "GET /accounts/dashboard/ HTTP/1.1" 200 20782
+[24/Dec/2025 15:49:06] "GET /accounts/transactions/ HTTP/1.1" 200 8254
+[24/Dec/2025 15:49:11] "GET /accounts/dashboard/ HTTP/1.1" 200 20782
+[24/Dec/2025 15:49:13] "POST /accounts/logout/ HTTP/1.1" 302 0
+[24/Dec/2025 15:49:13] "GET /accounts/login/ HTTP/1.1" 200 11011
+[24/Dec/2025 15:50:05] "POST /accounts/login/ HTTP/1.1" 200 12203
+[24/Dec/2025 15:51:23] "POST /accounts/login/ HTTP/1.1" 302 0
+[24/Dec/2025 15:51:23] "GET /accounts/dashboard/ HTTP/1.1" 200 21148
+[24/Dec/2025 15:51:33] "GET /accounts/my-team/ HTTP/1.1" 200 23121
+[24/Dec/2025 15:51:54] "GET /accounts/transactions/ HTTP/1.1" 200 10231
+[24/Dec/2025 15:52:06] "GET /accounts/dashboard/ HTTP/1.1" 200 20780
+[24/Dec/2025 15:52:10] "GET /accounts/my-team/ HTTP/1.1" 200 23121
+[24/Dec/2025 16:00:16] code 400, message Bad request version ('\xc0\\x14\xc0')
+[24/Dec/2025 16:00:16] You're accessing the development server over HTTPS, but it only supports HTTP.
+[24/Dec/2025 16:00:16] code 400, message Bad request syntax ('MGLNDD_5.202.85.78_8000')
+[24/Dec/2025 16:00:16] "MGLNDD_5.202.85.78_8000" 400 -
+Not Found: /
+[24/Dec/2025 16:34:36] "GET / HTTP/1.1" 404 2935
+/home/invest/my_lottery_project/apps/accounts/urls.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+December 24, 2025 - 01:34:42
+Django version 6.0, using settings 'config.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Watching for file changes with StatReloader
+[24/Dec/2025 22:49:08] "GET /accounts/dashboard/ HTTP/1.1" 200 20782
+[24/Dec/2025 22:49:14] "GET /accounts/transactions/ HTTP/1.1" 200 8254
+[24/Dec/2025 22:49:18] "GET /accounts/dashboard/ HTTP/1.1" 200 20782
+[24/Dec/2025 22:49:21] "POST /accounts/logout/ HTTP/1.1" 302 0
+[24/Dec/2025 22:49:21] "GET /accounts/login/ HTTP/1.1" 200 11011
+[24/Dec/2025 22:49:32] "POST /accounts/login/ HTTP/1.1" 302 0
+[24/Dec/2025 22:49:32] "GET /accounts/dashboard/ HTTP/1.1" 200 21148
+[24/Dec/2025 22:49:47] "GET /accounts/transactions/ HTTP/1.1" 200 10233
+Not Found: /
+[24/Dec/2025 22:57:01] "GET / HTTP/1.1" 404 2930
+[24/Dec/2025 22:57:01,842] - Broken pipe from ('192.168.5.1', 44994)
+[24/Dec/2025 22:57:02] code 400, message Bad request version ('\xc0\\x13\xc0')
+[24/Dec/2025 22:57:02] You're accessing the development server over HTTPS, but it only supports HTTP.
+[24/Dec/2025 22:57:02] code 400, message Bad HTTP/0.9 request type ('t3')
+[24/Dec/2025 22:57:02] "t3 12.1.2" 400 -
+Not Found: /
+[24/Dec/2025 22:57:37] "GET / HTTP/1.1" 404 2935
+Not Found: /favicon.ico
+[24/Dec/2025 22:57:37] "GET /favicon.ico HTTP/1.1" 404 2986
+Not Found: /robots.txt
+[24/Dec/2025 22:57:38] "GET /robots.txt HTTP/1.1" 404 2983
+Not Found: /sitemap.xml
+[24/Dec/2025 22:57:38] "GET /sitemap.xml HTTP/1.1" 404 2986
+/home/invest/my_lottery_project/apps/accounts/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+December 24, 2025 - 22:48:56
+Django version 6.0, using settings 'config.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Watching for file changes with StatReloader
+/home/invest/my_lottery_project/apps/accounts/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+December 24, 2025 - 23:00:07
+Django version 6.0, using settings 'config.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Performing system checks...
+
+Watching for file changes with StatReloader
+[25/Dec/2025 10:33:08] "GET /accounts/network/ HTTP/1.1" 200 21889
+[25/Dec/2025 10:33:12] "GET /accounts/network/ HTTP/1.1" 200 21889
+[25/Dec/2025 10:33:13] "GET /accounts/network/?user_id=13 HTTP/1.1" 200 21889
+[25/Dec/2025 10:33:14] "GET /accounts/network/?user_id=19 HTTP/1.1" 200 22361
+[25/Dec/2025 10:33:16] "GET /accounts/network/?user_id=31 HTTP/1.1" 200 22360
+[25/Dec/2025 10:33:28] "GET /accounts/network/?user_id=55 HTTP/1.1" 200 22362
+[25/Dec/2025 10:33:32] "GET /accounts/network/?user_id=103 HTTP/1.1" 200 22359
+[25/Dec/2025 11:19:59] code 400, message Bad request version ('(\xe1\xdb2\xd00\\x86\\x13m\\x07\\x91B|k\xdb}')
+[25/Dec/2025 11:19:59] You're accessing the development server over HTTPS, but it only supports HTTP.
+[25/Dec/2025 11:20:10] code 400, message Bad request version ('\xc0\\x13\xc0')
+[25/Dec/2025 11:20:10] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /
+[25/Dec/2025 11:20:11] "GET / HTTP/1.1" 404 2779
+Not Found: /favicon.ico
+[25/Dec/2025 11:20:13] "GET /favicon.ico HTTP/1.1" 404 2830
+[25/Dec/2025 14:20:29] code 400, message Bad request version ('\xc0\\x14\xc0')
+[25/Dec/2025 14:20:29] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /
+[25/Dec/2025 14:20:30] "GET / HTTP/1.1" 404 2779
+[25/Dec/2025 14:20:30] code 505, message Invalid HTTP version (2.0)
+[25/Dec/2025 14:20:30] "PRI * HTTP/2.0" 505 -
+[25/Dec/2025 14:20:40] code 400, message Bad request syntax ('\\x16\\x03\\x01\\x00\xee\\x01\\x00\\x00\xea\\x03\\x039|0\\x8c\xce\\x0f\xffSc')
+[25/Dec/2025 14:20:40] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /robots.txt
+[25/Dec/2025 14:20:41] "GET /robots.txt HTTP/1.1" 404 2827
+[25/Dec/2025 15:13:43] code 400, message Bad HTTP/0.9 request type ('JDWP-Handshake\\x00\\x00\\x00')
+[25/Dec/2025 15:13:43] "JDWP-Handshake\x00\x00\x00\t\x00\x00\x00\x01\x00\x01\x01" 400 -
+[25/Dec/2025 15:16:55] "GET /admin/ HTTP/1.1" 302 0
+[25/Dec/2025 15:16:55] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 11820
+[25/Dec/2025 15:16:56] "GET /static/unfold/fonts/inter/styles.css HTTP/1.1" 200 608
+[25/Dec/2025 15:16:56] "GET /static/unfold/css/simplebar/simplebar.css HTTP/1.1" 200 4647
+[25/Dec/2025 15:16:56] "GET /static/unfold/fonts/material-symbols/styles.css HTTP/1.1" 200 164
+[25/Dec/2025 15:16:56] "GET /static/unfold/js/htmx/htmx.js HTTP/1.1" 200 50918
+[25/Dec/2025 15:16:56] "GET /static/unfold/js/app.js HTTP/1.1" 200 19203
+[25/Dec/2025 15:16:56] "GET /static/unfold/js/simplebar/simplebar.js HTTP/1.1" 200 27176
+[25/Dec/2025 15:16:56] "GET /static/unfold/css/styles.css HTTP/1.1" 200 218995
+[25/Dec/2025 15:16:57] "GET /static/unfold/js/alpine/alpine.anchor.js HTTP/1.1" 200 15524
+[25/Dec/2025 15:16:57] "GET /static/unfold/js/alpine/alpine.persist.js HTTP/1.1" 200 837
+[25/Dec/2025 15:16:57] "GET /static/unfold/js/alpine/alpine.sort.js HTTP/1.1" 200 37891
+[25/Dec/2025 15:16:57] "GET /static/unfold/js/alpine/alpine.resize.js HTTP/1.1" 200 703
+[25/Dec/2025 15:16:57] "GET /static/unfold/js/chart/chart.js HTTP/1.1" 200 200633
+[25/Dec/2025 15:16:57] "GET /static/unfold/js/alpine/alpine.js HTTP/1.1" 200 44758
+[25/Dec/2025 15:16:58] "GET /static/unfold/fonts/inter/Inter-Medium.woff2 HTTP/1.1" 200 114348
+[25/Dec/2025 15:16:58] "GET /static/unfold/fonts/inter/Inter-SemiBold.woff2 HTTP/1.1" 200 114812
+[25/Dec/2025 15:16:58] "GET /static/unfold/fonts/inter/Inter-Regular.woff2 HTTP/1.1" 200 111268
+[25/Dec/2025 15:16:59] "GET /static/unfold/fonts/material-symbols/Material-Symbols-Outlined.woff2 HTTP/1.1" 200 291696
+Not Found: /favicon.ico
+[25/Dec/2025 15:17:00] "GET /favicon.ico HTTP/1.1" 404 2830
+Not Found: /favicon.ico
+[25/Dec/2025 15:17:00] "GET /favicon.ico HTTP/1.1" 404 2830
+[25/Dec/2025 15:17:59] "POST /admin/login/?next=/admin/ HTTP/1.1" 200 13367
+[25/Dec/2025 15:18:06] "POST /admin/login/?next=/admin/ HTTP/1.1" 200 13367
+[25/Dec/2025 15:18:55] "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[25/Dec/2025 15:18:56] "GET /admin/ HTTP/1.1" 200 88961
+[25/Dec/2025 15:19:10] "GET /admin/core/withdrawalrequest/ HTTP/1.1" 200 59933
+[25/Dec/2025 15:19:11] "GET /admin/jsi18n/ HTTP/1.1" 200 12738
+[25/Dec/2025 15:19:11] "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+[25/Dec/2025 15:19:11] "GET /static/admin/js/actions.js HTTP/1.1" 200 7977
+[25/Dec/2025 15:19:11] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9222
+[25/Dec/2025 15:19:11] "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+[25/Dec/2025 15:19:11] "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+[25/Dec/2025 15:19:11] "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+[25/Dec/2025 15:19:12] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+[25/Dec/2025 15:19:12] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+[25/Dec/2025 15:19:17] "GET /admin/ HTTP/1.1" 200 88961
+[25/Dec/2025 15:19:19] "GET /admin/core/plan/ HTTP/1.1" 200 71124
+[25/Dec/2025 15:19:20] "GET /admin/jsi18n/ HTTP/1.1" 200 12738
+[25/Dec/2025 15:19:31] "GET /admin/ HTTP/1.1" 200 88961
+[25/Dec/2025 15:19:34] "GET /admin/core/plan/add/ HTTP/1.1" 200 56123
+[25/Dec/2025 15:19:34] "GET /admin/jsi18n/ HTTP/1.1" 200 12738
+[25/Dec/2025 15:19:34] "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+[25/Dec/2025 15:19:34] "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+[25/Dec/2025 15:19:54] "GET /admin/ HTTP/1.1" 200 88961
+[25/Dec/2025 15:19:57] "GET /admin/core/mlmsettings/add/ HTTP/1.1" 200 52480
+[25/Dec/2025 15:19:57] "GET /admin/jsi18n/ HTTP/1.1" 200 12738
+[25/Dec/2025 15:20:00] "GET /admin/ HTTP/1.1" 200 88961
+[25/Dec/2025 15:20:01] "GET /admin/core/mlmsettings/ HTTP/1.1" 200 58694
+[25/Dec/2025 15:20:02] "GET /admin/jsi18n/ HTTP/1.1" 200 12738
+[25/Dec/2025 15:20:06] "GET /admin/ HTTP/1.1" 200 88961
+[25/Dec/2025 15:20:09] "GET /admin/jsi18n/ HTTP/1.1" 200 12738
+[25/Dec/2025 15:20:09] "GET /admin/core/transaction/ HTTP/1.1" 200 421018
+[25/Dec/2025 15:20:11] "GET /static/unfold/fonts/inter/Inter-Bold.woff2 HTTP/1.1" 200 114840
+[25/Dec/2025 15:20:13] "GET /admin/ HTTP/1.1" 200 88961
+[25/Dec/2025 15:20:15] "GET /admin/core/transaction/add/ HTTP/1.1" 200 218264
+[25/Dec/2025 15:20:16] "GET /admin/jsi18n/ HTTP/1.1" 200 12738
+[25/Dec/2025 15:20:16] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 593
+[25/Dec/2025 15:20:16] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 978
+[25/Dec/2025 15:20:16] "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 928
+[25/Dec/2025 15:20:20] "GET /admin/ HTTP/1.1" 200 88961
+[25/Dec/2025 15:20:23] "GET /admin/jsi18n/ HTTP/1.1" 200 12738
+[25/Dec/2025 15:20:23] "GET /admin/core/transaction/ HTTP/1.1" 200 421018
+[25/Dec/2025 15:20:29] "GET /admin/ HTTP/1.1" 200 88961
+[25/Dec/2025 15:20:32] "GET /admin/investments/investmentplan/ HTTP/1.1" 200 82137
+[25/Dec/2025 15:20:32] "GET /admin/jsi18n/ HTTP/1.1" 200 12738
+[25/Dec/2025 15:21:04] "GET /admin/ HTTP/1.1" 200 88961
+[25/Dec/2025 15:21:10] "GET /admin/django_celery_beat/solarschedule/add/ HTTP/1.1" 200 59983
+[25/Dec/2025 15:21:11] "GET /admin/jsi18n/ HTTP/1.1" 200 12738
+[25/Dec/2025 15:21:11] "GET /static/admin/js/inlines.js HTTP/1.1" 200 16222
+[25/Dec/2025 15:21:13] "GET /admin/ HTTP/1.1" 200 88961
+[25/Dec/2025 15:21:15] "GET /admin/django_celery_beat/solarschedule/ HTTP/1.1" 200 53691
+[25/Dec/2025 15:21:15] "GET /admin/jsi18n/ HTTP/1.1" 200 12738
+[25/Dec/2025 15:21:17] "GET /admin/ HTTP/1.1" 200 88961
+[25/Dec/2025 15:21:27] "GET /admin/jsi18n/ HTTP/1.1" 200 12738
+[25/Dec/2025 15:21:28] "GET /admin/accounts/user/ HTTP/1.1" 200 531220
+[25/Dec/2025 15:21:39] "GET /admin/accounts/user/binary-tree/Leader_2/ HTTP/1.1" 200 452957
+[25/Dec/2025 15:23:18] "GET /admin/accounts/user/ HTTP/1.1" 200 531220
+[25/Dec/2025 15:23:29] "GET /admin/ HTTP/1.1" 200 88961
+[25/Dec/2025 15:23:50] "GET /admin/django_celery_beat/crontabschedule/ HTTP/1.1" 200 53630
+[25/Dec/2025 15:23:51] "GET /admin/jsi18n/ HTTP/1.1" 200 12738
+[25/Dec/2025 15:23:53] "GET /admin/ HTTP/1.1" 200 88961
+[25/Dec/2025 15:23:55] "GET /admin/django_celery_beat/crontabschedule/add/ HTTP/1.1" 200 97693
+[25/Dec/2025 15:23:55] "GET /admin/jsi18n/ HTTP/1.1" 200 12738
+[25/Dec/2025 15:24:15] "GET /admin/ HTTP/1.1" 200 88961
+[25/Dec/2025 15:24:20] "GET /admin/django_celery_beat/clockedschedule/add/ HTTP/1.1" 200 58218
+[25/Dec/2025 15:24:20] "GET /static/admin/js/calendar.js HTTP/1.1" 200 9159
+[25/Dec/2025 15:24:20] "GET /admin/jsi18n/ HTTP/1.1" 200 12738
+[25/Dec/2025 15:24:20] "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19698
+[25/Dec/2025 15:24:23] "GET /admin/ HTTP/1.1" 200 88961
+[25/Dec/2025 15:24:24] "GET /admin/django_celery_beat/clockedschedule/ HTTP/1.1" 200 53663
+[25/Dec/2025 15:24:25] "GET /admin/jsi18n/ HTTP/1.1" 200 12738
+[25/Dec/2025 15:24:26] "GET /admin/ HTTP/1.1" 200 88961
+[25/Dec/2025 15:24:32] "GET /admin/lottery/lotteryround/add/ HTTP/1.1" 200 63720
+[25/Dec/2025 15:24:33] "GET /admin/jsi18n/ HTTP/1.1" 200 12738
+[25/Dec/2025 15:24:33] "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 645
+[25/Dec/2025 15:25:14] "GET /admin/ HTTP/1.1" 200 88961
+[25/Dec/2025 15:25:20] "GET /admin/lottery/lotterywinner/ HTTP/1.1" 200 53648
+[25/Dec/2025 15:25:21] "GET /admin/jsi18n/ HTTP/1.1" 200 12738
+[25/Dec/2025 15:25:24] "GET /admin/ HTTP/1.1" 200 88961
+[25/Dec/2025 15:25:26] "GET /admin/lottery/lotteryticket/ HTTP/1.1" 200 59532
+[25/Dec/2025 15:25:26] "GET /admin/jsi18n/ HTTP/1.1" 200 12738
+[25/Dec/2025 15:25:28] "GET /admin/ HTTP/1.1" 200 88961
+[25/Dec/2025 15:25:30] "GET /admin/lottery/lotteryticket/add/ HTTP/1.1" 200 55128
+[25/Dec/2025 15:25:31] "GET /admin/jsi18n/ HTTP/1.1" 200 12738
+[25/Dec/2025 15:25:39] "GET /admin/ HTTP/1.1" 200 88961
+[25/Dec/2025 15:25:44] "GET /admin/accounts/roihistory/ HTTP/1.1" 200 62249
+[25/Dec/2025 15:25:45] "GET /admin/jsi18n/ HTTP/1.1" 200 12738
+[25/Dec/2025 15:25:47] "GET /admin/ HTTP/1.1" 200 88961
+[25/Dec/2025 15:25:50] "GET /admin/jsi18n/ HTTP/1.1" 200 12738
+[25/Dec/2025 15:25:50] "GET /admin/accounts/roihistory/add/ HTTP/1.1" 200 218819
+[25/Dec/2025 15:25:50] "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 689
+[25/Dec/2025 15:25:55] "GET /admin/ HTTP/1.1" 200 88961
+[25/Dec/2025 15:25:57] "GET /admin/accounts/roihistory/ HTTP/1.1" 200 62249
+[25/Dec/2025 15:25:57] "GET /admin/jsi18n/ HTTP/1.1" 200 12738
+[25/Dec/2025 15:25:58] "GET /admin/ HTTP/1.1" 200 88961
+[25/Dec/2025 15:26:00] "GET /admin/accounts/levelcommissionhistory/ HTTP/1.1" 200 61144
+[25/Dec/2025 15:26:01] "GET /admin/jsi18n/ HTTP/1.1" 200 12738
+[25/Dec/2025 15:26:02] "GET /admin/ HTTP/1.1" 200 88961
+[25/Dec/2025 15:26:07] "GET /admin/jsi18n/ HTTP/1.1" 200 12738
+[25/Dec/2025 15:26:07] "GET /admin/accounts/binarycommission/add/ HTTP/1.1" 200 219433
+[25/Dec/2025 15:26:18] "GET /admin/ HTTP/1.1" 200 88961
+[25/Dec/2025 15:28:15,582] - Broken pipe from ('192.168.5.1', 53319)
+[25/Dec/2025 15:28:15,583] - Broken pipe from ('192.168.5.1', 53320)
+[25/Dec/2025 15:28:15,583] - Broken pipe from ('192.168.5.1', 53321)
+[25/Dec/2025 15:39:55] code 400, message Bad request version ('\xc0\\x14\xc0')
+[25/Dec/2025 15:39:55] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /sub/b5249973-7660-4f0f-bc9e-5f5181cd6fa4
+[25/Dec/2025 16:04:49] "GET /sub/b5249973-7660-4f0f-bc9e-5f5181cd6fa4 HTTP/1.1" 404 2917
+Not Found: /
+[25/Dec/2025 16:51:09] "GET / HTTP/1.1" 404 2779
+[25/Dec/2025 17:31:33] "GET /admin/ HTTP/1.1" 200 88961
+Not Found: /favicon.ico
+[25/Dec/2025 17:31:34] "GET /favicon.ico HTTP/1.1" 404 2830
+Not Found: /favicon.ico
+[25/Dec/2025 17:31:34] "GET /favicon.ico HTTP/1.1" 404 2830
+[25/Dec/2025 17:31:36] "GET /admin/ HTTP/1.1" 200 88961
+[25/Dec/2025 17:31:44] "GET /admin/core/plan/ HTTP/1.1" 200 71124
+[25/Dec/2025 17:31:46] "GET /admin/jsi18n/ HTTP/1.1" 200 12738
+[25/Dec/2025 17:31:50] "GET /admin/ HTTP/1.1" 200 88961
+[25/Dec/2025 17:31:52] "GET /admin/core/plan/add/ HTTP/1.1" 200 56123
+[25/Dec/2025 17:31:53] "GET /admin/jsi18n/ HTTP/1.1" 200 12738
+[25/Dec/2025 17:32:04] "GET /admin/ HTTP/1.1" 200 88961
+[25/Dec/2025 17:34:31,144] - Broken pipe from ('192.168.5.1', 56275)
+[25/Dec/2025 17:34:31,153] - Broken pipe from ('192.168.5.1', 56274)
+Not Found: /
+[25/Dec/2025 20:59:30] "GET / HTTP/1.1" 404 2779
+[25/Dec/2025 22:43:04] code 400, message Bad request version ('\xc0\\x14\xc0')
+[25/Dec/2025 22:43:04] You're accessing the development server over HTTPS, but it only supports HTTP.
+[25/Dec/2025 22:43:04] code 400, message Bad request syntax ('MGLNDD_5.202.85.78_8000')
+[25/Dec/2025 22:43:04] "MGLNDD_5.202.85.78_8000" 400 -
+Not Found: /http:/httpbin.org/ip
+[25/Dec/2025 22:46:06] "GET http://httpbin.org/ip HTTP/1.1" 404 1859
+Not Found: /doc/page/login.asp
+[25/Dec/2025 23:23:30] "GET /doc/page/login.asp HTTP/1.1" 404 2851
+Not Found: /
+[26/Dec/2025 00:12:00] "GET / HTTP/1.1" 404 2779
+[26/Dec/2025 03:12:09] code 400, message Bad request syntax ('JDWP-Handshake')
+[26/Dec/2025 03:12:09] "JDWP-Handshake" 400 -
+Not Found: /
+[26/Dec/2025 04:13:07] "GET / HTTP/1.1" 404 2779
+Not Found: /favicon.ico
+[26/Dec/2025 04:13:27] "GET /favicon.ico HTTP/1.1" 404 2830
+Not Found: /http:/api.ipify.org/
+[26/Dec/2025 04:13:32] "GET http://api.ipify.org/?format=json HTTP/1.1" 404 1873
+Not Found: /www.shadowserver.org:443
+[26/Dec/2025 04:13:35] "CONNECT www.shadowserver.org:443 HTTP/1.1" 404 1882
+[26/Dec/2025 04:51:51] "GET /admin/ HTTP/1.1" 200 88961
+[26/Dec/2025 04:51:51] "GET /static/unfold/fonts/inter/styles.css HTTP/1.1" 304 0
+[26/Dec/2025 04:51:51] "GET /static/unfold/fonts/material-symbols/styles.css HTTP/1.1" 304 0
+[26/Dec/2025 04:51:51] "GET /static/unfold/css/simplebar/simplebar.css HTTP/1.1" 304 0
+[26/Dec/2025 04:51:51] "GET /static/unfold/js/htmx/htmx.js HTTP/1.1" 304 0
+[26/Dec/2025 04:51:51] "GET /static/unfold/js/chart/chart.js HTTP/1.1" 304 0
+[26/Dec/2025 04:51:51] "GET /static/unfold/css/styles.css HTTP/1.1" 304 0
+[26/Dec/2025 04:51:51] "GET /static/unfold/js/app.js HTTP/1.1" 304 0
+[26/Dec/2025 04:51:51] "GET /static/unfold/js/simplebar/simplebar.js HTTP/1.1" 304 0
+[26/Dec/2025 04:51:52] "GET /static/unfold/js/alpine/alpine.anchor.js HTTP/1.1" 304 0
+[26/Dec/2025 04:51:52] "GET /static/unfold/js/alpine/alpine.sort.js HTTP/1.1" 304 0
+[26/Dec/2025 04:51:52] "GET /static/unfold/js/alpine/alpine.resize.js HTTP/1.1" 304 0
+[26/Dec/2025 04:51:52] "GET /static/unfold/js/alpine/alpine.js HTTP/1.1" 304 0
+[26/Dec/2025 04:51:52] "GET /static/unfold/js/alpine/alpine.persist.js HTTP/1.1" 304 0
+[26/Dec/2025 04:51:52] "GET /static/unfold/fonts/material-symbols/Material-Symbols-Outlined.woff2 HTTP/1.1" 304 0
+[26/Dec/2025 04:51:52] "GET /static/unfold/fonts/inter/Inter-SemiBold.woff2 HTTP/1.1" 304 0
+[26/Dec/2025 04:51:52] "GET /static/unfold/fonts/inter/Inter-Regular.woff2 HTTP/1.1" 304 0
+Not Found: /favicon.ico
+[26/Dec/2025 04:51:52] "GET /favicon.ico HTTP/1.1" 404 2830
+[26/Dec/2025 04:52:32] "GET /admin/investments/investmentplan/ HTTP/1.1" 200 82137
+[26/Dec/2025 04:52:33] "GET /admin/jsi18n/ HTTP/1.1" 200 12738
+[26/Dec/2025 04:52:33] "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+[26/Dec/2025 04:52:33] "GET /static/admin/js/core.js HTTP/1.1" 304 0
+[26/Dec/2025 04:52:33] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+[26/Dec/2025 04:52:33] "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+[26/Dec/2025 04:52:33] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+[26/Dec/2025 04:52:33] "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+[26/Dec/2025 04:52:33] "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+[26/Dec/2025 04:52:33] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+[26/Dec/2025 04:52:33] "GET /static/unfold/fonts/inter/Inter-Medium.woff2 HTTP/1.1" 304 0
+Not Found: /
+[26/Dec/2025 04:54:41] "GET / HTTP/1.1" 404 2779
+[26/Dec/2025 05:37:14] "GET /admin/ HTTP/1.1" 200 88961
+Not Found: /favicon.ico
+[26/Dec/2025 05:37:16] "GET /favicon.ico HTTP/1.1" 404 2830
+Not Found: /favicon.ico
+[26/Dec/2025 05:37:16] "GET /favicon.ico HTTP/1.1" 404 2830
+[26/Dec/2025 05:41:38] code 400, message Bad HTTP/0.9 request type ('\\x00\\x00\\x00')
+[26/Dec/2025 05:41:38] "\x00\x00\x00 c\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00" 400 -
+[26/Dec/2025 05:57:38] "GET /admin/ HTTP/1.1" 200 88961
+Not Found: /favicon.ico
+[26/Dec/2025 05:57:39] "GET /favicon.ico HTTP/1.1" 404 2830
+[26/Dec/2025 05:57:48] code 400, message Bad request version ('JJ\\x13\\x01\\x13\\x02\\x13\\x03\xc0+\xc0/\xc0,\xc00\xcc\xa9\xcc\xa8\xc0\\x13\xc0\\x14\\x00\\x9c\\x00\\x9d\\x00/\\x005\\x01\\x00\\x06S\xfa\xfa\\x00\\x00\\x00\\x05\\x00\\x05\\x01\\x00\\x00\\x00\\x00\xff\\x01\\x00\\x01\\x00\\x00+\\x00\\x07\\x06::\\x03\\x04\\x03\\x03\\x00')
+[26/Dec/2025 05:57:48] You're accessing the development server over HTTPS, but it only supports HTTP.
+[26/Dec/2025 05:57:48] code 400, message Bad request version ('\\x02h2\\x08http/1.1\\x00')
+[26/Dec/2025 05:57:48] You're accessing the development server over HTTPS, but it only supports HTTP.
+[26/Dec/2025 05:57:48] code 400, message Bad request version ('\\x00')
+[26/Dec/2025 05:57:48] You're accessing the development server over HTTPS, but it only supports HTTP.
+[26/Dec/2025 05:57:48] code 400, message Bad request version ('\xa4\\x10\xb3\xdcY\xeb\\x98\\x12\\x80\xc3\\x12\\x18\xf9\xa9\xa5WjKYW\xbb^WK\xb3\xc9\xdb~h\xf3\xd9r\\x00\xf0\xb8M\xa4\xf0h}u\xd4C')
+[26/Dec/2025 05:57:48] You're accessing the development server over HTTPS, but it only supports HTTP.
+[26/Dec/2025 05:57:48] code 400, message Bad request version ('\\x00\\x12\\x00\\x10\\x04\\x03\\x08\\x04\\x04\\x01\\x05\\x03\\x08\\x05\\x05\\x01\\x08\\x06\\x06\\x01\\x00\\x17\\x00\\x00\\x00')
+[26/Dec/2025 05:57:48] You're accessing the development server over HTTPS, but it only supports HTTP.
+[26/Dec/2025 05:57:48] code 400, message Bad request version ('p5\\x97\xd37oK\xab\xa6`\\x99\\x929\\x00')
+[26/Dec/2025 05:57:48] You're accessing the development server over HTTPS, but it only supports HTTP.
+[26/Dec/2025 05:57:52] "GET /admin/ HTTP/1.1" 200 88961
+[26/Dec/2025 05:57:53] "GET /admin/ HTTP/1.1" 200 88961
+[26/Dec/2025 05:58:07] "GET /admin/jsi18n/ HTTP/1.1" 200 12738
+[26/Dec/2025 05:58:07] "GET /admin/investments/userinvestment/ HTTP/1.1" 200 616385
+[26/Dec/2025 06:42:15] code 400, message Bad HTTP/0.9 request type ('\\x00\\x00\\x00')
+[26/Dec/2025 06:42:15] "\x00\x00\x00 c\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00" 400 -
+Not Found: /
+[26/Dec/2025 07:43:52] "GET / HTTP/1.0" 404 2774
+Not Found: /.env
+[26/Dec/2025 08:00:43] "GET /.env HTTP/1.1" 404 2809
+Not Found: /.git/config
+[26/Dec/2025 08:00:43] "GET /.git/config HTTP/1.1" 404 2830
+Not Found: /
+[26/Dec/2025 08:05:53] "GET / HTTP/1.1" 404 2779
+[26/Dec/2025 08:53:11] code 400, message Bad HTTP/0.9 request type ('\\x16\\x03\\x01\\x00{\\x01\\x00\\x00w\\x03\\x03/\xe9\xccp\xcbb{\\x815x\xbb\\x17\xa8\\x08\\x83\xcd\xff\\x00\xa9G\xd7\xdeF*{\\x82Df9\xe5c8\\x00\\x00\\x1a\xc0/\xc0+\xc0\\x11\xc0\\x07\xc0\\x13\xc0')
+[26/Dec/2025 08:53:11] You're accessing the development server over HTTPS, but it only supports HTTP.
+[26/Dec/2025 08:53:12] code 400, message Bad request version ('\xc0\\x14\xc0')
+[26/Dec/2025 08:53:12] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /
+[26/Dec/2025 08:53:12] "GET / HTTP/1.1" 404 2779
+Not Found: /login
+[26/Dec/2025 08:53:13] "GET /login HTTP/1.1" 404 2812
+[26/Dec/2025 12:50:46,418] - Broken pipe from ('192.168.5.1', 15396)
+Not Found: /
+[26/Dec/2025 12:50:49] "GET / HTTP/1.1" 404 2779
+[26/Dec/2025 12:50:49,765] - Broken pipe from ('192.168.5.1', 15460)
+[26/Dec/2025 12:50:52] code 400, message Bad request version ('\xc0\\x14\xc0')
+[26/Dec/2025 12:50:52] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /
+[26/Dec/2025 12:50:53] "GET / HTTP/1.1" 404 2779
+[26/Dec/2025 12:50:53] code 505, message Invalid HTTP version (2.0)
+[26/Dec/2025 12:50:53] "PRI * HTTP/2.0" 505 -
+[26/Dec/2025 12:50:56] code 400, message Bad request version ('\xc0\\x14\xc0')
+[26/Dec/2025 12:50:56] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /security.txt
+[26/Dec/2025 12:50:57] "GET /security.txt HTTP/1.1" 404 2833
+[26/Dec/2025 12:53:31] "GET /accounts/network/?user_id=103 HTTP/1.1" 200 22359
+[26/Dec/2025 12:53:31] "GET /accounts/network/?user_id=199 HTTP/1.1" 200 22310
+[26/Dec/2025 12:53:38] "GET /accounts/network/?user_id=775 HTTP/1.1" 200 17673
+[26/Dec/2025 12:53:43] "GET /accounts/network/?user_id=775 HTTP/1.1" 200 17673
+[26/Dec/2025 12:53:44] "GET /accounts/network/?user_id=775 HTTP/1.1" 200 17673
+[26/Dec/2025 12:53:45] "GET /accounts/network/?user_id=391 HTTP/1.1" 200 19922
+[26/Dec/2025 12:53:47] "GET /accounts/network/?user_id=199 HTTP/1.1" 200 22310
+[26/Dec/2025 12:53:52] "GET /accounts/network/ HTTP/1.1" 200 21889
+[26/Dec/2025 12:56:27] "GET /static/unfold/fonts/inter/styles.css HTTP/1.1" 304 0
+[26/Dec/2025 12:56:27] "GET /static/unfold/fonts/material-symbols/styles.css HTTP/1.1" 304 0
+[26/Dec/2025 12:56:27] "GET /static/unfold/css/styles.css HTTP/1.1" 304 0
+[26/Dec/2025 12:56:27] "GET /static/unfold/css/simplebar/simplebar.css HTTP/1.1" 304 0
+[26/Dec/2025 12:56:27] "GET /static/unfold/js/htmx/htmx.js HTTP/1.1" 304 0
+[26/Dec/2025 12:56:28] "GET /static/unfold/js/chart/chart.js HTTP/1.1" 304 0
+[26/Dec/2025 12:56:28] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+[26/Dec/2025 12:56:28] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[26/Dec/2025 12:56:28] "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+[26/Dec/2025 12:56:28] "GET /static/admin/js/core.js HTTP/1.1" 304 0
+[26/Dec/2025 12:56:28] "GET /admin/accounts/user/ HTTP/1.1" 200 529494
+[26/Dec/2025 12:56:28] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+[26/Dec/2025 12:56:29] "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+[26/Dec/2025 12:56:29] "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+[26/Dec/2025 12:56:29] "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+[26/Dec/2025 12:56:29] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+[26/Dec/2025 12:56:29] "GET /static/unfold/js/app.js HTTP/1.1" 304 0
+[26/Dec/2025 12:56:29] "GET /static/unfold/js/simplebar/simplebar.js HTTP/1.1" 304 0
+[26/Dec/2025 12:56:29] "GET /static/unfold/js/alpine/alpine.anchor.js HTTP/1.1" 304 0
+[26/Dec/2025 12:56:29] "GET /static/unfold/js/alpine/alpine.persist.js HTTP/1.1" 304 0
+[26/Dec/2025 12:56:29] "GET /static/unfold/js/alpine/alpine.sort.js HTTP/1.1" 304 0
+[26/Dec/2025 12:56:29] "GET /static/unfold/js/alpine/alpine.js HTTP/1.1" 304 0
+[26/Dec/2025 12:56:29] "GET /static/unfold/js/alpine/alpine.resize.js HTTP/1.1" 304 0
+[26/Dec/2025 12:56:29] "GET /static/unfold/fonts/material-symbols/Material-Symbols-Outlined.woff2 HTTP/1.1" 304 0
+[26/Dec/2025 12:56:29] "GET /static/unfold/fonts/inter/Inter-SemiBold.woff2 HTTP/1.1" 304 0
+[26/Dec/2025 12:56:29] "GET /static/unfold/fonts/inter/Inter-Medium.woff2 HTTP/1.1" 304 0
+[26/Dec/2025 12:56:29] "GET /static/unfold/fonts/inter/Inter-Regular.woff2 HTTP/1.1" 304 0
+/home/invest/my_lottery_project/apps/accounts/admin.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+December 25, 2025 - 10:32:55
+Django version 6.0, using settings 'config.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Watching for file changes with StatReloader
+[26/Dec/2025 13:00:38] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[26/Dec/2025 13:00:38] "GET /admin/accounts/user/ HTTP/1.1" 200 529494
+[26/Dec/2025 13:00:41] "GET /admin/accounts/user/binary-tree/Leader_1/ HTTP/1.1" 200 54140
+[26/Dec/2025 13:00:41] "GET /admin/accounts/user/binary-tree/Leader_1/ HTTP/1.1" 200 54140
+[26/Dec/2025 13:00:50] "GET /admin/accounts/user/binary-tree/qoreyshi/ HTTP/1.1" 200 53997
+[26/Dec/2025 13:00:52] "GET /admin/accounts/user/binary-tree/User_2/ HTTP/1.1" 200 54139
+[26/Dec/2025 13:00:53] "GET /admin/accounts/user/binary-tree/User_12/ HTTP/1.1" 200 54154
+[26/Dec/2025 13:00:54] "GET /admin/accounts/user/binary-tree/User_52/ HTTP/1.1" 200 54162
+[26/Dec/2025 13:00:54] "GET /admin/accounts/user/binary-tree/User_212/ HTTP/1.1" 200 54164
+[26/Dec/2025 13:00:55] "GET /admin/accounts/user/binary-tree/User_852/ HTTP/1.1" 200 53428
+[26/Dec/2025 13:01:00] "GET /admin/accounts/user/binary-tree/User_425/ HTTP/1.1" 200 53556
+[26/Dec/2025 13:01:01] "GET /admin/accounts/user/binary-tree/User_212/ HTTP/1.1" 200 54164
+[26/Dec/2025 13:01:02] "GET /admin/accounts/user/binary-tree/User_105/ HTTP/1.1" 200 54166
+[26/Dec/2025 13:01:03] "GET /admin/accounts/user/binary-tree/User_52/ HTTP/1.1" 200 54162
+[26/Dec/2025 13:01:03] "GET /admin/accounts/user/binary-tree/User_25/ HTTP/1.1" 200 54160
+[26/Dec/2025 13:01:05] "GET /admin/accounts/user/binary-tree/User_52/ HTTP/1.1" 200 54162
+[26/Dec/2025 13:01:06] "GET /admin/accounts/user/binary-tree/User_213/ HTTP/1.1" 200 54164
+[26/Dec/2025 13:01:07] "GET /admin/accounts/user/binary-tree/User_858/ HTTP/1.1" 200 53428
+[26/Dec/2025 13:01:11] "GET /admin/accounts/user/binary-tree/User_428/ HTTP/1.1" 200 53557
+[26/Dec/2025 13:01:11] "GET /admin/accounts/user/binary-tree/User_213/ HTTP/1.1" 200 54164
+[26/Dec/2025 13:01:14] "GET /admin/accounts/user/binary-tree/User_106/ HTTP/1.1" 200 54165
+[26/Dec/2025 13:01:15] "GET /admin/accounts/user/binary-tree/User_52/ HTTP/1.1" 200 54162
+[26/Dec/2025 13:01:15] "GET /admin/accounts/user/binary-tree/User_25/ HTTP/1.1" 200 54160
+[26/Dec/2025 13:01:16] "GET /admin/accounts/user/binary-tree/User_12/ HTTP/1.1" 200 54154
+[26/Dec/2025 13:01:17] "GET /admin/accounts/user/binary-tree/User_5/ HTTP/1.1" 200 54150
+[26/Dec/2025 13:01:18] "GET /admin/accounts/user/binary-tree/User_2/ HTTP/1.1" 200 54139
+[26/Dec/2025 13:01:19] "GET /admin/accounts/user/binary-tree/Leader_1/ HTTP/1.1" 200 54140
+[26/Dec/2025 13:01:20] "GET /admin/accounts/user/binary-tree/qoreyshi/ HTTP/1.1" 200 53997
+[26/Dec/2025 13:02:23] "GET /admin/ HTTP/1.1" 200 88115
+[26/Dec/2025 13:02:23] "GET /static/unfold/js/app.js HTTP/1.1" 304 0
+[26/Dec/2025 13:02:23] "GET /static/unfold/fonts/inter/styles.css HTTP/1.1" 304 0
+[26/Dec/2025 13:02:23] "GET /static/unfold/fonts/material-symbols/styles.css HTTP/1.1" 304 0
+[26/Dec/2025 13:02:23] "GET /static/unfold/js/htmx/htmx.js HTTP/1.1" 304 0
+[26/Dec/2025 13:02:23] "GET /static/unfold/css/styles.css HTTP/1.1" 304 0
+[26/Dec/2025 13:02:23] "GET /static/unfold/css/simplebar/simplebar.css HTTP/1.1" 304 0
+[26/Dec/2025 13:02:23] "GET /static/unfold/js/simplebar/simplebar.js HTTP/1.1" 304 0
+[26/Dec/2025 13:02:23] "GET /static/unfold/js/chart/chart.js HTTP/1.1" 304 0
+[26/Dec/2025 13:02:23] "GET /static/unfold/js/alpine/alpine.anchor.js HTTP/1.1" 304 0
+[26/Dec/2025 13:02:23] "GET /static/unfold/js/alpine/alpine.persist.js HTTP/1.1" 304 0
+[26/Dec/2025 13:02:23] "GET /static/unfold/js/alpine/alpine.resize.js HTTP/1.1" 304 0
+[26/Dec/2025 13:02:23] "GET /static/unfold/js/alpine/alpine.sort.js HTTP/1.1" 304 0
+[26/Dec/2025 13:02:23] "GET /static/unfold/js/alpine/alpine.js HTTP/1.1" 304 0
+[26/Dec/2025 13:02:24] "GET /static/unfold/fonts/material-symbols/Material-Symbols-Outlined.woff2 HTTP/1.1" 304 0
+[26/Dec/2025 13:02:24] "GET /static/unfold/fonts/inter/Inter-SemiBold.woff2 HTTP/1.1" 304 0
+[26/Dec/2025 13:02:24] "GET /static/unfold/fonts/inter/Inter-Regular.woff2 HTTP/1.1" 304 0
+Not Found: /favicon.ico
+[26/Dec/2025 13:02:24] "GET /favicon.ico HTTP/1.1" 404 2830
+[26/Dec/2025 13:02:30] "GET /static/unfold/fonts/inter/Inter-Medium.woff2 HTTP/1.1" 304 0
+[26/Dec/2025 13:02:40] "GET /admin/ HTTP/1.1" 200 88115
+[26/Dec/2025 13:02:43] "GET /admin/ HTTP/1.1" 200 88115
+[26/Dec/2025 13:02:45] "GET /admin/ HTTP/1.1" 200 88115
+[26/Dec/2025 13:03:00] "GET /admin/ HTTP/1.1" 200 88115
+[26/Dec/2025 13:03:02] "GET /admin/ HTTP/1.1" 200 88115
+[26/Dec/2025 13:03:08] "GET /admin/accounts/user/ HTTP/1.1" 200 529494
+[26/Dec/2025 13:03:08] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+[26/Dec/2025 13:03:08] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+[26/Dec/2025 13:03:08] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[26/Dec/2025 13:03:08] "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+[26/Dec/2025 13:03:08] "GET /static/admin/js/core.js HTTP/1.1" 304 0
+[26/Dec/2025 13:03:08] "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+[26/Dec/2025 13:03:08] "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+[26/Dec/2025 13:03:08] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+[26/Dec/2025 13:03:08] "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+[26/Dec/2025 13:03:13] "GET /admin/accounts/user/binary-tree/Leader_1/ HTTP/1.1" 200 54140
+[26/Dec/2025 13:06:37] "GET /admin/accounts/user/binary-tree/qoreyshi/ HTTP/1.1" 200 56039
+[26/Dec/2025 13:06:46] "GET /admin/accounts/user/binary-tree/Leader_1/ HTTP/1.1" 200 56180
+[26/Dec/2025 13:06:52] "GET /admin/accounts/user/binary-tree/User_1/ HTTP/1.1" 200 56185
+[26/Dec/2025 13:06:53] "GET /admin/accounts/user/binary-tree/User_7/ HTTP/1.1" 200 56189
+[26/Dec/2025 13:06:54] "GET /admin/accounts/user/binary-tree/User_32/ HTTP/1.1" 200 56197
+[26/Dec/2025 13:06:57] "GET /admin/accounts/user/binary-tree/User_15/ HTTP/1.1" 200 56189
+[26/Dec/2025 13:06:58] "GET /admin/accounts/user/binary-tree/User_7/ HTTP/1.1" 200 56189
+[26/Dec/2025 13:06:59] "GET /admin/accounts/user/binary-tree/User_3/ HTTP/1.1" 200 56185
+[26/Dec/2025 13:06:59] "GET /admin/accounts/user/binary-tree/User_1/ HTTP/1.1" 200 56185
+[26/Dec/2025 13:07:00] "GET /admin/accounts/user/binary-tree/Leader_1/ HTTP/1.1" 200 56180
+[26/Dec/2025 13:07:02] "GET /admin/accounts/user/binary-tree/qoreyshi/ HTTP/1.1" 200 56039
+[26/Dec/2025 13:07:12] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[26/Dec/2025 13:07:13] "GET /admin/accounts/user/ HTTP/1.1" 200 529494
+[26/Dec/2025 13:07:22] "GET /admin/accounts/user/?q=leader HTTP/1.1" 200 82915
+[26/Dec/2025 13:07:22] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[26/Dec/2025 13:07:43] "GET /admin/accounts/user/binary-tree/Leader_1/ HTTP/1.1" 200 56180
+[26/Dec/2025 13:07:50] "GET /admin/accounts/user/binary-tree/qoreyshi/ HTTP/1.1" 200 56039
+[26/Dec/2025 13:07:54] "GET /admin/accounts/user/binary-tree/Leader_1/ HTTP/1.1" 200 56180
+[26/Dec/2025 13:07:55] "GET /admin/accounts/user/?q=leader HTTP/1.1" 200 82915
+[26/Dec/2025 13:07:58] "GET /admin/accounts/user/binary-tree/Leader_2/ HTTP/1.1" 200 56231
+[26/Dec/2025 13:08:38] "GET /admin/accounts/user/binary-tree/User_1004/ HTTP/1.1" 200 56231
+[26/Dec/2025 13:08:38] "GET /admin/accounts/user/binary-tree/User_1004/ HTTP/1.1" 200 56231
+[26/Dec/2025 13:09:21] "GET /admin/accounts/user/binary-tree/User_1001/ HTTP/1.1" 200 56231
+[26/Dec/2025 13:09:22] "GET /admin/accounts/user/binary-tree/Leader_2/ HTTP/1.1" 200 56231
+[26/Dec/2025 13:09:23] "GET /admin/accounts/user/binary-tree/qoreyshi/ HTTP/1.1" 200 56039
+[26/Dec/2025 13:09:26] "GET /admin/accounts/user/binary-tree/User_1/ HTTP/1.1" 200 56185
+[26/Dec/2025 13:11:30] "GET /accounts/transactions/ HTTP/1.1" 200 61137
+[26/Dec/2025 13:15:11] "GET /admin/accounts/user/binary-tree/User_1/ HTTP/1.1" 200 57792
+[26/Dec/2025 13:15:36] "GET /accounts/logout/ HTTP/1.1" 302 0
+[26/Dec/2025 13:15:36] "GET /accounts/login/ HTTP/1.1" 200 8988
+[26/Dec/2025 13:15:40] "GET /accounts/register/ HTTP/1.1" 200 11805
+[26/Dec/2025 13:16:33] "POST /accounts/register/ HTTP/1.1" 302 0
+[26/Dec/2025 13:16:33] "GET /accounts/dashboard/ HTTP/1.1" 200 21891
+[26/Dec/2025 13:16:41] "GET /accounts/network/ HTTP/1.1" 200 17204
+[26/Dec/2025 13:16:44] "GET /accounts/network/?user_id=3020 HTTP/1.1" 200 17204
+[26/Dec/2025 13:16:47] "GET /accounts/transactions/ HTTP/1.1" 200 7338
+[26/Dec/2025 13:16:49] "GET /accounts/plans/ HTTP/1.1" 200 12522
+[26/Dec/2025 13:16:50] "GET /accounts/dashboard/ HTTP/1.1" 200 21418
+/home/invest/my_lottery_project/apps/accounts/admin.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+December 26, 2025 - 13:00:03
+Django version 6.0, using settings 'config.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Watching for file changes with StatReloader
+[26/Dec/2025 13:17:10] "GET /admin/accounts/user/binary-tree/User_1/ HTTP/1.1" 200 57810
+[26/Dec/2025 13:17:13] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[26/Dec/2025 13:17:14] "GET /admin/accounts/user/ HTTP/1.1" 200 529494
+[26/Dec/2025 13:17:15] "GET /admin/accounts/user/binary-tree/Leader_1/ HTTP/1.1" 200 57814
+[26/Dec/2025 13:17:40] "GET /admin/accounts/user/binary-tree/Leader_1/ HTTP/1.1" 200 57814
+[26/Dec/2025 13:17:40] "GET /static/unfold/fonts/inter/styles.css HTTP/1.1" 200 608
+[26/Dec/2025 13:17:41] "GET /static/unfold/fonts/material-symbols/styles.css HTTP/1.1" 200 164
+[26/Dec/2025 13:17:41] "GET /static/unfold/css/simplebar/simplebar.css HTTP/1.1" 200 4647
+[26/Dec/2025 13:17:41] "GET /static/unfold/js/htmx/htmx.js HTTP/1.1" 200 50918
+[26/Dec/2025 13:17:41] "GET /static/unfold/js/app.js HTTP/1.1" 200 19203
+[26/Dec/2025 13:17:41] "GET /static/unfold/js/simplebar/simplebar.js HTTP/1.1" 200 27176
+[26/Dec/2025 13:17:41] "GET /static/unfold/js/chart/chart.js HTTP/1.1" 200 200633
+[26/Dec/2025 13:17:41] "GET /static/unfold/css/styles.css HTTP/1.1" 200 218995
+[26/Dec/2025 13:17:41] "GET /static/unfold/js/alpine/alpine.anchor.js HTTP/1.1" 200 15524
+[26/Dec/2025 13:17:41] "GET /static/unfold/js/alpine/alpine.persist.js HTTP/1.1" 200 837
+[26/Dec/2025 13:17:41] "GET /static/unfold/js/alpine/alpine.sort.js HTTP/1.1" 200 37891
+[26/Dec/2025 13:17:41] "GET /static/unfold/js/alpine/alpine.resize.js HTTP/1.1" 200 703
+[26/Dec/2025 13:17:41] "GET /static/unfold/js/alpine/alpine.js HTTP/1.1" 200 44758
+[26/Dec/2025 13:17:41] "GET /static/unfold/fonts/inter/Inter-SemiBold.woff2 HTTP/1.1" 200 114812
+[26/Dec/2025 13:17:41] "GET /static/unfold/fonts/inter/Inter-Regular.woff2 HTTP/1.1" 200 111268
+[26/Dec/2025 13:17:41] "GET /static/unfold/fonts/inter/Inter-Medium.woff2 HTTP/1.1" 200 114348
+[26/Dec/2025 13:17:42] "GET /static/unfold/fonts/material-symbols/Material-Symbols-Outlined.woff2 HTTP/1.1" 200 291696
+Not Found: /favicon.ico
+[26/Dec/2025 13:17:42] "GET /favicon.ico HTTP/1.1" 404 2831
+[26/Dec/2025 13:18:09] "GET /admin/accounts/user/binary-tree/User_3/ HTTP/1.1" 200 57810
+[26/Dec/2025 13:18:51] "GET /accounts/network/ HTTP/1.1" 200 21885
+/home/invest/my_lottery_project/apps/accounts/admin.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+December 26, 2025 - 13:17:07
+Django version 6.0, using settings 'config.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Watching for file changes with StatReloader
+[26/Dec/2025 13:20:16] "GET /admin/accounts/user/binary-tree/User_3/ HTTP/1.1" 200 59132
+[26/Dec/2025 13:20:21] "GET /admin/accounts/user/binary-tree/User_3/ HTTP/1.1" 200 59132
+[26/Dec/2025 13:21:47] "GET /admin/accounts/user/binary-tree/User_31/ HTTP/1.1" 200 59166
+[26/Dec/2025 13:21:51] "GET /admin/accounts/user/binary-tree/User_255/ HTTP/1.1" 200 54258
+[26/Dec/2025 13:21:54] "GET /admin/accounts/user/binary-tree/User_127/ HTTP/1.1" 200 57898
+[26/Dec/2025 13:21:55] "GET /admin/accounts/user/binary-tree/User_127/ HTTP/1.1" 200 57898
+[26/Dec/2025 13:21:56] "GET /admin/accounts/user/binary-tree/User_63/ HTTP/1.1" 200 59170
+[26/Dec/2025 13:21:58] "GET /admin/accounts/user/binary-tree/User_31/ HTTP/1.1" 200 59166
+[26/Dec/2025 13:21:59] "GET /admin/accounts/user/binary-tree/User_15/ HTTP/1.1" 200 59156
+[26/Dec/2025 13:22:00] "GET /admin/accounts/user/binary-tree/User_7/ HTTP/1.1" 200 59136
+[26/Dec/2025 13:22:01] "GET /admin/accounts/user/binary-tree/User_3/ HTTP/1.1" 200 59132
+[26/Dec/2025 13:22:03] "GET /admin/accounts/user/binary-tree/User_1/ HTTP/1.1" 200 59130
+[26/Dec/2025 13:22:06] "GET /admin/accounts/user/binary-tree/Leader_1/ HTTP/1.1" 200 59145
+[26/Dec/2025 13:22:07] "GET /admin/accounts/user/binary-tree/qoreyshi/ HTTP/1.1" 200 59052
+[26/Dec/2025 13:22:15] "GET /admin/accounts/user/binary-tree/User_2/ HTTP/1.1" 200 59157
+[26/Dec/2025 13:22:22] "GET /admin/accounts/user/binary-tree/User_26/ HTTP/1.1" 200 59166
+[26/Dec/2025 13:22:30] "GET /admin/accounts/user/binary-tree/User_218/ HTTP/1.1" 200 57900
+[26/Dec/2025 13:22:34] "GET /admin/accounts/user/binary-tree/User_108/ HTTP/1.1" 200 59174
+[26/Dec/2025 13:22:35] "GET /admin/accounts/user/binary-tree/User_53/ HTTP/1.1" 200 59170
+[26/Dec/2025 13:22:35] "GET /admin/accounts/user/binary-tree/User_26/ HTTP/1.1" 200 59166
+[26/Dec/2025 13:22:36] "GET /admin/accounts/user/binary-tree/User_12/ HTTP/1.1" 200 59156
+[26/Dec/2025 13:22:36] "GET /admin/accounts/user/binary-tree/User_5/ HTTP/1.1" 200 59136
+[26/Dec/2025 13:22:37] "GET /admin/accounts/user/binary-tree/User_2/ HTTP/1.1" 200 59157
+[26/Dec/2025 13:22:38] "GET /admin/accounts/user/binary-tree/Leader_1/ HTTP/1.1" 200 59145
+[26/Dec/2025 13:22:38] "GET /admin/accounts/user/binary-tree/qoreyshi/ HTTP/1.1" 200 59052
+[26/Dec/2025 13:22:50] "GET /admin/accounts/user/binary-tree/qoreyshi/ HTTP/1.1" 200 59052
+/home/invest/my_lottery_project/apps/accounts/admin.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+December 26, 2025 - 13:19:47
+Django version 6.0, using settings 'config.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Watching for file changes with StatReloader
+Internal Server Error: /admin/accounts/user/binary-tree/qoreyshi/
+Traceback (most recent call last):
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 247, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/apps/accounts/admin.py", line 154, in binary_tree_view
+    root_user = attach_stats(root_user)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/apps/accounts/admin.py", line 129, in attach_stats
+    total=Coalesce(Sum('paid_amount'), Value(0.0))
+          ^^^^^^^^
+NameError: name 'Coalesce' is not defined
+[26/Dec/2025 13:24:05] "GET /admin/accounts/user/binary-tree/qoreyshi/ HTTP/1.1" 500 91048
+Internal Server Error: /admin/accounts/user/binary-tree/qoreyshi/
+Traceback (most recent call last):
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/venv/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 247, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/apps/accounts/admin.py", line 154, in binary_tree_view
+    root_user = attach_stats(root_user)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/invest/my_lottery_project/apps/accounts/admin.py", line 129, in attach_stats
+    total=Coalesce(Sum('paid_amount'), Value(0.0))
+          ^^^^^^^^
+NameError: name 'Coalesce' is not defined
+[26/Dec/2025 13:24:59] "GET /admin/accounts/user/binary-tree/qoreyshi/ HTTP/1.1" 500 91048
+Watching for file changes with StatReloader
+[26/Dec/2025 21:54:10] code 400, message Bad request version ('\xc0#\xc0\xac\xc0\xae\xc0+\xc0')
+[26/Dec/2025 21:54:10] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /
+[26/Dec/2025 21:54:14] "GET / HTTP/1.1" 404 2779
+Not Found: /favicon.ico
+[26/Dec/2025 21:56:09] "GET /favicon.ico HTTP/1.1" 404 2830
+[26/Dec/2025 21:58:38] code 400, message Bad request version ('\xc0#\xc0\xac\xc0\xae\xc0+\xc0')
+[26/Dec/2025 21:58:38] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /
+[26/Dec/2025 21:58:41] "GET / HTTP/1.1" 404 2779
+Not Found: /favicon.ico
+[26/Dec/2025 22:01:09] "GET /favicon.ico HTTP/1.1" 404 2830
+[26/Dec/2025 22:06:08] "GET /accounts/plans/ HTTP/1.1" 200 12511
+[26/Dec/2025 22:06:16] "GET /accounts/transactions/ HTTP/1.1" 200 7332
+[26/Dec/2025 22:06:26] "GET /accounts/dashboard/ HTTP/1.1" 200 21412
+[26/Dec/2025 22:06:42] "GET /accounts/plans/ HTTP/1.1" 200 12511
+Not Found: /http:/httpbin.org/ip
+[26/Dec/2025 22:07:16] "GET http://httpbin.org/ip HTTP/1.1" 404 1859
+[26/Dec/2025 22:40:51] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[26/Dec/2025 22:40:55] "GET /admin/accounts/user/ HTTP/1.1" 200 531884
+[26/Dec/2025 22:41:29] "GET /admin/accounts/user/?p=10 HTTP/1.1" 200 104744
+[26/Dec/2025 22:41:31] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[26/Dec/2025 22:41:42] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[26/Dec/2025 22:42:09] "GET /admin/accounts/user/?p=9 HTTP/1.1" 200 534581
+[26/Dec/2025 22:44:12] "GET /accounts/network/?user_id=3040 HTTP/1.1" 200 22276
+[26/Dec/2025 22:44:16] "GET /accounts/network/?user_id=3033 HTTP/1.1" 200 22269
+[26/Dec/2025 22:44:18] "GET /accounts/network/?user_id=3032 HTTP/1.1" 200 21789
+[26/Dec/2025 22:44:22] "GET /accounts/transactions/ HTTP/1.1" 200 7332
+[26/Dec/2025 22:44:25] "GET /accounts/network/ HTTP/1.1" 200 21789
+[26/Dec/2025 22:44:42] "GET /admin/accounts/user/binary-tree/User_816/ HTTP/1.1" 200 53253
+[26/Dec/2025 22:44:47] "GET /admin/accounts/user/binary-tree/User_530/ HTTP/1.1" 200 54718
+[26/Dec/2025 22:44:51] "GET /admin/accounts/user/binary-tree/User_276/ HTTP/1.1" 200 57379
+[26/Dec/2025 22:44:55] "GET /admin/wallet/transaction/ HTTP/1.1" 200 76076
+[26/Dec/2025 22:44:55] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[26/Dec/2025 22:45:06] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[26/Dec/2025 22:45:06] "GET /admin/investments/investmentplan/ HTTP/1.1" 200 82620
+[26/Dec/2025 22:45:15] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[26/Dec/2025 22:45:18] "GET /admin/investments/userinvestment/ HTTP/1.1" 200 616062
+[26/Dec/2025 22:45:31] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[26/Dec/2025 22:45:35] "GET /admin/accounts/user/ HTTP/1.1" 200 531884
+[26/Dec/2025 22:45:46] "GET /admin/accounts/user/?q=900 HTTP/1.1" 200 88454
+[26/Dec/2025 22:45:46] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[26/Dec/2025 22:46:45] "GET /accounts/network/?user_id=3035 HTTP/1.1" 200 22270
+[26/Dec/2025 22:46:51] "GET /accounts/plans/ HTTP/1.1" 200 12516
+[26/Dec/2025 22:47:00] "GET /accounts/dashboard/ HTTP/1.1" 200 21412
+[26/Dec/2025 22:47:04] "GET /accounts/transactions/ HTTP/1.1" 200 7332
+[26/Dec/2025 22:47:47] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[26/Dec/2025 22:47:54] "GET /admin/investments/userinvestment/?q=user_1 HTTP/1.1" 200 618536
+[26/Dec/2025 22:48:17] "GET /admin/investments/userinvestment/?p=2&q=user_1 HTTP/1.1" 200 133024
+[26/Dec/2025 22:48:17] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[26/Dec/2025 22:49:46] "GET /admin/core/transaction/ HTTP/1.1" 200 64596
+[26/Dec/2025 22:49:47] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[26/Dec/2025 22:57:38] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[26/Dec/2025 22:57:39] "GET /admin/accounts/user/ HTTP/1.1" 200 531884
+/home/invest/my_lottery_project/apps/accounts/services/plan_service.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+December 26, 2025 - 21:26:17
+Django version 6.0, using settings 'config.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+December 26, 2025 - 23:01:31
+Django version 6.0, using settings 'config.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/

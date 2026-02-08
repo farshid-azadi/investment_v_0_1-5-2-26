@@ -1,0 +1,167 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block content %}
+<style>
+    .tree-scroll-wrapper {
+        background-color: #0f172a; /* Dark background matches your theme */
+        padding: 40px 20px;
+        border-radius: 12px;
+        overflow-x: auto;
+        text-align: center;
+        direction: ltr;
+        min-height: 800px;
+    }
+    .tree { display: inline-flex; justify-content: center; min-width: 100%; padding-bottom: 50px; }
+    .tree ul {
+        padding-top: 20px; position: relative; display: flex; justify-content: center; margin: 0; padding-left: 0;
+    }
+    .tree li {
+        float: left; text-align: center; list-style-type: none; position: relative; padding: 20px 4px 0 4px;
+    }
+    /* Connectors */
+    .tree li::before, .tree li::after {
+        content: ''; position: absolute; top: 0; right: 50%; border-top: 2px solid #475569; width: 50%; height: 20px;
+    }
+    .tree li::after { right: auto; left: 50%; border-left: 2px solid #475569; }
+    .tree li:only-child::after, .tree li:only-child::before { display: none; }
+    .tree li:only-child { padding-top: 0; }
+    .tree li:first-child::before, .tree li:last-child::after { border: 0 none; }
+    .tree li:last-child::before { border-right: 2px solid #475569; border-radius: 0 5px 0 0; }
+    .tree li:first-child::after { border-radius: 5px 0 0 0; }
+    .tree ul ul::before {
+        content: ''; position: absolute; top: 0; left: 50%; border-left: 2px solid #475569; width: 0; height: 20px;
+    }
+
+    /* CARD STYLES */
+    .node-card {
+        background-color: #1e293b; border: 1px solid #334155; display: inline-block;
+        padding: 6px; border-radius: 8px; text-decoration: none; color: #f1f5f9;
+        font-family: sans-serif; font-size: 10px; min-width: 110px; 
+        position: relative; z-index: 10; transition: all 0.3s;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+    .node-card:hover { background-color: #334155; border-color: #6366f1; transform: translateY(-3px); z-index: 20; }
+
+    .avatar {
+        width: 24px; height: 24px; border-radius: 50%; background-color: #475569;
+        display: flex; align-items: center; justify-content: center; margin: 0 auto 4px auto;
+        font-weight: bold; font-size: 10px; border: 2px solid rgba(255,255,255,0.1);
+    }
+    .root-node .avatar { background-color: #2563eb; width: 32px; height: 32px; font-size: 14px; }
+    .left-node .avatar { background-color: #dc2626; }
+    .right-node .avatar { background-color: #16a34a; }
+    
+    .empty-node { opacity: 0.4; border: 1px dashed #64748b; min-width: 80px; padding: 5px; background: transparent;}
+    .empty-node .avatar { background: transparent; border: 1px dashed #64748b; color: #64748b; }
+
+    .user-name { display: block; font-weight: bold; margin-bottom: 2px; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; margin-left: auto; margin-right: auto;}
+    
+    /* Volume Bar */
+    .vol-row { background: #334155; border-radius: 3px; padding: 1px 4px; margin-bottom: 2px; color: #cbd5e1; font-size: 9px; display: flex; justify-content: space-between; }
+    
+    /* Income Bars */
+    .income-row { display: flex; flex-direction: column; gap: 1px; }
+    .income-badge { font-size: 9px; padding: 1px 4px; border-radius: 2px; display: flex; justify-content: space-between; }
+    .income-bin { background: rgba(59, 130, 246, 0.2); color: #93c5fd; }
+    .income-ref { background: rgba(234, 179, 8, 0.2); color: #fde047; }
+    .income-tot { background: rgba(16, 185, 129, 0.2); color: #6ee7b7; border-top: 1px solid #334155; margin-top:1px;}
+
+    .back-btn { background: #334155; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; margin-bottom: 10px; display: inline-block;}
+</style>
+
+<div style="text-align:center; margin-bottom:20px;">
+    {% if root_user.binary_parent %}
+        <a href="{% url 'admin:binary_tree_view_user' root_user.binary_parent.username %}" class="back-btn">⬆️ بازگشت به {{ root_user.binary_parent.username }}</a>
+    {% endif %}
+    <h3 style="color:white; margin:0;">کاربر: {{ root_user.username }}</h3>
+</div>
+
+<div class="tree-scroll-wrapper">
+    <div class="tree">
+        <ul>
+            <!-- ROOT -->
+            <li>
+                {% include "admin/includes/tree_node_card.html" with node=root_user role="root" %}
+                
+                <!-- Level 1 -->
+                <ul>
+                    <!-- Left Branch -->
+                    <li>
+                        {% if l_child %}
+                            {% include "admin/includes/tree_node_card.html" with node=l_child role="left" %}
+                            
+                            <!-- Level 2 Left -->
+                            <ul>
+                                <li>
+                                    {% if ll_child %}
+                                        {% include "admin/includes/tree_node_card.html" with node=ll_child role="left" %}
+                                        <!-- Level 3 L-L -->
+                                        <ul>
+                                            <li>{% if lll_child %}{% include "admin/includes/tree_node_card.html" with node=lll_child role="left" %}{% else %}<div class="node-card empty-node"><div class="avatar">x</div></div>{% endif %}</li>
+                                            <li>{% if llr_child %}{% include "admin/includes/tree_node_card.html" with node=llr_child role="right" %}{% else %}<div class="node-card empty-node"><div class="avatar">x</div></div>{% endif %}</li>
+                                        </ul>
+                                    {% else %}
+                                        <div class="node-card empty-node"><div class="avatar">+</div></div>
+                                    {% endif %}
+                                </li>
+                                <li>
+                                    {% if lr_child %}
+                                        {% include "admin/includes/tree_node_card.html" with node=lr_child role="right" %}
+                                        <!-- Level 3 L-R -->
+                                        <ul>
+                                            <li>{% if lrl_child %}{% include "admin/includes/tree_node_card.html" with node=lrl_child role="left" %}{% else %}<div class="node-card empty-node"><div class="avatar">x</div></div>{% endif %}</li>
+                                            <li>{% if lrr_child %}{% include "admin/includes/tree_node_card.html" with node=lrr_child role="right" %}{% else %}<div class="node-card empty-node"><div class="avatar">x</div></div>{% endif %}</li>
+                                        </ul>
+                                    {% else %}
+                                        <div class="node-card empty-node"><div class="avatar">+</div></div>
+                                    {% endif %}
+                                </li>
+                            </ul>
+                        {% else %}
+                            <div class="node-card empty-node"><div class="avatar">+</div></div>
+                        {% endif %}
+                    </li>
+
+                    <!-- Right Branch -->
+                    <li>
+                        {% if r_child %}
+                            {% include "admin/includes/tree_node_card.html" with node=r_child role="right" %}
+                            
+                            <!-- Level 2 Right -->
+                            <ul>
+                                <li>
+                                    {% if rl_child %}
+                                        {% include "admin/includes/tree_node_card.html" with node=rl_child role="left" %}
+                                        <!-- Level 3 R-L -->
+                                        <ul>
+                                            <li>{% if rll_child %}{% include "admin/includes/tree_node_card.html" with node=rll_child role="left" %}{% else %}<div class="node-card empty-node"><div class="avatar">x</div></div>{% endif %}</li>
+                                            <li>{% if rlr_child %}{% include "admin/includes/tree_node_card.html" with node=rlr_child role="right" %}{% else %}<div class="node-card empty-node"><div class="avatar">x</div></div>{% endif %}</li>
+                                        </ul>
+                                    {% else %}
+                                        <div class="node-card empty-node"><div class="avatar">+</div></div>
+                                    {% endif %}
+                                </li>
+                                <li>
+                                    {% if rr_child %}
+                                        {% include "admin/includes/tree_node_card.html" with node=rr_child role="right" %}
+                                        <!-- Level 3 R-R -->
+                                        <ul>
+                                            <li>{% if rrl_child %}{% include "admin/includes/tree_node_card.html" with node=rrl_child role="left" %}{% else %}<div class="node-card empty-node"><div class="avatar">x</div></div>{% endif %}</li>
+                                            <li>{% if rrr_child %}{% include "admin/includes/tree_node_card.html" with node=rrr_child role="right" %}{% else %}<div class="node-card empty-node"><div class="avatar">x</div></div>{% endif %}</li>
+                                        </ul>
+                                    {% else %}
+                                        <div class="node-card empty-node"><div class="avatar">+</div></div>
+                                    {% endif %}
+                                </li>
+                            </ul>
+                        {% else %}
+                            <div class="node-card empty-node"><div class="avatar">+</div></div>
+                        {% endif %}
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

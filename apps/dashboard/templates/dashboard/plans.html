@@ -1,0 +1,304 @@
+{% extends 'base_dashboard.html' %}
+{% load static %}
+
+{% block title %}Investment Plans{% endblock %}
+
+{% block content %}
+<div class="container-fluid py-4">
+    <!-- Header Section -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body">
+                    <h2 class="mb-0 text-primary">
+                        <i class="fas fa-chart-line me-2"></i>
+                        Investment Plans
+                    </h2>
+                    <p class="text-muted mb-0 mt-2">
+                        Choose the best plan for your investment goals
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wallet Balance Cards -->
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="card border-0 shadow-sm bg-gradient-primary text-white">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="text-white-50 mb-1">💵 Cash Balance</h6>
+                            <h3 class="mb-0">${{ user.cash_balance|floatformat:2 }}</h3>
+                        </div>
+                        <div class="fs-1 opacity-50">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card border-0 shadow-sm bg-gradient-success text-white">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="text-white-50 mb-1">🔄 Reinvest Balance</h6>
+                            <h3 class="mb-0">${{ user.reinvest_balance|floatformat:2 }}</h3>
+                        </div>
+                        <div class="fs-1 opacity-50">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Investment Plans -->
+    <div class="row g-4">
+        {% for plan in plans %}
+        <div class="col-lg-4 col-md-6">
+            <div class="card border-0 shadow-sm h-100 hover-lift">
+                <div class="card-header bg-gradient-primary text-white text-center py-3">
+                    <h4 class="mb-0">{{ plan.name }}</h4>
+                </div>
+                <div class="card-body">
+                    <!-- Plan Details -->
+                    <div class="text-center mb-4">
+                        <h2 class="text-primary mb-0">{{ plan.daily_interest_rate }}%</h2>
+                        <p class="text-muted small">Daily Interest</p>
+                    </div>
+
+                    <!-- Features List -->
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-3">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <strong>Min:</strong> ${{ plan.min_amount|floatformat:2 }}
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <strong>Max:</strong> ${{ plan.max_amount|floatformat:2 }}
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <strong>Duration:</strong> {{ plan.duration_days }} Days
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <strong>Total ROI:</strong> {{ plan.total_return_percent }}%
+                        </li>
+                        {% if plan.capital_back %}
+                        <li class="mb-3">
+                            <i class="fas fa-shield-alt text-info me-2"></i>
+                            <strong>Capital Back:</strong> Yes
+                        </li>
+                        {% endif %}
+                    </ul>
+
+                    <!-- Buy Button -->
+                    <button 
+                        type="button" 
+                        class="btn btn-primary w-100 btn-lg"
+                        data-bs-toggle="modal" 
+                        data-bs-target="#buyPlanModal"
+                        data-plan-id="{{ plan.id }}"
+                        data-plan-name="{{ plan.name }}"
+                        data-plan-min="{{ plan.min_amount }}"
+                        data-plan-max="{{ plan.max_amount }}"
+                        data-plan-rate="{{ plan.daily_interest_rate }}"
+                    >
+                        <i class="fas fa-rocket me-2"></i>
+                        Invest Now
+                    </button>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12">
+            <div class="alert alert-warning text-center">
+                <i class="fas fa-exclamation-triangle me-2"></i>
+                No active investment plans available at the moment.
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Buy Plan Modal -->
+<div class="modal fade" id="buyPlanModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title">
+                    <i class="fas fa-shopping-cart me-2"></i>
+                    Buy Investment Plan
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <form method="POST" action="{% url 'dashboard:buy_plan' %}" id="buyPlanForm">
+                {% csrf_token %}
+                <input type="hidden" name="plan_id" id="modalPlanId">
+                
+                <div class="modal-body">
+                    <!-- Plan Info Display -->
+                    <div class="alert alert-info mb-4">
+                        <h6 class="mb-2" id="modalPlanName"></h6>
+                        <div class="small">
+                            <strong>Daily Rate:</strong> <span id="modalPlanRate"></span>%<br>
+                            <strong>Range:</strong> $<span id="modalPlanMin"></span> - $<span id="modalPlanMax"></span>
+                        </div>
+                    </div>
+
+                    <!-- Amount Input -->
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Investment Amount ($)</label>
+                        <input 
+                            type="number" 
+                            class="form-control form-control-lg" 
+                            name="amount" 
+                            id="investAmount"
+                            placeholder="Enter amount"
+                            step="0.01"
+                            required
+                        >
+                        <div class="form-text">
+                            Min: $<span id="minAmountText"></span> | Max: $<span id="maxAmountText"></span>
+                        </div>
+                    </div>
+
+                    <!-- Wallet Source Selection -->
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Payment Source</label>
+                        <div class="form-check mb-2">
+                            <input 
+                                class="form-check-input" 
+                                type="radio" 
+                                name="wallet_source" 
+                                id="walletCash" 
+                                value="cash"
+                                checked
+                            >
+                            <label class="form-check-label" for="walletCash">
+                                💵 Cash Balance (${{ user.cash_balance|floatformat:2 }})
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input 
+                                class="form-check-input" 
+                                type="radio" 
+                                name="wallet_source" 
+                                id="walletReinvest" 
+                                value="reinvest"
+                            >
+                            <label class="form-check-label" for="walletReinvest">
+                                🔄 Reinvest Balance (${{ user.reinvest_balance|floatformat:2 }})
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Projected Earnings -->
+                    <div class="card bg-light border-0">
+                        <div class="card-body">
+                            <h6 class="text-muted mb-2">Projected Daily Earning:</h6>
+                            <h4 class="text-success mb-0" id="projectedDaily">$0.00</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Cancel
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-check me-2"></i>
+                        Confirm Investment
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+.bg-gradient-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.bg-gradient-success {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+/* Card Hover Effect */
+.hover-lift {
+    transition: all 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('buyPlanModal');
+    const form = document.getElementById('buyPlanForm');
+    const amountInput = document.getElementById('investAmount');
+    
+    // Populate modal with plan data
+    modal.addEventListener('show.bs.modal', function(event) {
+        const button = event.relatedTarget;
+        
+        const planId = button.getAttribute('data-plan-id');
+        const planName = button.getAttribute('data-plan-name');
+        const planMin = button.getAttribute('data-plan-min');
+        const planMax = button.getAttribute('data-plan-max');
+        const planRate = button.getAttribute('data-plan-rate');
+        
+        document.getElementById('modalPlanId').value = planId;
+        document.getElementById('modalPlanName').textContent = planName;
+        document.getElementById('modalPlanRate').textContent = planRate;
+        document.getElementById('modalPlanMin').textContent = parseFloat(planMin).toFixed(2);
+        document.getElementById('modalPlanMax').textContent = parseFloat(planMax).toFixed(2);
+        document.getElementById('minAmountText').textContent = parseFloat(planMin).toFixed(2);
+        document.getElementById('maxAmountText').textContent = parseFloat(planMax).toFixed(2);
+        
+        // Set input constraints
+        amountInput.min = planMin;
+        amountInput.max = planMax;
+        amountInput.value = '';
+        
+        // Store rate for calculation
+        amountInput.dataset.rate = planRate;
+        
+        updateProjectedEarnings();
+    });
+    
+    // Calculate projected earnings
+    function updateProjectedEarnings() {
+        const amount = parseFloat(amountInput.value) || 0;
+        const rate = parseFloat(amountInput.dataset.rate) || 0;
+        const daily = (amount * rate / 100);
+        
+        document.getElementById('projectedDaily').textContent = '$' + daily.toFixed(2);
+    }
+    
+    amountInput.addEventListener('input', updateProjectedEarnings);
+    
+    // Form validation
+    form.addEventListener('submit', function(e) {
+        const amount = parseFloat(amountInput.value);
+        const min = parseFloat(amountInput.min);
+        const max = parseFloat(amountInput.max);
+        
+        if (amount < min || amount > max) {
+            e.preventDefault();
+            alert(`Amount must be between $${min} and $${max}`);
+            return false;
+        }
+    });
+});
+</script>
+{% endblock %}

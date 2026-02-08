@@ -1,0 +1,83 @@
+{% extends 'base_dashboard.html' %}
+{% block title %}My Team{% endblock %}
+
+{% block content %}
+<h2 style="margin-bottom: 20px; color: var(--text-light);">My Team & Referrals</h2>
+
+<div class="grid-container" style="margin-bottom: 20px;">
+    <!-- کارت خلاصه تعداد نفرات -->
+    <div class="card">
+        <div class="card-header">
+            <h3>Direct Referrals</h3>
+            <i class="fas fa-users" style="color: var(--primary);"></i>
+        </div>
+        <div class="card-body">
+            <h2 style="font-size: 2rem;">{{ referrals.count }}</h2>
+            <p style="color: var(--text-gray);">People joined with your link</p>
+        </div>
+    </div>
+    
+    <!-- کارت لینک دعوت -->
+    <div class="card">
+        <div class="card-header">
+            <h3>Your Referral Link</h3>
+            <i class="fas fa-link"></i>
+        </div>
+        <div class="card-body">
+            <input type="text" value="https://cryptix.com/register?ref={{ request.user.referral_code }}" 
+                   style="width: 100%; background: #1a1a2e; border: 1px solid #333; color: white; padding: 10px; border-radius: 5px;" readonly>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h3>Team Members List</h3>
+    </div>
+    <div class="table-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Join Date</th>
+                    <th>Active Plan</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for member in referrals %}
+                <tr>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <div style="width: 30px; height: 30px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: black; font-weight: bold;">
+                                {{ member.username|slice:":1"|upper }}
+                            </div>
+                            {{ member.username }}
+                        </div>
+                    </td>
+                    <td>{{ member.date_joined|date:"Y-m-d" }}</td>
+                    <td>
+                        {% if member.active_plan %}
+                            <span style="color: var(--primary);">{{ member.active_plan.plan.name }}</span>
+                        {% else %}
+                            <span style="color: var(--text-gray);">No Plan</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if member.is_active %}
+                            <span class="status completed">Active</span>
+                        {% else %}
+                            <span class="status pending">Inactive</span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="4" style="text-align: center;">You haven't invited anyone yet.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

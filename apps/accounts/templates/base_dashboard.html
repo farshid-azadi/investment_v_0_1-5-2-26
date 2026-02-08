@@ -1,0 +1,207 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Dashboard{% endblock %} | Investment Panel</title>
+    
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome (Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-body: #13131f; /* رنگ پس‌زمینه اصلی */
+            --bg-card: #1e1e2d; /* رنگ کارت‌ها */
+            --bg-sidebar: #151521; /* رنگ سایدبار */
+            --text-primary: #ffffff;
+            --text-secondary: #92929f;
+            --accent: #3699ff;
+            --accent-hover: #0073e9;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-primary);
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 260px;
+            height: 100vh;
+            background-color: var(--bg-sidebar);
+            position: fixed;
+            top: 0;
+            left: 0;
+            border-right: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            flex-direction: column;
+            z-index: 50;
+            transition: transform 0.3s ease;
+        }
+
+        .brand {
+            height: 70px;
+            display: flex;
+            align-items: center;
+            padding: 0 24px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: white;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .brand span { color: var(--accent); }
+
+        .menu { flex: 1; padding: 20px 0; overflow-y: auto; }
+        
+        .menu-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 24px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: 0.2s;
+            font-size: 0.95rem;
+            border-left: 3px solid transparent;
+        }
+
+        .menu-item:hover, .menu-item.active {
+            color: white;
+            background: rgba(54, 153, 255, 0.05);
+            border-left-color: var(--accent);
+        }
+        
+        .menu-item i { width: 25px; font-size: 1.1rem; margin-right: 10px; text-align: center; }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 260px;
+            padding: 24px;
+            min-height: 100vh;
+        }
+
+        /* Header (Mobile Toggle & Profile) */
+        .top-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .user-avatar {
+            width: 40px; height: 40px;
+            background: var(--accent);
+            border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; color: white;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .sidebar { transform: translateX(-100%); }
+            .sidebar.open { transform: translateX(0); }
+            .main-content { margin-left: 0; }
+        }
+    </style>
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="brand">
+            <i class="fas fa-cube" style="margin-right: 10px;"></i>
+            Invest<span>Pro</span>
+        </div>
+        
+        <nav class="menu">
+            <div style="padding: 0 24px 10px; font-size: 0.75rem; color: #555; text-transform: uppercase; font-weight: 600;">Menu</div>
+            
+            <!-- ✅ لینک‌های اصلاح شده با Namespace -->
+            <a href="{% url 'dashboard:dashboard' %}" class="menu-item {% if request.resolver_match.url_name == 'dashboard' %}active{% endif %}">
+                <i class="fas fa-home"></i> Dashboard
+            </a>
+            
+            <a href="{% url 'dashboard:plans' %}" class="menu-item {% if request.resolver_match.url_name == 'plans' %}active{% endif %}">
+                <i class="fas fa-layer-group"></i> Investment Plans
+            </a>
+
+            <a href="{% url 'dashboard:network' %}" class="menu-item {% if request.resolver_match.url_name == 'network' %}active{% endif %}">
+                <i class="fas fa-users"></i> My Network
+            </a>
+
+            <a href="{% url 'dashboard:transactions' %}" class="menu-item {% if request.resolver_match.url_name == 'transactions' %}active{% endif %}">
+                <i class="fas fa-history"></i> Transactions
+            </a>
+
+            <div style="margin-top: 20px; padding: 0 24px 10px; font-size: 0.75rem; color: #555; text-transform: uppercase; font-weight: 600;">User</div>
+            
+            <a href="#" class="menu-item">
+                <i class="fas fa-user-cog"></i> Profile Settings
+            </a>
+
+            <!-- ✅ دکمه خروج اصلاح شده (دلیل اصلی خطا) -->
+            <a href="{% url 'accounts:logout' %}" class="menu-item" style="color: #ef4444;">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Top Header -->
+        <div class="top-header">
+            <div style="font-size: 1.2rem; font-weight: 600;">
+                Welcome Back, <span style="color: var(--accent);">{{ user.username }}</span> 👋
+            </div>
+            
+            <div class="user-profile">
+                <div style="text-align: right; display: none; @media(min-width:768px){display:block;}">
+                    <div style="font-size: 0.9rem; font-weight: 600;">{{ user.username }}</div>
+                    <div style="font-size: 0.8rem; color: var(--text-secondary);">Investor</div>
+                </div>
+                <div class="user-avatar">
+                    {{ user.username|make_list|first|upper }}
+                </div>
+            </div>
+        </div>
+
+        <!-- Flash Messages (نمایش پیام‌های موفقیت یا خطا) -->
+        {% if messages %}
+            <div style="margin-bottom: 20px;">
+                {% for message in messages %}
+                    <div style="padding: 10px 15px; border-radius: 8px; margin-bottom: 10px; 
+                        {% if message.tags == 'success' %}background: rgba(38, 166, 154, 0.2); color: #26a69a; border: 1px solid #26a69a;{% endif %}
+                        {% if message.tags == 'error' %}background: rgba(239, 68, 68, 0.2); color: #ef4444; border: 1px solid #ef4444;{% endif %}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <!-- Content Injection -->
+        {% block content %}{% endblock %}
+    </main>
+
+    <script>
+        // اسکریپت ساده برای ریسپانسیو کردن منو در موبایل (اختیاری)
+        // فعلا نیازی نیست مگر اینکه روی موبایل تست کنید
+    </script>
+</body>
+</html>

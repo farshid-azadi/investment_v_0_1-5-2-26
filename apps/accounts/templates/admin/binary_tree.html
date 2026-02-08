@@ -1,0 +1,336 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block title %}{{ title }} - {{ block.super }}{% endblock %}
+
+{% block extrastyle %}
+{{ block.super }}
+<style>
+    .binary-tree {
+        padding: 30px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        direction: ltr;
+    }
+    
+    .tree-header {
+        background: white;
+        padding: 20px;
+        border-radius: 15px;
+        margin-bottom: 30px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+    
+    .tree-header h1 {
+        margin: 0 0 10px 0;
+        color: #667eea;
+        font-size: 28px;
+    }
+    
+    .tree-header .stats {
+        display: flex;
+        gap: 20px;
+        margin-top: 15px;
+    }
+    
+    .stat-box {
+        background: #f8f9fa;
+        padding: 12px 20px;
+        border-radius: 10px;
+        flex: 1;
+    }
+    
+    .stat-box .label {
+        font-size: 12px;
+        color: #666;
+        margin-bottom: 5px;
+    }
+    
+    .stat-box .value {
+        font-size: 20px;
+        font-weight: bold;
+        color: #667eea;
+    }
+    
+    .tree-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+    
+    /* نود (کارت کاربر) */
+    .node {
+        background: white;
+        border-radius: 15px;
+        padding: 15px;
+        min-width: 200px;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        transition: all 0.3s ease;
+        position: relative;
+    }
+    
+    .node:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 50px rgba(0,0,0,0.25);
+    }
+    
+    .node.empty {
+        background: #f8f9fa;
+        border: 2px dashed #dee2e6;
+        min-height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #adb5bd;
+        font-size: 14px;
+    }
+    
+    /* هدر نود */
+    .node-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 12px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #f1f3f5;
+    }
+    
+    .node-username {
+        font-size: 16px;
+        font-weight: bold;
+        color: #495057;
+    }
+    
+    .node-badge {
+        background: #667eea;
+        color: white;
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-size: 11px;
+        font-weight: bold;
+    }
+    
+    .node-badge.active {
+        background: #4CAF50;
+    }
+    
+    /* بدنه نود */
+    .node-body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .node-stat {
+        text-align: center;
+    }
+    
+    .node-stat .label {
+        font-size: 10px;
+        color: #868e96;
+        margin-bottom: 3px;
+    }
+    
+    .node-stat .value {
+        font-size: 14px;
+        font-weight: bold;
+        color: #495057;
+    }
+    
+    .node-stat .value.green {
+        color: #4CAF50;
+    }
+    
+    .node-stat .value.blue {
+        color: #2196F3;
+    }
+    
+    /* حجم‌های باینری */
+    .node-volumes {
+        display: flex;
+        gap: 5px;
+        margin-top: 10px;
+    }
+    
+    .volume-bar {
+        flex: 1;
+        height: 6px;
+        border-radius: 3px;
+    }
+    
+    .volume-bar.left {
+        background: linear-gradient(90deg, #4CAF50, #66BB6A);
+    }
+    
+    .volume-bar.right {
+        background: linear-gradient(90deg, #2196F3, #42A5F5);
+    }
+    
+    /* پلن فعال */
+    .node-plan {
+        margin-top: 10px;
+        padding: 8px;
+        background: #f8f9fa;
+        border-radius: 8px;
+        font-size: 11px;
+    }
+    
+    .node-plan .plan-name {
+        font-weight: bold;
+        color: #667eea;
+        margin-bottom: 3px;
+    }
+    
+    .node-plan .plan-amount {
+        color: #4CAF50;
+        font-weight: bold;
+    }
+    
+    /* اکشن‌ها */
+    .node-actions {
+        display: flex;
+        gap: 5px;
+        margin-top: 12px;
+    }
+    
+    .node-actions a {
+        flex: 1;
+        text-align: center;
+        padding: 6px 10px;
+        border-radius: 6px;
+        font-size: 11px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.2s;
+    }
+    
+    .btn-primary {
+        background: #667eea;
+        color: white;
+    }
+    
+    .btn-primary:hover {
+        background: #5568d3;
+    }
+    
+    .btn-success {
+        background: #4CAF50;
+        color: white;
+    }
+    
+    .btn-success:hover {
+        background: #45a049;
+    }
+    
+    /* سطح‌ها */
+    .level {
+        display: flex;
+        justify-content: center;
+        gap: 80px;
+        position: relative;
+    }
+    
+    .level-1 { gap: 80px; }
+    .level-2 { gap: 40px; }
+    .level-3 { gap: 20px; }
+    
+    /* خطوط اتصال */
+    .node::before {
+        content: '';
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        width: 2px;
+        height: 30px;
+        background: rgba(255,255,255,0.3);
+    }
+    
+    .level > div:first-child .node::after,
+    .level > div:last-child .node::after {
+        content: '';
+        position: absolute;
+        top: -30px;
+        width: 50%;
+        height: 2px;
+        background: rgba(255,255,255,0.3);
+    }
+    
+    .level > div:first-child .node::after {
+        left: 50%;
+    }
+    
+    .level > div:last-child .node::after {
+        right: 50%;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="binary-tree">
+    {% if error %}
+        <div class="tree-header">
+            <h1>⚠️ خطا</h1>
+            <p>{{ error }}</p>
+        </div>
+    {% else %}
+        <!-- هدر درخت -->
+        <div class="tree-header">
+            <h1>🌳 درخت باینری: {{ root_user.username }}</h1>
+            <div class="stats">
+                <div class="stat-box">
+                    <div class="label">حجم چپ</div>
+                    <div class="value" style="color:#4CAF50;">${{ root_user.left_volume|floatformat:0 }}</div>
+                </div>
+                <div class="stat-box">
+                    <div class="label">حجم راست</div>
+                    <div class="value" style="color:#2196F3;">${{ root_user.right_volume|floatformat:0 }}</div>
+                </div>
+                <div class="stat-box">
+                    <div class="label">درآمد باینری</div>
+                    <div class="value">${{ root_user.stat_binary_income|floatformat:2 }}</div>
+                </div>
+                <div class="stat-box">
+                    <div class="label">درآمد رفرال</div>
+                    <div class="value">${{ root_user.stat_referral_income|floatformat:2 }}</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- درخت -->
+        <div class="tree-container">
+            <!-- سطح 0: ریشه -->
+            <div class="level level-0">
+                {% include 'admin/partials/binary_node.html' with user=root_user %}
+            </div>
+            
+            <!-- سطح 1 -->
+            <div class="level level-1">
+                <div>{% include 'admin/partials/binary_node.html' with user=l_child %}</div>
+                <div>{% include 'admin/partials/binary_node.html' with user=r_child %}</div>
+            </div>
+            
+            <!-- سطح 2 -->
+            <div class="level level-2">
+                <div>{% include 'admin/partials/binary_node.html' with user=ll_child %}</div>
+                <div>{% include 'admin/partials/binary_node.html' with user=lr_child %}</div>
+                <div>{% include 'admin/partials/binary_node.html' with user=rl_child %}</div>
+                <div>{% include 'admin/partials/binary_node.html' with user=rr_child %}</div>
+            </div>
+            
+            <!-- سطح 3 -->
+            <div class="level level-3">
+                <div>{% include 'admin/partials/binary_node.html' with user=lll_child %}</div>
+                <div>{% include 'admin/partials/binary_node.html' with user=llr_child %}</div>
+                <div>{% include 'admin/partials/binary_node.html' with user=lrl_child %}</div>
+                <div>{% include 'admin/partials/binary_node.html' with user=lrr_child %}</div>
+                <div>{% include 'admin/partials/binary_node.html' with user=rll_child %}</div>
+                <div>{% include 'admin/partials/binary_node.html' with user=rlr_child %}</div>
+                <div>{% include 'admin/partials/binary_node.html' with user=rrl_child %}</div>
+                <div>{% include 'admin/partials/binary_node.html' with user=rrr_child %}</div>
+            </div>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

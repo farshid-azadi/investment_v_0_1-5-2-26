@@ -1,0 +1,63 @@
+{% load binary_tags %}
+
+{% if user %}
+<div class="node">
+    <!-- 🎯 هدر نود -->
+    <div class="node-header">
+        <div class="node-username">{{ user.username }}</div>
+        {% if user.active_inv %}
+            <div class="node-badge active">فعال</div>
+        {% else %}
+            <div class="node-badge">غیرفعال</div>
+        {% endif %}
+    </div>
+    
+    <!-- 📊 بدنه (آمار باینری و رفرال) -->
+    <div class="node-body">
+        <div class="node-stat">
+            <div class="label">باینری</div>
+            <div class="value green">${{ user.stat_binary_income|floatformat:0 }}</div>
+        </div>
+        <div class="node-stat">
+            <div class="label">رفرال</div>
+            <div class="value blue">${{ user.stat_referral_income|floatformat:0 }}</div>
+        </div>
+        <div class="node-stat">
+            <div class="label">چپ</div>
+            <div class="value green">{% format_volume user.left_volume %}</div>
+        </div>
+        <div class="node-stat">
+            <div class="label">راست</div>
+            <div class="value blue">{% format_volume user.right_volume %}</div>
+        </div>
+    </div>
+    
+    <!-- 📈 نوار حجم (Volume Progress Bar) -->
+    <div class="node-volumes">
+        <div class="volume-bar left" 
+             style="width:{% volume_percentage user.left_volume user.right_volume 'left' %}%">
+        </div>
+        <div class="volume-bar right" 
+             style="width:{% volume_percentage user.left_volume user.right_volume 'right' %}%">
+        </div>
+    </div>
+    
+    <!-- 💰 پلن فعال -->
+    {% if user.active_inv %}
+    <div class="node-plan">
+        <div class="plan-name">{{ user.active_inv.plan.title }}</div>
+        <div class="plan-amount">${{ user.active_inv.amount|floatformat:0 }}</div>
+    </div>
+    {% endif %}
+    
+    <!-- 🔧 دکمه‌های اکشن -->
+    <div class="node-actions">
+        <a href="{% url 'admin:accounts_user_change' user.id %}" class="btn-primary">ویرایش</a>
+        <a href="{% url 'admin:user_dashboard' user.id %}" class="btn-success">آمار</a>
+    </div>
+</div>
+{% else %}
+<div class="node empty">
+    <span>موقعیت خالی</span>
+</div>
+{% endif %}

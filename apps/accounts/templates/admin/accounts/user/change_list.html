@@ -1,0 +1,11 @@
+{% extends "admin/change_list.html" %}
+{% load i18n %}
+
+{% block object-tools-items %}
+    <li>
+        <a href="{% url 'admin:binary_tree_view' %}" class="viewsitelink" style="background-color: #2c3e50; color: white; border-radius: 4px;">
+            🌳 مشاهده درخت باینری
+        </a>
+    </li>
+    {{ block.super }}
+{% endblock %}

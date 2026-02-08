@@ -1,0 +1,306 @@
+<!-- apps/accounts/templates/dashboard/network.html -->
+{% extends 'base_dashboard.html' %}
+{% load static %}
+
+{% block title %}Binary Genealogy Tree{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* Container styling to match the dark theme */
+    .tree-container {
+        text-align: center;
+        overflow-x: auto;
+        padding: 50px 0;
+        min-height: 80vh;
+        background: #0f172a; /* Match body bg */
+    }
+
+    /* Binary Tree CSS Logic */
+    .tree ul {
+        padding-top: 20px; 
+        position: relative;
+        transition: all 0.5s;
+        display: flex;
+        justify-content: center;
+        padding-inline-start: 0; /* Reset default ul padding */
+    }
+
+    .tree li {
+        float: left; text-align: center;
+        list-style-type: none;
+        position: relative;
+        padding: 20px 5px 0 5px;
+        transition: all 0.5s;
+    }
+
+    /* Connecting Lines */
+    .tree li::before, .tree li::after {
+        content: '';
+        position: absolute; top: 0; right: 50%;
+        border-top: 2px solid #ccc;
+        width: 50%; height: 20px;
+    }
+    .tree li::after {
+        right: auto; left: 50%;
+        border-left: 2px solid #ccc;
+    }
+
+    /* Remove connectors from root */
+    .tree li:only-child::after, .tree li:only-child::before {
+        display: none;
+    }
+    .tree li:only-child { padding-top: 0;}
+
+    /* Remove connectors from first and last nodes */
+    .tree li:first-child::before, .tree li:last-child::after {
+        border: 0 none;
+    }
+    .tree li:last-child::before{
+        border-right: 2px solid #ccc;
+        border-radius: 0 5px 0 0;
+    }
+    .tree li:first-child::after{
+        border-radius: 5px 0 0 0;
+    }
+
+    /* Connector down to the node */
+    .tree ul ul::before{
+        content: '';
+        position: absolute; top: 0; left: 50%;
+        border-left: 2px solid #ccc;
+        width: 0; height: 20px;
+    }
+
+    /* THE NODE CARD DESIGN */
+    .node-card {
+        background: linear-gradient(145deg, #1e293b, #0f172a);
+        border: 1px solid rgba(255,255,255,0.1);
+        padding: 15px;
+        border-radius: 12px;
+        display: inline-block;
+        width: 160px;
+        text-decoration: none;
+        color: #fff;
+        transition: all 0.3s;
+        position: relative;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+
+    .node-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(99, 102, 241, 0.2);
+        border-color: #6366f1;
+        z-index: 10;
+    }
+
+    .node-img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin: 0 auto 10px;
+        background: #334155;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 1.2rem;
+        border: 2px solid #6366f1;
+    }
+
+    .node-user {
+        font-weight: bold;
+        font-size: 0.9rem;
+        display: block;
+        margin-bottom: 5px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .node-stats {
+        font-size: 0.7rem;
+        color: #94a3b8;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5px;
+        background: rgba(0,0,0,0.2);
+        padding: 4px;
+        border-radius: 4px;
+    }
+
+    /* Empty Slot Style */
+    .node-empty {
+        border: 2px dashed #475569;
+        background: transparent;
+        color: #64748b;
+        cursor: default;
+    }
+    .node-empty:hover {
+        transform: none;
+        box-shadow: none;
+        border-color: #475569;
+    }
+
+    /* Search/Back Bar */
+    .control-bar {
+        background: #1e293b;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .back-btn {
+        background: #6366f1;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 6px;
+        text-decoration: none;
+    }
+    .back-btn:hover { background: #4f46e5; color: white; }
+
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="control-bar">
+    <div>
+        <h4 class="m-0">Binary Tree</h4>
+        <small class="text-muted">Viewing tree for: <strong>{{ current_user.username }}</strong></small>
+    </div>
+    
+    <div>
+        {% if current_user != request.user %}
+            <a href="?user_id={{ current_user.binary_parent.id|default:request.user.id }}" class="back-btn">
+                <i class="fas fa-arrow-up"></i> One Level Up
+            </a>
+            <a href="{% url 'dashboard:network' %}" class="btn btn-outline-secondary btn-sm ms-2">
+                Root
+            </a>
+        {% endif %}
+    </div>
+</div>
+
+<div class="tree-container">
+    <div class="tree">
+        <ul>
+            <!-- Root User (Level 1) -->
+            <li>
+                <a href="#" class="node-card">
+                    <div class="node-img">{{ current_user.username|make_list|first|upper }}</div>
+                    <span class="node-user">{{ current_user.username }}</span>
+                    <div class="node-stats">
+                        <span>L: ${{ current_user.left_volume|floatformat:0 }}</span>
+                        <span>R: ${{ current_user.right_volume|floatformat:0 }}</span>
+                    </div>
+                </a>
+
+                <!-- Level 2 -->
+                <ul>
+                    <!-- LEFT LEG -->
+                    <li>
+                        {% if left_child %}
+                            <a href="?user_id={{ left_child.id }}" class="node-card" title="Click to view downline">
+                                <div class="node-img">{{ left_child.username|make_list|first|upper }}</div>
+                                <span class="node-user">{{ left_child.username }}</span>
+                                <div class="node-stats">
+                                    <span>L: ${{ left_child.left_volume|floatformat:0 }}</span>
+                                    <span>R: ${{ left_child.right_volume|floatformat:0 }}</span>
+                                </div>
+                            </a>
+                            
+                            <!-- Level 3 (Left Child's Children) -->
+                            <ul>
+                                <li>
+                                    {% if left_child_left %}
+                                        <a href="?user_id={{ left_child_left.id }}" class="node-card">
+                                            <div class="node-img">{{ left_child_left.username|make_list|first|upper }}</div>
+                                            <span class="node-user">{{ left_child_left.username }}</span>
+                                        </a>
+                                    {% else %}
+                                        <div class="node-card node-empty">
+                                            <div class="node-img" style="border:none; background:transparent;"><i class="fas fa-plus"></i></div>
+                                            <span class="node-user">Left Empty</span>
+                                        </div>
+                                    {% endif %}
+                                </li>
+                                <li>
+                                    {% if left_child_right %}
+                                        <a href="?user_id={{ left_child_right.id }}" class="node-card">
+                                            <div class="node-img">{{ left_child_right.username|make_list|first|upper }}</div>
+                                            <span class="node-user">{{ left_child_right.username }}</span>
+                                        </a>
+                                    {% else %}
+                                        <div class="node-card node-empty">
+                                            <div class="node-img" style="border:none; background:transparent;"><i class="fas fa-plus"></i></div>
+                                            <span class="node-user">Right Empty</span>
+                                        </div>
+                                    {% endif %}
+                                </li>
+                            </ul>
+
+                        {% else %}
+                            <div class="node-card node-empty">
+                                <div class="node-img" style="border:none; background:transparent;"><i class="fas fa-user-plus"></i></div>
+                                <span class="node-user">Empty (L)</span>
+                            </div>
+                        {% endif %}
+                    </li>
+
+                    <!-- RIGHT LEG -->
+                    <li>
+                        {% if right_child %}
+                            <a href="?user_id={{ right_child.id }}" class="node-card" title="Click to view downline">
+                                <div class="node-img">{{ right_child.username|make_list|first|upper }}</div>
+                                <span class="node-user">{{ right_child.username }}</span>
+                                <div class="node-stats">
+                                    <span>L: ${{ right_child.left_volume|floatformat:0 }}</span>
+                                    <span>R: ${{ right_child.right_volume|floatformat:0 }}</span>
+                                </div>
+                            </a>
+
+                            <!-- Level 3 (Right Child's Children) -->
+                            <ul>
+                                <li>
+                                    {% if right_child_left %}
+                                        <a href="?user_id={{ right_child_left.id }}" class="node-card">
+                                            <div class="node-img">{{ right_child_left.username|make_list|first|upper }}</div>
+                                            <span class="node-user">{{ right_child_left.username }}</span>
+                                        </a>
+                                    {% else %}
+                                        <div class="node-card node-empty">
+                                            <div class="node-img" style="border:none; background:transparent;"><i class="fas fa-plus"></i></div>
+                                            <span class="node-user">Left Empty</span>
+                                        </div>
+                                    {% endif %}
+                                </li>
+                                <li>
+                                    {% if right_child_right %}
+                                        <a href="?user_id={{ right_child_right.id }}" class="node-card">
+                                            <div class="node-img">{{ right_child_right.username|make_list|first|upper }}</div>
+                                            <span class="node-user">{{ right_child_right.username }}</span>
+                                        </a>
+                                    {% else %}
+                                        <div class="node-card node-empty">
+                                            <div class="node-img" style="border:none; background:transparent;"><i class="fas fa-plus"></i></div>
+                                            <span class="node-user">Right Empty</span>
+                                        </div>
+                                    {% endif %}
+                                </li>
+                            </ul>
+
+                        {% else %}
+                            <div class="node-card node-empty">
+                                <div class="node-img" style="border:none; background:transparent;"><i class="fas fa-user-plus"></i></div>
+                                <span class="node-user">Empty (R)</span>
+                            </div>
+                        {% endif %}
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

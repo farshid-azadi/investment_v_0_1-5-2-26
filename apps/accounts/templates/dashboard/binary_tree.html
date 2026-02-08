@@ -1,0 +1,144 @@
+{% extends 'base_dashboard.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+    
+    <!-- Header Section -->
+    <div class="flex justify-between items-center mb-8 bg-slate-800 p-4 rounded-lg border border-slate-700">
+        <div>
+            <h1 class="text-2xl font-bold text-white">شبکه باینری من</h1>
+            <p class="text-slate-400 text-sm">مشاهده ساختار درختی برای: <span class="text-indigo-400 font-bold">{{ root_user.username }}</span></p>
+        </div>
+        
+        <div class="flex gap-2">
+            {% if root_user != request.user and root_user.binary_parent %}
+                <a href="?user_id={{ root_user.binary_parent.id }}" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg transition text-sm flex items-center">
+                    <i class="fas fa-arrow-up mr-2"></i> یک سطح بالاتر
+                </a>
+            {% endif %}
+            
+            {% if root_user != request.user %}
+                <a href="{% url 'dashboard:network' %}" class="bg-slate-600 hover:bg-slate-700 text-white px-4 py-2 rounded-lg transition text-sm">
+                    ریشه (خودم)
+                </a>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Tree Container -->
+    <div class="overflow-x-auto pb-10">
+        <div class="tree-wrapper min-w-[800px] flex justify-center">
+            
+            <div class="tree">
+                <ul>
+                    <!-- Level 1: Root -->
+                    <li>
+                        {% include "dashboard/includes/user_node.html" with node=root_user is_root=True %}
+                        
+                        <ul>
+                            <!-- Level 2: Left Side -->
+                            <li>
+                                {% include "dashboard/includes/user_node.html" with node=l2_left position="Left" parent=root_user side="left" %}
+                                
+                                <ul>
+                                    <!-- Level 3: Left-Left -->
+                                    <li>
+                                        {% include "dashboard/includes/user_node.html" with node=l3_ll position="Left" parent=l2_left side="left" %}
+                                    </li>
+                                    <!-- Level 3: Left-Right -->
+                                    <li>
+                                        {% include "dashboard/includes/user_node.html" with node=l3_lr position="Right" parent=l2_left side="right" %}
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <!-- Level 2: Right Side -->
+                            <li>
+                                {% include "dashboard/includes/user_node.html" with node=l2_right position="Right" parent=root_user side="right" %}
+                                
+                                <ul>
+                                    <!-- Level 3: Right-Left -->
+                                    <li>
+                                        {% include "dashboard/includes/user_node.html" with node=l3_rl position="Left" parent=l2_right side="left" %}
+                                    </li>
+                                    <!-- Level 3: Right-Right -->
+                                    <li>
+                                        {% include "dashboard/includes/user_node.html" with node=l3_rr position="Right" parent=l2_right side="right" %}
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<style>
+/* CSS Tree Logic for Connectors */
+.tree ul {
+	padding-top: 20px; position: relative;
+	transition: all 0.5s;
+    display: flex;
+    justify-content: center;
+}
+
+.tree li {
+	float: left; text-align: center;
+	list-style-type: none;
+	position: relative;
+	padding: 20px 5px 0 5px;
+	transition: all 0.5s;
+}
+
+/* Connectors (Lines) */
+.tree li::before, .tree li::after{
+	content: '';
+	position: absolute; top: 0; right: 50%;
+	border-top: 2px solid #475569; /* Slate-600 */
+	width: 50%; height: 20px;
+}
+.tree li::after{
+	right: auto; left: 50%;
+	border-left: 2px solid #475569; /* Slate-600 */
+}
+
+/* Remove connectors from the only child */
+.tree li:only-child::after, .tree li:only-child::before {
+	display: none;
+}
+.tree li:only-child{ padding-top: 0;}
+
+/* Remove left connector from first child and right connector from last child */
+.tree li:first-child::before, .tree li:last-child::after{
+	border: 0 none;
+}
+
+/* Adding back the vertical connector to the last nodes */
+.tree li:last-child::before{
+	border-right: 2px solid #475569; /* Slate-600 */
+	border-radius: 0 5px 0 0;
+}
+.tree li:first-child::after{
+	border-radius: 5px 0 0 0;
+}
+
+/* Time to add downward connectors from parents */
+.tree ul ul::before{
+	content: '';
+	position: absolute; top: 0; left: 50%;
+	border-left: 2px solid #475569; /* Slate-600 */
+	width: 0; height: 20px;
+}
+
+/* Card Styles Hover Effects */
+.user-card-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    border-color: #6366f1; /* Indigo-500 */
+}
+</style>
+{% endblock %}

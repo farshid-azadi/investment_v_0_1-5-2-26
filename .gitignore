@@ -1,0 +1,24 @@
+# Environments
+# .env
+# .env.*
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+# .env/
+# IDEs and editors
+.vscode/
+.idea/
+#sqlite database files
+*.sqlite3
+# Logs
+logs/
+*.log
+# OS files
+.DS_Store
+Thumbs.db
+# Temporary files
+tmp/
+temp/
+*.tmp   

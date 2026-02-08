@@ -1,0 +1,289 @@
+<!-- updatet at 17-10-1404 and 44 lines extended to 288 lines  -->
+ 
+{% extends 'base_dashboard.html' %}
+{% load humanize %}
+{% block title %}Investment Plans{% endblock %}
+
+{% block content %}
+<div class="container-fluid px-4 py-5">
+    <!-- Header -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2 class="h3 mb-3 text-gray-800">💎 Investment Plans</h2>
+            <p class="text-muted">Choose your preferred investment plan and start earning daily returns</p>
+        </div>
+    </div>
+
+    <!-- پیام‌های سیستم -->
+    {% if messages %}
+    <div class="row mb-4">
+        <div class="col-12">
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                <strong>
+                    {% if message.tags == 'success' %}✅{% elif message.tags == 'error' %}❌{% else %}ℹ️{% endif %}
+                </strong>
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- نمایش موجودی کاربر -->
+    <div class="row mb-4">
+        <div class="col-md-6 mb-3">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                💰 Cash Balance
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                ${{ request.user.cash_balance|floatformat:2|intcomma }}
+                            </div>
+                            <small class="text-muted">Available for investment & withdrawal</small>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                🔄 Reinvest Balance
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                ${{ request.user.reinvest_balance|floatformat:2|intcomma }}
+                            </div>
+                            <small class="text-muted">From your earnings (investment only)</small>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-sync-alt fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- لیست پلن‌ها -->
+    <div class="row">
+        {% for plan in plans %}
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-info shadow h-100 plan-card">
+                <div class="card-header bg-gradient-primary text-white">
+                    <h5 class="m-0 font-weight-bold">{{ plan.name }}</h5>
+                    <small>{{ plan.duration_days }} Days Investment Period</small>
+                </div>
+                
+                <div class="card-body">
+                    <!-- نمایش ROI -->
+                    <div class="text-center mb-3">
+                        <span class="badge badge-success p-3" style="font-size: 1.5rem;">
+                            {{ plan.daily_interest_rate }}% Daily
+                        </span>
+                    </div>
+
+                    <!-- جزئیات پلن -->
+                    <ul class="list-unstyled text-muted mb-3">
+                        <li class="mb-2">
+                            <i class="fas fa-check-circle text-success mr-2"></i>
+                            <strong>Min Investment:</strong> ${{ plan.min_amount|intcomma }}
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-check-circle text-success mr-2"></i>
+                            <strong>Max Investment:</strong> ${{ plan.max_amount|intcomma }}
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-chart-line text-info mr-2"></i>
+                            <strong>Total ROI:</strong> ~{{ plan.daily_interest_rate|floatformat:1 }}% × {{ plan.duration_days }} days
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-users text-warning mr-2"></i>
+                            <strong>Binary Bonus:</strong> Available
+                        </li>
+                    </ul>
+
+                    <!-- دکمه خرید -->
+                    <button type="button" 
+                            class="btn btn-primary btn-block btn-invest" 
+                            data-plan-id="{{ plan.id }}"
+                            data-plan-name="{{ plan.name }}"
+                            data-min="{{ plan.min_amount }}"
+                            data-max="{{ plan.max_amount }}"
+                            data-bs-toggle="modal" 
+                            data-bs-target="#investModal">
+                        <i class="fas fa-rocket mr-1"></i> Invest Now
+                    </button>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12">
+            <div class="alert alert-warning text-center">
+                <i class="fas fa-exclamation-triangle fa-3x mb-3"></i>
+                <h4>Coming Soon</h4>
+                <p class="mb-0">Investment plans are being updated. Please check back later.</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Modal خرید پلن -->
+<div class="modal fade" id="investModal" tabindex="-1" aria-labelledby="investModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="investModalLabel">
+                    <i class="fas fa-money-bill-wave mr-2"></i> Make Investment
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            
+            <form method="post" action="{% url 'dashboard:buy_plan' %}" id="investForm">
+                {% csrf_token %}
+                <div class="modal-body">
+                    <input type="hidden" name="plan_id" id="modal-plan-id">
+                    
+                    <!-- نمایش اطلاعات پلن -->
+                    <div class="alert alert-info">
+                        <h6 class="alert-heading"><strong id="modal-plan-name">Plan Name</strong></h6>
+                        <hr>
+                        <p class="mb-0">
+                            <small>
+                                <i class="fas fa-info-circle mr-1"></i>
+                                Investment Range: $<span id="modal-min">0</span> - $<span id="modal-max">0</span>
+                            </small>
+                        </p>
+                    </div>
+
+                    <!-- ورودی مبلغ -->
+                    <div class="mb-3">
+                        <label for="invest-amount" class="form-label">
+                            <i class="fas fa-dollar-sign text-success mr-1"></i> Investment Amount (USD)
+                        </label>
+                        <input type="number" 
+                               class="form-control form-control-lg" 
+                               name="amount" 
+                               id="invest-amount"
+                               placeholder="Enter investment amount" 
+                               required
+                               min="10"
+                               step="0.01">
+                        <small class="form-text text-muted">
+                            Minimum: $<span id="modal-min-hint">10</span>
+                        </small>
+                    </div>
+
+                    <!-- انتخاب منبع پرداخت -->
+                    <div class="mb-3">
+                        <label for="wallet-source" class="form-label">
+                            <i class="fas fa-wallet text-primary mr-1"></i> Payment Source
+                        </label>
+                        <select class="form-select form-select-lg" name="wallet_source" id="wallet-source" required>
+                            <option value="cash">
+                                💰 Cash Balance (${{ request.user.cash_balance|floatformat:2|intcomma }})
+                            </option>
+                            <option value="reinvest">
+                                🔄 Reinvest Balance (${{ request.user.reinvest_balance|floatformat:2|intcomma }})
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        <i class="fas fa-times mr-1"></i> Cancel
+                    </button>
+                    <button type="submit" class="btn btn-success">
+                        <i class="fas fa-check-circle mr-1"></i> Confirm Investment
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- استایل‌های سفارشی -->
+<style>
+.plan-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plan-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
+}
+
+.bg-gradient-primary {
+    background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
+}
+
+.border-left-primary {
+    border-left: 0.25rem solid #4e73df !important;
+}
+
+.border-left-success {
+    border-left: 0.25rem solid #1cc88a !important;
+}
+
+.border-left-info {
+    border-left: 0.25rem solid #36b9cc !important;
+}
+</style>
+
+<!-- اسکریپت انتقال داده به Modal -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // انتقال اطلاعات پلن به Modal
+    const investButtons = document.querySelectorAll('.btn-invest');
+    
+    investButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const planId = this.dataset.planId;
+            const planName = this.dataset.planName;
+            const minAmount = this.dataset.min;
+            const maxAmount = this.dataset.max;
+
+            // تنظیم مقادیر در Modal
+            document.getElementById('modal-plan-id').value = planId;
+            document.getElementById('modal-plan-name').textContent = planName;
+            document.getElementById('modal-min').textContent = parseFloat(minAmount).toLocaleString();
+            document.getElementById('modal-max').textContent = parseFloat(maxAmount).toLocaleString();
+            document.getElementById('modal-min-hint').textContent = parseFloat(minAmount).toLocaleString();
+            
+            // تنظیم محدودیت‌های input
+            const amountInput = document.getElementById('invest-amount');
+            amountInput.min = minAmount;
+            amountInput.max = maxAmount;
+            amountInput.value = ''; // پاک کردن مقدار قبلی
+        });
+    });
+
+    // اعتبارسنجی فرم قبل از ارسال
+    const investForm = document.getElementById('investForm');
+    investForm.addEventListener('submit', function(e) {
+        const amount = parseFloat(document.getElementById('invest-amount').value);
+        const minAmount = parseFloat(document.getElementById('invest-amount').min);
+        const maxAmount = parseFloat(document.getElementById('invest-amount').max);
+
+        if (amount < minAmount || amount > maxAmount) {
+            e.preventDefault();
+            alert(`❌ Investment amount must be between $${minAmount.toLocaleString()} and $${maxAmount.toLocaleString()}`);
+            return false;
+        }
+    });
+});
+</script>
+{% endblock %}

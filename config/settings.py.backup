@@ -1,0 +1,286 @@
+# config/settings.py
+import os
+from pathlib import Path
+from dotenv import load_dotenv
+from django.utils.translation import gettext_lazy as _
+from datetime import timedelta
+from django.urls import reverse_lazy
+
+# بارگذاری متغیرها از فایل .env
+load_dotenv()
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+SECRET_KEY = os.getenv('SECRET_KEY')
+DEBUG = os.getenv('DEBUG') == 'True'
+ALLOWED_HOSTS = ['*']
+
+# --- تعریف برنامه‌ها (Applications) ---
+INSTALLED_APPS = [
+    "unfold",  # 🎨 قالب ادمین: باید اولین گزینه باشد تا بتواند قالب پیش‌فرض را بازنویسی کند
+    "unfold.contrib.filters",
+    "unfold.contrib.forms",
+     'django_q',
+    
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'django.contrib.humanize', # 💡 برای نمایش اعداد و تاریخ به صورت خواناتر (مثلا: "۳ دقیقه پیش")
+    
+    # برنامه‌های جانبی (Third-Party)
+    'rest_framework',
+    'rest_framework_simplejwt',
+    'corsheaders',
+    'django_celery_beat',  # مدیریت تسک‌های زمان‌بندی شده
+    'apps.wallet',
+    'apps.investments',
+    'apps.lottery', 
+
+    # برنامه‌های اصلی پروژه
+    'apps.accounts',
+    'apps.core', # مدل‌های اصلی مثل Plan و Transaction اینجا هستند
+    # 'apps.investments', # به نظر می‌رسد منطق‌ها در core و accounts ادغام شده‌اند
+    # 'apps.network',
+    # 'apps.wallet',
+    # 'apps.finance',
+    # 'apps.lottery',
+    # 'apps.crypto_gateway',
+    # 'apps.reports',
+]
+
+MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware', # 🇮🇷 برای تشخیص و فعال‌سازی زبان فارسی
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+ROOT_URLCONF = 'config.urls'
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [BASE_DIR / 'templates'],  # این خط باید دقیقاً همین باشد
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+
+WSGI_APPLICATION = 'config.wsgi.application'
+
+# --- دیتابیس ---
+# ⚠️ نکته: مطمئن شوید دیتابیس شما با Collation utf8mb4_general_ci ساخته شده است تا از تمام کاراکترهای فارسی پشتیبانی کند.
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT'),
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+        },
+    }
+}
+
+# --- احراز هویت ---
+AUTH_USER_MODEL = 'accounts.User'
+
+# --- بومی‌سازی و زبان ---
+LANGUAGE_CODE = 'fa' # استفاده از 'fa' به جای 'fa-ir' برای سازگاری بیشتر
+TIME_ZONE = 'Asia/Tehran'
+USE_I18N = True # فعال‌سازی سیستم ترجمه
+USE_TZ = True # فعال‌سازی پشتیبانی از منطقه زمانی
+
+# لیست زبان‌های قابل انتخاب در پنل
+LANGUAGES = [
+    ('fa', _('فارسی')),
+    ('en', _('English')),
+]
+
+# مسیر فایل‌های ترجمه (.po, .mo)
+LOCALE_PATHS = [
+    BASE_DIR / 'locale',
+]
+
+# --- فایل‌های استاتیک ---
+STATIC_URL = 'static/'
+# STATIC_ROOT = BASE_DIR / 'staticfiles' # در حالت پروداکشن برای collectstatic
+STATICFILES_DIRS = [BASE_DIR / 'static']
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# --- تنظیمات Celery (برای پردازش‌های پس‌زمینه) ---
+CELERY_BROKER_URL = os.getenv('REDIS_URL', 'redis://localhost:6379/0')
+CELERY_RESULT_BACKEND = os.getenv('REDIS_URL', 'redis://localhost:6379/0')
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = TIME_ZONE
+
+# تنظیم زمان‌بندی (Beat) برای اجرای خودکار تسک‌ها
+from celery.schedules import crontab
+CELERY_BEAT_SCHEDULE = {
+    'process-daily-roi-every-midnight': {
+        'task': 'apps.accounts.tasks.process_daily_roi_for_all_users', # ❗️ مسیر تسک را دقیق مشخص کنید
+        'schedule': crontab(hour=0, minute=5), # هر شب ساعت ۱۲:۰۵ بامداد
+        'args': (),
+    },
+    'calculate-binary-commission-every-midnight': {
+        'task': 'apps.accounts.tasks.process_daily_binary_for_all_users', # ❗️ مسیر تسک را دقیق مشخص کنید
+        'schedule': crontab(hour=0, minute=15), # هر شب ساعت ۱۲:۱۵ بامداد
+        'args': (),
+    },
+}
+
+# --- تنظیمات DRF (برای API) ---
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+}
+
+# --- تنظیمات JWT ---
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
+}
+
+# --- تنظیمات CORS ---
+CORS_ALLOW_ALL_ORIGINS = True
+
+# ==========================================
+# 🎨 تنظیمات قالب ادمین UNFOLD
+# ==========================================
+UNFOLD = {
+    "SITE_TITLE": "مدیریت سیستم سرمایه‌گذاری",
+    "SITE_HEADER": "پنل مدیریت",
+    "SITE_URL": "/",
+    "SHOW_HISTORY": True,
+    "SHOW_VIEW_ON_SITE": True,
+
+    "SIDEBAR": {
+        "show_search": True,
+        "show_all_applications": True,  # اگر می‌خواهید اپ‌ها خودکار هم لیست شوند این را True بگذارید
+        "navigation": [
+            {
+                "title": _("مدیریت کاربران"),
+                "separator": True,  # خط جداکننده
+                "collapsible": True,
+                "items": [
+                    {
+                        "title": _("لیست کاربران"),
+                        "icon": "people",
+                        "link": reverse_lazy("admin:accounts_user_changelist"),
+                    },
+                    {
+                        "title": _("پلن‌های عضویت"),
+                        "icon": "card_membership",
+                        "link": reverse_lazy("admin:accounts_userplan_changelist"),
+                    },
+                ],
+            },
+            {
+                "title": _("امور مالی و کیف پول"),
+                "separator": True,
+                "collapsible": True,
+                "items": [
+                    {
+                        "title": _("کیف پول‌ها"),
+                        "icon": "account_balance_wallet",
+                        # نام مدل در url باید با حروف کوچک باشد
+                        "link": reverse_lazy("admin:wallet_wallet_changelist"),
+                    },
+                    {
+                        "title": _("تراکنش‌ها"),
+                        "icon": "receipt_long",
+                        "link": reverse_lazy("admin:wallet_transaction_changelist"),
+                    },
+                    {
+                        "title": _("درخواست‌های برداشت"),
+                        "icon": "payments",
+                        "link": reverse_lazy("admin:wallet_withdrawalrequest_changelist"),
+                    },
+                ],
+            },
+            {
+                "title": _("سرمایه‌گذاری‌ها"),
+                "separator": True,
+                "collapsible": True,
+                "items": [
+                    {
+                        "title": _("پلن‌های سرمایه‌گذاری"),
+                        "icon": "trending_up",
+                        "link": reverse_lazy("admin:investments_investmentplan_changelist"),
+                    },
+                    {
+                        "title": _("سرمایه‌گذاری‌های فعال"),
+                        "icon": "history_edu",
+                        "link": reverse_lazy("admin:investments_userinvestment_changelist"),
+                    },
+                ],
+            },
+            {
+                "title": _("لاتاری و قرعه‌کشی"),
+                "separator": True,
+                "collapsible": True,
+                "items": [
+                    {
+                        "title": _("دورهای لاتاری"),
+                        "icon": "casino",
+                        "link": reverse_lazy("admin:lottery_lotteryround_changelist"),
+                    },
+                    {
+                        "title": _("بلیط‌های خریداری شده"),
+                        "icon": "confirmation_number",
+                        "link": reverse_lazy("admin:lottery_lotteryticket_changelist"),
+                    },
+                    {
+                        "title": _("برندگان"),
+                        "icon": "emoji_events",
+                        "link": reverse_lazy("admin:lottery_lotterywinner_changelist"),
+                    },
+                ],
+            },
+        ],
+    },
+}
+
+
+
+# ==========================================
+# پایان تنظیمات قالب ادمین UNFOLD
+# ==========================================
+import os
+
+Q_CLUSTER = {
+    'name': 'MLM_Queue',
+    'workers': 4,
+    'timeout': 300,
+    'retry': 360,
+    'queue_limit': 50,
+    'bulk': 10,
+    'redis': os.environ.get('REDIS_URL', 'redis://127.0.0.1:6379/1'),
+}

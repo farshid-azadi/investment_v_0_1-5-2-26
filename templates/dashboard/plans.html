@@ -1,0 +1,44 @@
+{% extends 'base_dashboard.html' %}
+{% load humanize %}
+
+{% block title %}Investment Plans{% endblock %}
+
+{% block content %}
+<h2 style="margin-bottom: 20px; color: var(--text-light);">Investment Plans</h2>
+
+<div class="grid-container" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+    {% for plan in plans %}
+    <div class="card" style="border: 1px solid var(--primary); text-align: center;">
+        <div class="card-header" style="justify-content: center; flex-direction: column;">
+            <h3 style="font-size: 1.5rem; color: var(--primary);">{{ plan.name }}</h3>
+            <span style="font-size: 0.9rem; color: var(--text-gray);">{{ plan.duration_days }} Days Period</span>
+        </div>
+        <div class="card-body">
+            <h1 style="font-size: 2.5rem; margin: 20px 0;">{{ plan.roi_percent }}% <span style="font-size: 1rem;">ROI</span></h1>
+            <ul style="list-style: none; padding: 0; text-align: left; margin-bottom: 20px;">
+                <li style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                    <i class="fas fa-check" style="color: var(--success); margin-right: 10px;"></i>
+                    Min Invest: ${{ plan.min_amount|intcomma }}
+                </li>
+                <li style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                    <i class="fas fa-check" style="color: var(--success); margin-right: 10px;"></i>
+                    Max Invest: ${{ plan.max_amount|intcomma }}
+                </li>
+                <li style="padding: 10px 0;">
+                    <i class="fas fa-check" style="color: var(--success); margin-right: 10px;"></i>
+                    Binary Bonus: {{ plan.binary_percentage }}%
+                </li>
+            </ul>
+            <button class="btn btn-primary" style="width: 100%;">Invest Now</button>
+        </div>
+    </div>
+    {% empty %}
+    <div class="card">
+        <div class="card-body" style="text-align: center;">
+            <h3>Coming Soon</h3>
+            <p>Investment plans are being updated.</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

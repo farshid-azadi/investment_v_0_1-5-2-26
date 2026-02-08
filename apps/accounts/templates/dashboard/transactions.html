@@ -1,0 +1,71 @@
+{% extends 'base_dashboard.html' %}
+{% load humanize %}
+
+{% block title %}Transaction History{% endblock %}
+
+{% block content %}
+<h2 style="margin-bottom: 20px; color: var(--text-light);">Transaction History</h2>
+
+<!-- جدول نئونی تراکنش‌ها -->
+<div class="card">
+    <div class="card-header">
+        <h3>All Activities</h3>
+    </div>
+    <div class="table-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for tx in transactions %}
+                <tr>
+                    <!-- نمایش نوع تراکنش -->
+                    <td>
+                        <span class="status 
+                            {% if tx.transaction_type == 'deposit' %}completed
+                            {% elif tx.transaction_type == 'withdrawal' %}pending
+                            {% else %}process{% endif %}">
+                            {{ tx.get_transaction_type_display|default:tx.transaction_type }}
+                        </span>
+                    </td>
+                    
+                    <!-- مبلغ -->
+                    <td style="color: {% if tx.amount > 0 %}var(--primary){% else %}var(--danger){% endif %}; font-weight: bold;">
+                        ${{ tx.amount|intcomma }}
+                    </td>
+
+                    <!-- وضعیت -->
+                    <td>
+                        {% if tx.status == 'confirmed' %}
+                            <span style="color: var(--primary);"><i class="fas fa-check-circle"></i> Success</span>
+                        {% elif tx.status == 'pending' %}
+                            <span style="color: var(--warning);"><i class="fas fa-clock"></i> Pending</span>
+                        {% else %}
+                            <span style="color: var(--danger);"><i class="fas fa-times-circle"></i> Failed</span>
+                        {% endif %}
+                    </td>
+
+                    <!-- تاریخ -->
+                    <td>{{ tx.created_at|date:"Y-m-d H:i" }}</td>
+                    
+                    <!-- توضیحات -->
+                    <td style="font-size: 0.9em; color: var(--text-gray);">
+                        {{ tx.description|default:"-" }}
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5" style="text-align: center; padding: 20px;">No transactions found.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

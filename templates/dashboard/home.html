@@ -1,0 +1,385 @@
+{% extends 'base_dashboard.html' %}
+{% load static %}
+
+{% block title %}داشبورد سرمایه‌گذاری{% endblock %}
+
+{% block extra_css %}
+<!-- اضافه کردن Chart.js برای نمودارها -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+    /* Grid Layout - 12 Columns */
+    .dashboard-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-auto-rows: minmax(min-content, max-content);
+        gap: 1.5rem;
+        padding-bottom: 2rem;
+    }
+
+    .card {
+        background: var(--bg-card, #1e1e2d); /* Fallback color */
+        border-radius: 16px;
+        padding: 1.5rem;
+        border: 1px solid rgba(255,255,255,0.05);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+
+    /* --- Top Row --- */
+    /* Balance Chart (Left Large) */
+    .card-balance {
+        grid-column: span 8;
+        min-height: 350px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .balance-header { display: flex; justify-content: space-between; align-items: start; margin-bottom: 2rem; }
+    .balance-label { color: #aaa; font-size: 0.9rem; margin-bottom: 5px; }
+    .balance-amount { font-size: 2.5rem; font-weight: 600; color: white; letter-spacing: -1px; }
+    .balance-percent { color: #26a69a; font-size: 1rem; font-weight: 500; margin-left: 10px; background: rgba(38, 166, 154, 0.1); padding: 2px 8px; border-radius: 6px; }
+
+    .time-selectors { background: rgba(255,255,255,0.05); border-radius: 20px; padding: 4px; display: flex; gap: 5px; }
+    .time-btn { border: none; background: transparent; color: #aaa; padding: 5px 12px; border-radius: 15px; font-size: 0.8rem; cursor: pointer; transition: 0.3s; }
+    .time-btn.active, .time-btn:hover { background: white; color: black; font-weight: 600; }
+
+    .chart-area { flex: 1; width: 100%; position: relative; min-height: 200px; }
+
+    /* Quick Swap (Top Right) */
+    .card-swap {
+        grid-column: span 4;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .swap-inputs { display: flex; flex-direction: column; gap: 10px; position: relative; }
+    .input-group { background: rgba(0,0,0,0.2); border-radius: 12px; padding: 15px; border: 1px solid transparent; transition: 0.3s; }
+    .input-group:focus-within { border-color: #26a69a; }
+    
+    .input-row { display: flex; justify-content: space-between; margin-bottom: 5px; }
+    .coin-select { display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 0.95rem; color: white; }
+    
+    .swap-btn-circle {
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        width: 32px; height: 32px;
+        background: #333;
+        border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        border: 2px solid var(--bg-card, #1e1e2d);
+        color: #aaa;
+        cursor: pointer;
+        z-index: 2;
+    }
+    
+    .btn-visualize {
+        width: 100%;
+        background: #3699ff;
+        color: white;
+        border: none;
+        padding: 14px;
+        border-radius: 12px;
+        margin-top: 1rem;
+        cursor: pointer;
+        font-weight: 500;
+        transition: 0.2s;
+    }
+    .btn-visualize:hover { background: #007bff; }
+
+    /* --- Middle Row --- */
+    /* Assets Table (Left) */
+    .card-assets {
+        grid-column: span 8;
+        min-height: 300px;
+    }
+    
+    .assets-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+    .assets-table th { text-align: left; color: #aaa; font-size: 0.8rem; padding-bottom: 1rem; font-weight: 500; }
+    .assets-table td { padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.95rem; color: white; }
+    .assets-table tr:last-child td { border-bottom: none; }
+    
+    .asset-name { display: flex; align-items: center; gap: 10px; font-weight: 500; }
+    .asset-icon-bg { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; }
+    .btc-bg { background: rgba(247, 147, 26, 0.2); color: #F7931A; }
+    .eth-bg { background: rgba(98, 126, 234, 0.2); color: #627EEA; }
+    .usdt-bg { background: rgba(38, 161, 123, 0.2); color: #26A17B; }
+
+    /* Repartition / Pie Chart (Right) */
+    .card-repartition {
+        grid-column: span 4;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+    .chart-pie-container { width: 180px; height: 180px; position: relative; margin: 0 auto; }
+    .legend { display: flex; gap: 15px; margin-top: 1.5rem; justify-content: center; flex-wrap: wrap;}
+    .legend-item { font-size: 0.8rem; color: #aaa; display: flex; align-items: center; gap: 5px; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; }
+
+    /* --- Bottom Row (Navigation) --- */
+    .card-nav {
+        grid-column: span 4;
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #aaa;
+        border: 1px dashed rgba(255,255,255,0.2);
+        background: transparent;
+        text-decoration: none;
+        transition: all 0.3s;
+        cursor: pointer;
+    }
+    .card-nav:hover {
+        border-color: #3699ff;
+        color: white;
+        background: rgba(54, 153, 255, 0.05);
+        transform: translateY(-2px);
+    }
+    .card-nav i { font-size: 1.5rem; margin-bottom: 0.5rem; }
+
+    @media (max-width: 1200px) {
+        .card-balance, .card-assets { grid-column: span 12; }
+        .card-swap, .card-repartition, .card-nav { grid-column: span 12; }
+        .card-nav { height: 80px; flex-direction: row; gap: 10px; }
+        .card-nav i { margin-bottom: 0; }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="dashboard-grid">
+
+    <!-- 1. Balance Chart -->
+    <div class="card card-balance">
+        <div class="balance-header">
+            <div>
+                <div class="balance-label">Total Balance (USDT)</div>
+                <div style="display: flex; align-items: baseline;">
+                    <!-- اتصال به متغیر واقعی بک‌اند -->
+                    <span class="balance-amount">${{ user.cash_balance|default:0|floatformat:2 }}</span>
+                    <!-- این درصد فعلا نمایشی است -->
+                    <span class="balance-percent">+{{ roi_percent|default:"1.5" }}%</span> 
+                </div>
+            </div>
+            <div class="time-selectors">
+                <button class="time-btn">1D</button>
+                <button class="time-btn">7D</button>
+                <button class="time-btn">1M</button>
+                <button class="time-btn active">1Y</button>
+            </div>
+        </div>
+        
+        <div class="chart-area">
+            <canvas id="balanceChart"></canvas>
+        </div>
+    </div>
+
+    <!-- 2. Quick Swap (نمایشی برای آینده) -->
+    <div class="card card-swap">
+        <h3 style="font-weight: 500; margin-bottom: 1rem; color:white;">Quick Swap</h3>
+        
+        <div class="swap-inputs">
+            <div class="input-group">
+                <div class="input-row">
+                    <input type="text" value="0.00" style="background:none; border:none; color:white; font-size:1.1rem; width: 100%;">
+                    <div class="coin-select">
+                        <span style="color:#F7931A;"><i class="fab fa-bitcoin"></i></span> BTC
+                    </div>
+                </div>
+                <div style="font-size: 0.8rem; color: #aaa;">Balance: 0.00 BTC</div>
+            </div>
+
+            <div class="swap-btn-circle">
+                <i class="fas fa-arrow-down"></i>
+            </div>
+
+            <div class="input-group">
+                <div class="input-row">
+                    <!-- نمایش موجودی واقعی در اینپوت سواپ -->
+                    <input type="text" value="{{ user.cash_balance|floatformat:2 }}" style="background:none; border:none; color:white; font-size:1.1rem; width: 100%;">
+                    <div class="coin-select">
+                        <span style="color:#26A17B;"><i class="fas fa-dollar-sign"></i></span> USDT
+                    </div>
+                </div>
+                <div style="font-size: 0.8rem; color: #aaa;">Max Available</div>
+            </div>
+        </div>
+
+        <button class="btn-visualize">
+            Exchange Now <i class="fas fa-chevron-right" style="margin-left: 5px; font-size: 0.8rem;"></i>
+        </button>
+    </div>
+
+    <!-- 3. Assets Table -->
+    <div class="card card-assets">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h3 style="font-weight: 500; color:white;">My Assets</h3>
+            <a href="{% url 'dashboard:transactions' %}" style="color: #3699ff; font-size: 0.9rem; text-decoration: none;">History</a>
+        </div>
+
+        <table class="assets-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Balance</th>
+                    <th>Price</th>
+                    <th>Value (USD)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- ردیف واقعی USDT متصل به دیتابیس -->
+                <tr>
+                    <td>
+                        <div class="asset-name">
+                            <div class="asset-icon-bg usdt-bg"><i class="fas fa-dollar-sign"></i></div>
+                            <div>Tether <span style="color:#aaa; font-size:0.8rem;">USDT</span></div>
+                        </div>
+                    </td>
+                    <td>{{ user.cash_balance|floatformat:2 }}</td>
+                    <td>$1.00</td>
+                    <td>${{ user.cash_balance|floatformat:2 }}</td>
+                </tr>
+                
+                <!-- ردیف‌های نمایشی (Placeholder) برای پر نشان دادن جدول -->
+                <tr>
+                    <td>
+                        <div class="asset-name">
+                            <div class="asset-icon-bg btc-bg"><i class="fab fa-bitcoin"></i></div>
+                            <div>Bitcoin <span style="color:#aaa; font-size:0.8rem;">BTC</span></div>
+                        </div>
+                    </td>
+                    <td>0.000000</td>
+                    <td>$98,000</td>
+                    <td>$0.00</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="asset-name">
+                            <div class="asset-icon-bg eth-bg"><i class="fab fa-ethereum"></i></div>
+                            <div>Ethereum <span style="color:#aaa; font-size:0.8rem;">ETH</span></div>
+                        </div>
+                    </td>
+                    <td>0.0000</td>
+                    <td>$3,200</td>
+                    <td>$0.00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 4. Repartition (Pie Chart) -->
+    <div class="card card-repartition">
+        <h3 style="font-weight: 500; align-self: flex-start; width: 100%; margin-bottom: 1rem; color:white;">Portfolio</h3>
+        
+        <div class="chart-pie-container">
+            <canvas id="repartitionChart"></canvas>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item"><span class="dot" style="background: #26A17B;"></span> USDT</div>
+            <div class="legend-item"><span class="dot" style="background: #F7931A;"></span> BTC</div>
+            <div class="legend-item"><span class="dot" style="background: #627EEA;"></span> ETH</div>
+        </div>
+    </div>
+
+    <!-- 5. Navigation Shortcuts (Fixed Links) -->
+    <!-- لینک به صفحه تراکنش‌ها -->
+    <a href="{% url 'dashboard:transactions' %}" class="card card-nav">
+        <i class="fas fa-list-ul"></i>
+        <span>Transactions</span>
+    </a>
+
+    <!-- لینک به خرید پلن (سرمایه‌گذاری) -->
+    <a href="{% url 'dashboard:plans' %}" class="card card-nav">
+        <i class="fas fa-rocket"></i>
+        <span>Invest Plans</span>
+    </a>
+
+    <!-- لینک به شبکه باینری -->
+    <a href="{% url 'dashboard:network' %}" class="card card-nav">
+        <i class="fas fa-project-diagram"></i>
+        <span>My Network</span>
+    </a>
+
+</div>
+
+<!-- اسکریپت نمودارها -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // 1. Balance Area Chart
+        const canvasBalance = document.getElementById('balanceChart');
+        if (canvasBalance) {
+            const ctxBalance = canvasBalance.getContext('2d');
+            
+            // Gradient Setup
+            const gradientFill = ctxBalance.createLinearGradient(0, 0, 0, 400);
+            gradientFill.addColorStop(0, 'rgba(255, 255, 255, 0.1)'); 
+            gradientFill.addColorStop(1, 'rgba(255, 255, 255, 0)');
+
+            new Chart(ctxBalance, {
+                type: 'line',
+                data: {
+                    labels: ['Start', 'Day 1', 'Day 2', 'Day 3', 'Day 4', 'Today'],
+                    datasets: [{
+                        label: 'Portfolio Value',
+                        // اگر دیتا از سمت سرور نیامد، یک خط صاف نشان بده
+                        data: [
+                            {{ user.cash_balance|default:0 }}, 
+                            {{ user.cash_balance|default:0 }}, 
+                            {{ user.cash_balance|default:0 }},
+                            {{ user.cash_balance|default:0 }},
+                            {{ user.cash_balance|default:0 }},
+                            {{ user.cash_balance|default:0 }}
+                        ],
+                        borderColor: '#ffffff',
+                        borderWidth: 2,
+                        backgroundColor: gradientFill,
+                        fill: true,
+                        tension: 0.4,
+                        pointRadius: 3,
+                        pointHoverRadius: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { display: false },
+                        y: { display: false }
+                    }
+                }
+            });
+        }
+
+        // 2. Repartition Pie Chart
+        const canvasPie = document.getElementById('repartitionChart');
+        if (canvasPie) {
+            const ctxPie = canvasPie.getContext('2d');
+            new Chart(ctxPie, {
+                type: 'doughnut',
+                data: {
+                    labels: ['USDT', 'Bitcoin', 'Ethereum'],
+                    datasets: [{
+                        data: [100, 0, 0], // فعلا 100 درصد USDT چون فقط آن واقعی است
+                        backgroundColor: ['#26A17B', '#F7931A', '#627EEA'],
+                        borderWidth: 0,
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    cutout: '70%', 
+                    plugins: { legend: { display: false } }
+                }
+            });
+        }
+    });
+</script>
+{% endblock %}
