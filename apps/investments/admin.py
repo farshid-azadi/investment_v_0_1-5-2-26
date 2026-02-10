@@ -10,7 +10,7 @@ from .forms import InvestmentPlanAdminForm
 
 
 # =============================================================================
-# 📊 Investment Plan Admin
+# 📊 Investment Plan Admin #
 # =============================================================================
 
 @admin.register(InvestmentPlan)
