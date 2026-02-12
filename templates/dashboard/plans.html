@@ -3,41 +3,158 @@
 
 {% block title %}Investment Plans{% endblock %}
 
-{% block content %}
-<h2 style="margin-bottom: 20px; color: var(--text-light);">Investment Plans</h2>
+{% block extra_css %}
+<style>
+    .plans-title {
+        margin-bottom: 20px;
+        color: var(--text-primary);
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
 
-<div class="grid-container" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+    .plans-grid {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .plan-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 20px;
+        text-align: center;
+        transition: 0.2s;
+    }
+
+    .plan-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(54, 153, 255, 0.4);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .plan-title {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--accent);
+    }
+
+    .plan-duration {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+        margin-top: 4px;
+    }
+
+    .plan-roi {
+        font-size: 2.4rem;
+        font-weight: 700;
+        margin: 18px 0 12px;
+    }
+
+    .plan-roi span {
+        font-size: 1rem;
+        color: var(--text-secondary);
+        font-weight: 400;
+    }
+
+    .plan-features {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 18px;
+        text-align: left;
+    }
+
+    .plan-features li {
+        padding: 10px 0;
+        border-bottom: 1px solid var(--border);
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .plan-features li:last-child {
+        border-bottom: none;
+    }
+
+    .plan-features i {
+        color: #26a69a;
+        min-width: 16px;
+    }
+
+    .plan-btn {
+        width: 100%;
+        background: var(--accent);
+        color: #fff;
+        border: none;
+        padding: 12px 16px;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .plan-btn:hover {
+        background: var(--accent-hover);
+    }
+
+    .empty-card {
+        background: var(--bg-card);
+        border: 1px dashed var(--border);
+        border-radius: 12px;
+        padding: 24px;
+        text-align: center;
+        color: var(--text-secondary);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<h2 class="plans-title">Investment Plans</h2>
+
+<div class="plans-grid">
     {% for plan in plans %}
-    <div class="card" style="border: 1px solid var(--primary); text-align: center;">
-        <div class="card-header" style="justify-content: center; flex-direction: column;">
-            <h3 style="font-size: 1.5rem; color: var(--primary);">{{ plan.name }}</h3>
-            <span style="font-size: 0.9rem; color: var(--text-gray);">{{ plan.duration_days }} Days Period</span>
+    <div class="plan-card">
+        <div>
+            <div class="plan-title">{{ plan.name }}</div>
+            <div class="plan-duration">{{ plan.duration_days }} Days Period</div>
         </div>
-        <div class="card-body">
-            <h1 style="font-size: 2.5rem; margin: 20px 0;">{{ plan.roi_percent }}% <span style="font-size: 1rem;">ROI</span></h1>
-            <ul style="list-style: none; padding: 0; text-align: left; margin-bottom: 20px;">
-                <li style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
-                    <i class="fas fa-check" style="color: var(--success); margin-right: 10px;"></i>
-                    Min Invest: ${{ plan.min_amount|intcomma }}
-                </li>
-                <li style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
-                    <i class="fas fa-check" style="color: var(--success); margin-right: 10px;"></i>
-                    Max Invest: ${{ plan.max_amount|intcomma }}
-                </li>
-                <li style="padding: 10px 0;">
-                    <i class="fas fa-check" style="color: var(--success); margin-right: 10px;"></i>
-                    Binary Bonus: {{ plan.binary_percentage }}%
-                </li>
-            </ul>
-            <button class="btn btn-primary" style="width: 100%;">Invest Now</button>
+
+        <div class="plan-roi">
+            {{ plan.roi_percent }}% <span>ROI</span>
         </div>
+
+        <ul class="plan-features">
+            <li>
+                <i class="fas fa-check"></i>
+                Min Invest: ${{ plan.min_amount|intcomma }}
+            </li>
+            <li>
+                <i class="fas fa-check"></i>
+                Max Invest: ${{ plan.max_amount|intcomma }}
+            </li>
+            <li>
+                <i class="fas fa-check"></i>
+                Binary Bonus: {{ plan.binary_percentage }}%
+            </li>
+        </ul>
+
+        <!-- اگر مودال یا فرم خرید داری -->
+        <button
+            class="plan-btn"
+            data-plan-id="{{ plan.id }}"
+            data-plan-name="{{ plan.name }}"
+            data-plan-min="{{ plan.min_amount }}"
+            data-plan-max="{{ plan.max_amount }}"
+        >
+            Invest Now
+        </button>
     </div>
     {% empty %}
-    <div class="card">
-        <div class="card-body" style="text-align: center;">
-            <h3>Coming Soon</h3>
-            <p>Investment plans are being updated.</p>
-        </div>
+    <div class="empty-card">
+        <h3>Coming Soon</h3>
+        <p>Investment plans are being updated.</p>
     </div>
     {% endfor %}
 </div>

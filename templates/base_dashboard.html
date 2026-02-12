@@ -5,25 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Dashboard{% endblock %} | Investment Panel</title>
-    
+
     <!-- Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- FontAwesome (Icons) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --bg-body: #13131f; /* رنگ پس‌زمینه اصلی */
-            --bg-card: #1e1e2d; /* رنگ کارت‌ها */
-            --bg-sidebar: #151521; /* رنگ سایدبار */
+            --bg-body: #13131f;
+            --bg-card: #1e1e2d;
+            --bg-sidebar: #151521;
             --text-primary: #ffffff;
             --text-secondary: #92929f;
             --accent: #3699ff;
             --accent-hover: #0073e9;
+            --border: rgba(255,255,255,0.05);
         }
 
         body {
@@ -34,7 +35,7 @@
             overflow-x: hidden;
         }
 
-        /* Sidebar Styles */
+        /* Sidebar */
         .sidebar {
             width: 260px;
             height: 100vh;
@@ -42,7 +43,7 @@
             position: fixed;
             top: 0;
             left: 0;
-            border-right: 1px solid rgba(255,255,255,0.05);
+            border-right: 1px solid var(--border);
             display: flex;
             flex-direction: column;
             z-index: 50;
@@ -57,12 +58,20 @@
             font-size: 1.25rem;
             font-weight: 700;
             color: white;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid var(--border);
         }
         .brand span { color: var(--accent); }
 
         .menu { flex: 1; padding: 20px 0; overflow-y: auto; }
-        
+
+        .menu-title {
+            padding: 0 24px 10px;
+            font-size: 0.75rem;
+            color: #555;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
         .menu-item {
             display: flex;
             align-items: center;
@@ -74,13 +83,19 @@
             border-left: 3px solid transparent;
         }
 
-        .menu-item:hover, .menu-item.active {
+        .menu-item:hover,
+        .menu-item.active {
             color: white;
             background: rgba(54, 153, 255, 0.05);
             border-left-color: var(--accent);
         }
-        
-        .menu-item i { width: 25px; font-size: 1.1rem; margin-right: 10px; text-align: center; }
+
+        .menu-item i {
+            width: 25px;
+            font-size: 1.1rem;
+            margin-right: 10px;
+            text-align: center;
+        }
 
         /* Main Content */
         .main-content {
@@ -89,14 +104,15 @@
             min-height: 100vh;
         }
 
-        /* Header (Mobile Toggle & Profile) */
+        /* Header */
         .top-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 2rem;
             padding-bottom: 1rem;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid var(--border);
+            gap: 16px;
         }
 
         .user-profile {
@@ -104,12 +120,39 @@
             align-items: center;
             gap: 12px;
         }
+
+        .user-info {
+            text-align: right;
+        }
+
         .user-avatar {
-            width: 40px; height: 40px;
+            width: 40px;
+            height: 40px;
             background: var(--accent);
             border-radius: 8px;
-            display: flex; align-items: center; justify-content: center;
-            font-weight: bold; color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+        }
+
+        /* Flash Messages */
+        .alert {
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border: 1px solid transparent;
+        }
+        .alert-success {
+            background: rgba(38, 166, 154, 0.2);
+            color: #26a69a;
+            border-color: #26a69a;
+        }
+        .alert-error {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+            border-color: #ef4444;
         }
 
         /* Mobile Responsive */
@@ -117,8 +160,23 @@
             .sidebar { transform: translateX(-100%); }
             .sidebar.open { transform: translateX(0); }
             .main-content { margin-left: 0; }
+            .user-info { display: none; }
+        }
+
+        /* Mobile Toggle Button */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: 1px solid var(--border);
+            color: white;
+            padding: 8px 10px;
+            border-radius: 8px;
+        }
+        @media (max-width: 768px) {
+            .menu-toggle { display: inline-flex; align-items: center; gap: 6px; }
         }
     </style>
+
     {% block extra_css %}{% endblock %}
 </head>
 <body>
@@ -129,15 +187,14 @@
             <i class="fas fa-cube" style="margin-right: 10px;"></i>
             Invest<span>Pro</span>
         </div>
-        
+
         <nav class="menu">
-            <div style="padding: 0 24px 10px; font-size: 0.75rem; color: #555; text-transform: uppercase; font-weight: 600;">Menu</div>
-            
-            <!-- ✅ لینک‌های اصلاح شده با Namespace -->
+            <div class="menu-title">Menu</div>
+
             <a href="{% url 'dashboard:dashboard' %}" class="menu-item {% if request.resolver_match.url_name == 'dashboard' %}active{% endif %}">
                 <i class="fas fa-home"></i> Dashboard
             </a>
-            
+
             <a href="{% url 'dashboard:plans' %}" class="menu-item {% if request.resolver_match.url_name == 'plans' %}active{% endif %}">
                 <i class="fas fa-layer-group"></i> Investment Plans
             </a>
@@ -150,29 +207,31 @@
                 <i class="fas fa-history"></i> Transactions
             </a>
 
-            <div style="margin-top: 20px; padding: 0 24px 10px; font-size: 0.75rem; color: #555; text-transform: uppercase; font-weight: 600;">User</div>
-            
+            <div class="menu-title" style="margin-top: 20px;">User</div>
+
             <a href="#" class="menu-item">
                 <i class="fas fa-user-cog"></i> Profile Settings
             </a>
 
-            <!-- ✅ دکمه خروج اصلاح شده (دلیل اصلی خطا) -->
             <a href="{% url 'accounts:logout' %}" class="menu-item" style="color: #ef4444;">
                 <i class="fas fa-sign-out-alt"></i> Logout
             </a>
         </nav>
     </aside>
 
-    <!-- Main Content Area -->
+    <!-- Main Content -->
     <main class="main-content">
-        <!-- Top Header -->
         <div class="top-header">
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i> Menu
+            </button>
+
             <div style="font-size: 1.2rem; font-weight: 600;">
                 Welcome Back, <span style="color: var(--accent);">{{ user.username }}</span> 👋
             </div>
-            
+
             <div class="user-profile">
-                <div style="text-align: right; display: none; @media(min-width:768px){display:block;}">
+                <div class="user-info">
                     <div style="font-size: 0.9rem; font-weight: 600;">{{ user.username }}</div>
                     <div style="font-size: 0.8rem; color: var(--text-secondary);">Investor</div>
                 </div>
@@ -182,26 +241,35 @@
             </div>
         </div>
 
-        <!-- Flash Messages (نمایش پیام‌های موفقیت یا خطا) -->
         {% if messages %}
             <div style="margin-bottom: 20px;">
                 {% for message in messages %}
-                    <div style="padding: 10px 15px; border-radius: 8px; margin-bottom: 10px; 
-                        {% if message.tags == 'success' %}background: rgba(38, 166, 154, 0.2); color: #26a69a; border: 1px solid #26a69a;{% endif %}
-                        {% if message.tags == 'error' %}background: rgba(239, 68, 68, 0.2); color: #ef4444; border: 1px solid #ef4444;{% endif %}">
+                    <div class="alert {% if message.tags == 'success' %}alert-success{% endif %}{% if message.tags == 'error' %}alert-error{% endif %}">
                         {{ message }}
                     </div>
                 {% endfor %}
             </div>
         {% endif %}
 
-        <!-- Content Injection -->
         {% block content %}{% endblock %}
     </main>
 
+    <!-- Optional: Bootstrap JS (اگر مودال Bootstrap داری لازم است) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+
     <script>
-        // اسکریپت ساده برای ریسپانسیو کردن منو در موبایل (اختیاری)
-        // فعلا نیازی نیست مگر اینکه روی موبایل تست کنید
+        const sidebar = document.getElementById("sidebar");
+        const toggleBtn = document.getElementById("menuToggle");
+
+        if (toggleBtn) {
+            toggleBtn.addEventListener("click", () => {
+                sidebar.classList.toggle("open");
+            });
+        }
     </script>
+
+    {% block extra_js %}{% endblock %}
 </body>
 </html>
